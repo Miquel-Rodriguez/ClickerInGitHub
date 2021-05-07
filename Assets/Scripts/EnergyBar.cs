@@ -17,9 +17,6 @@ public class EnergyBar : MonoBehaviour
 	[SerializeField] float energyCostForClick;
 	void Start()
 	{
-
-	
-
 		currentEnergy = maxEnergy;
 		SetMaxHealth(maxEnergy);
 		
@@ -71,7 +68,7 @@ public class EnergyBar : MonoBehaviour
 		
 	}
 
-	void UpBar(float up)
+	public void UpBar(float up)
 	{
         if (currentEnergy < maxEnergy)
         {
