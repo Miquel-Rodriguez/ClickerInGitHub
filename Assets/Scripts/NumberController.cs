@@ -6,6 +6,12 @@ public class NumberController : MonoBehaviour
 {
 
     [SerializeField] EnergyBar energyBarController;
+    [SerializeField] public float bitPerClick;
+    [SerializeField] public double bitPerSecond;
+    [SerializeField] public int energyPerClick;
+    [SerializeField] public int totalEnergy;
+    [SerializeField] public int energyRecovery;
+    [SerializeField] public float currentBits=0;
 
 
 
@@ -20,6 +26,7 @@ public class NumberController : MonoBehaviour
     {
         
     }
-
    
+
+
 }
