@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EnergyBar : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class EnergyBar : MonoBehaviour
 
 	[SerializeField] float energyForSecond;
 	[SerializeField] float energyCostForClick;
+    public TextMeshProUGUI bitText;
+    public GameObject eventSystem;
 	void Start()
 	{
 		currentEnergy = maxEnergy;
@@ -64,7 +67,10 @@ public class EnergyBar : MonoBehaviour
         {
 			currentEnergy -= energyCostForClick;
 			SetHealth(currentEnergy);
-		}
+            eventSystem.GetComponent<NumberController>().currentBits += eventSystem.GetComponent<NumberController>().bitPerClick;
+            //bitText.text = eventSystem.GetComponent<NumberController>().currentBits + " BYTES";
+            bitText.text = BitUtil.StringFormat(eventSystem.GetComponent<NumberController>().currentBits, BitUtil.TextFormat.Long);
+        }
 		
 	}
 
