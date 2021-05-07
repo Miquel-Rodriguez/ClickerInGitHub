@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class EnergyBar : MonoBehaviour
 {
 
 	[SerializeField] private Slider slider;
@@ -13,35 +13,25 @@ public class HealthBar : MonoBehaviour
 	[SerializeField] private float maxEnergy = 100;
 	[SerializeField] float currentEnergy;
 
-	private HealthBar energyBar;
 	[SerializeField] float energyForSecond;
+	[SerializeField] float energyCostForClick;
 	void Start()
 	{
 
-		energyBar = gameObject.GetComponent<HealthBar>();
+	
 
 		currentEnergy = maxEnergy;
-		energyBar.SetMaxHealth(maxEnergy);
+		SetMaxHealth(maxEnergy);
+		
+	}
 
-	}
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			DownBar(20);
-		}
-		if (Input.GetKey("2"))
-		{
-			UpBar(1);
-		}
-	}
 
 	public void ChangeMaxEnergy(float newMaxEnergy)
     {
 		slider.maxValue = newMaxEnergy;
 		maxEnergy = newMaxEnergy;
-		energyBar.SetMaxHealth(maxEnergy);
-		energyBar.SetHealth(currentEnergy);
+		SetMaxHealth(maxEnergy);
+		SetHealth(currentEnergy);
 	}
  
 	private void FixedUpdate()
@@ -49,7 +39,7 @@ public class HealthBar : MonoBehaviour
 		if (currentEnergy < maxEnergy)
 		{
 			currentEnergy += energyForSecond * Time.deltaTime;
-			energyBar.SetHealth(currentEnergy);
+			SetHealth(currentEnergy);
 		}
 	}
 	
@@ -67,18 +57,18 @@ public class HealthBar : MonoBehaviour
 		fill.color = gradient.Evaluate(slider.normalizedValue);
 	}
 
-	void DownBar(float down)
+	public void DownBar()
 	{
-        if (currentEnergy-down <= 0)
+        if (currentEnergy- energyCostForClick < 0)
         {
-			currentEnergy = 0;
-			energyBar.SetHealth(currentEnergy);
+			
 		}
         else
         {
-			currentEnergy -= down;
-			energyBar.SetHealth(currentEnergy);
+			currentEnergy -= energyCostForClick;
+			SetHealth(currentEnergy);
 		}
+		
 	}
 
 	void UpBar(float up)
@@ -86,7 +76,7 @@ public class HealthBar : MonoBehaviour
         if (currentEnergy < maxEnergy)
         {
 			currentEnergy += up;
-			energyBar.SetHealth(currentEnergy);
+			SetHealth(currentEnergy);
 		}
 
 	}
