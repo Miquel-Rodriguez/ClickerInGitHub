@@ -604,8 +604,8 @@ RectTransform:
   m_Father: {fileID: 1036803599}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5219452}
+  m_AnchorMax: {x: 1, y: 0.9999795}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5084,7 +5084,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: ButtonShop
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6480,7 +6480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -373.6295}
+  m_AnchoredPosition: {x: 0, y: -373.62943}
   m_SizeDelta: {x: 0, y: 747.2589}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409068325
@@ -6800,7 +6800,6 @@ GameObject:
   - component: {fileID: 1445307964}
   - component: {fileID: 1445307968}
   - component: {fileID: 1445307967}
-  - component: {fileID: 1445307968}
   - component: {fileID: 1445307969}
   m_Layer: 0
   m_Name: EventSystem
@@ -8852,6 +8851,7 @@ RectTransform:
   - {fileID: 2131763031}
   - {fileID: 1661506940}
   - {fileID: 1604207974}
+  - {fileID: 2127956424}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10100,6 +10100,73 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1908575267}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2127956423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2127956424}
+  - component: {fileID: 2127956425}
+  m_Layer: 5
+  m_Name: SkinsRecyclerView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2127956424
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127956423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1891388372}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.6, y: 119.3}
+  m_SizeDelta: {x: 585.4691, y: 371.59595}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2127956425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127956423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fa00db8b0ca7144b1cac4d99a1b80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decelerationRate: 0.5
+  orientation: 0
+  Spacing: {x: 20, y: 20}
+  IsReverse: 0
+  PoolSize: 3
+  CacheSize: 3
+  SkinsProcesador:
+  - {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c, type: 3}
+  - {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8, type: 3}
+  SkinsEspacio:
+  - {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8, type: 3}
+  - {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c, type: 3}
+  SkinsFuenteAlimentacion: []
+  SkinsGrafica: []
+  row: {fileID: 8495104374442903244, guid: debd64e5d8b652449addde3b73343ab7, type: 3}
+  RealSkinsList:
+  - {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c, type: 3}
+  - {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c, type: 3}
+  - {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c, type: 3}
 --- !u!1 &2131763030
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,7 +10184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2131763031
 RectTransform:
   m_ObjectHideFlags: 0

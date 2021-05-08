@@ -26,7 +26,12 @@ public class NumberController : MonoBehaviour
     {
         
     }
-   
+
+
+    public void ClickOnByteButton()
+    {
+
+    }
 
 
 }
