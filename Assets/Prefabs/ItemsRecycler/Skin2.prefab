@@ -43,4 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3943c871ff9ed04793e7542d9c4ec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Skin2
+  componentNum: 0
+  names: F
+  available: 0
+  spriteSkin: {fileID: 21300000, guid: 91536964031ae9844bb404a544360b42, type: 3}
+  spriteUnavailable: {fileID: 21300000, guid: 723a0c18c8d4f1e4389ecb4001c03463, type: 3}

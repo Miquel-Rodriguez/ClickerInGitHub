@@ -15,6 +15,17 @@ public class ComponentSkins : UI.RecyclerView<ComponentSkins.Holder>.Adapter {
 
     public List<Skin> RealSkinsList;
 
+    [SerializeField] GameObject Container;
+    [SerializeField] NumberController numberController;
+
+    [SerializeField] Image spriteSkinProcesador;
+    [SerializeField] Image spriteSkinEspacio;
+    [SerializeField] Image spriteSkinFuenteAlimentacion;
+    [SerializeField] Image spriteSkinGraficos;
+
+    private int num;
+   
+
     public void Start()
     {
        
@@ -23,6 +34,7 @@ public class ComponentSkins : UI.RecyclerView<ComponentSkins.Holder>.Adapter {
 
     public void SetSkinsList(int num)
     {
+        this.num = num;
         if(num == 0)
         {
             RealSkinsList = SkinsProcesador;
@@ -37,6 +49,7 @@ public class ComponentSkins : UI.RecyclerView<ComponentSkins.Holder>.Adapter {
         {
             RealSkinsList = SkinsGrafica;
         }
+        Container.SetActive(true);
         NotifyDatasetChanged();
 
 
@@ -49,12 +62,50 @@ public class ComponentSkins : UI.RecyclerView<ComponentSkins.Holder>.Adapter {
 
     public override void OnBindViewHolder(Holder holder, int i)
     {
-        print(RealSkinsList[i].name);
-        holder.text.text = RealSkinsList[i].name;
+        holder.text.text = RealSkinsList[i].names;
+
+        if (RealSkinsList[i].available)
+        {
+            holder.skinSprite.sprite = RealSkinsList[i].spriteSkin;
+            holder.buttonBuy.gameObject.SetActive(false);
+        }
+        else holder.skinSprite.sprite = RealSkinsList[i].spriteUnavailable;
+
+
         holder.button.onClick.RemoveAllListeners();
         holder.button.onClick.AddListener(delegate ()
         {
-            
+
+            if (num == 0)
+            {
+                spriteSkinProcesador.sprite = RealSkinsList[i].spriteSkin;
+            }
+            else if (num == 1)
+            {
+                spriteSkinEspacio.sprite = RealSkinsList[i].spriteSkin;
+            }
+            else if (num == 2)
+            {
+                spriteSkinFuenteAlimentacion.sprite = RealSkinsList[i].spriteSkin;
+            }
+            else
+            {
+                spriteSkinGraficos.sprite = RealSkinsList[i].spriteSkin;
+            }
+
+        });
+
+        holder.buttonBuy.onClick.RemoveAllListeners();
+        holder.buttonBuy.onClick.AddListener(delegate () 
+        {
+            if (numberController.currentBits>= RealSkinsList[i].price)
+            {
+                numberController.RestBits(RealSkinsList[i].price);
+                RealSkinsList[i].available = true;
+                holder.buttonBuy.gameObject.SetActive(false);
+                holder.skinSprite.sprite = RealSkinsList[i].spriteSkin;
+            }
+           
         });
     }
 
@@ -67,18 +118,15 @@ public class ComponentSkins : UI.RecyclerView<ComponentSkins.Holder>.Adapter {
     {
         public Text text;
         public Button button;
+        public Image skinSprite;
+        public Button buttonBuy;
         public Holder(GameObject itemView) : base(itemView)
         {
             text = itemView.transform.Find("Name").GetComponent<Text>();
             button = itemView.transform.Find("Button").GetComponent<Button>();
+            skinSprite = itemView.transform.Find("Image").GetComponent<Image>();
+            buttonBuy = itemView.transform.Find("ButtonBuy").GetComponent<Button>();
         }
-    }
-
-    private class Item
-    {
-        public string name;
-        public Sprite image;
-        public bool available;
     }
 }
 

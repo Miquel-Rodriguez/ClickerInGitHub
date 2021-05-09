@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class NumberController : MonoBehaviour
 {
@@ -13,12 +15,14 @@ public class NumberController : MonoBehaviour
     [SerializeField] public int energyRecovery;
     [SerializeField] public float currentBits=0;
 
+    [SerializeField] GameObject contenedorSkins;
 
+    [SerializeField] private TextMeshProUGUI bitText;
 
 
     void Start()
     {
-        
+        SetInicialSkins();
     }
 
     
@@ -27,11 +31,21 @@ public class NumberController : MonoBehaviour
         
     }
 
+    public void RestBits(float bits)
+    {
+        currentBits -= bits;
+        bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long);
+    }
+
 
     public void ClickOnByteButton()
     {
 
     }
 
+    public void SetInicialSkins()
+    {
+       
+    }
 
 }
