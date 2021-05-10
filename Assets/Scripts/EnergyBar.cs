@@ -15,7 +15,7 @@ public class EnergyBar : MonoBehaviour
 	[SerializeField] float currentEnergy;
 
 	[SerializeField] float energyForSecond;
-	[SerializeField] float energyCostForClick;
+    public float energyCostForClick;
     [SerializeField] private TextMeshProUGUI bitText;
     [SerializeField] private GameObject eventSystem;
 	void Start()
@@ -60,9 +60,9 @@ public class EnergyBar : MonoBehaviour
 
 	public void DownBar()
 	{
-        if (currentEnergy- energyCostForClick < 0)
+        if (currentEnergy - energyCostForClick < 0)
         {
-			
+
 		}
         else
         {
