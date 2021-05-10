@@ -590,6 +590,7 @@ GameObject:
   - component: {fileID: 794222937}
   - component: {fileID: 794222936}
   - component: {fileID: 794222939}
+  - component: {fileID: 794222940}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -655,6 +656,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30275c35614204648a3b5978b1da129c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initalPanel: 0
+  panels: []
+  ClickPanel: {fileID: 0}
+  PcPanel: {fileID: 0}
+--- !u!114 &794222940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794222935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94500441925ada34ab6c30118ea19fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &912105571
