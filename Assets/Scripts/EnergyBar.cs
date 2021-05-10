@@ -16,13 +16,13 @@ public class EnergyBar : MonoBehaviour
 
 	[SerializeField] float energyForSecond;
 	[SerializeField] float energyCostForClick;
-    public TextMeshProUGUI bitText;
-    public GameObject eventSystem;
+    [SerializeField] private TextMeshProUGUI bitText;
+    [SerializeField] private GameObject eventSystem;
 	void Start()
 	{
 		currentEnergy = maxEnergy;
 		SetMaxHealth(maxEnergy);
-		
+	
 	}
 
 
@@ -33,6 +33,7 @@ public class EnergyBar : MonoBehaviour
 		SetMaxHealth(maxEnergy);
 		SetHealth(currentEnergy);
 	}
+
  
 	private void FixedUpdate()
 	{
