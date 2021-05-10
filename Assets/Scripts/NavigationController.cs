@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class NavigationController : MonoBehaviour
 {
 
-    [SerializeField] public int initalPanel;
 
     [SerializeField] GameObject[] panels;
     [SerializeField] GameObject ClickPanel;
@@ -15,15 +14,10 @@ public class NavigationController : MonoBehaviour
 
     private void Start()
     {
-        if (initalPanel == 0)
-        {
-            ClickPanel.SetActive(true);
-            PcPanel.SetActive(false);
-        }
-        else {
-            PcPanel.SetActive(true);
-            ClickPanel.SetActive(false);
-        }
+      
+           
+           
+       
         
 
 
@@ -35,7 +29,9 @@ public class NavigationController : MonoBehaviour
              
             }
         }
-        
+
+        ClickPanel.SetActive(true);
+
     }
 
 
@@ -43,11 +39,12 @@ public class NavigationController : MonoBehaviour
     {
         foreach (GameObject panel in panels)
         {
-            
-                if (!panel.name.Equals(thispa.name))
-                {
-                    panel.SetActive(false);
-                }
+
+            if (!panel.name.Equals(thispa.name) && !panel.name.Equals(ClickPanel.name) && !panel.name.Equals(PcPanel.name))
+            {
+                panel.SetActive(false);
+            }
+            else thispa.SetActive(true);
             
         }
     }
