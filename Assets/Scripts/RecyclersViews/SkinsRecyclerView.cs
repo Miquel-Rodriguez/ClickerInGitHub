@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class ComponentSkins : UI.RecyclerView<ComponentSkins.Holder>.Adapter {
+public class SkinsRecyclerView : UI.RecyclerView<SkinsRecyclerView.Holder>.Adapter {
 
 
     public List<Skin> SkinsProcesador;
@@ -68,30 +68,19 @@ public class ComponentSkins : UI.RecyclerView<ComponentSkins.Holder>.Adapter {
         {
             holder.skinSprite.sprite = RealSkinsList[i].spriteSkin;
             holder.buttonBuy.gameObject.SetActive(false);
+            
         }
-        else holder.skinSprite.sprite = RealSkinsList[i].spriteUnavailable;
-
+        else
+        {
+            holder.skinSprite.sprite = RealSkinsList[i].spriteUnavailable;
+            holder.button.gameObject.SetActive(false);
+        }
 
         holder.button.onClick.RemoveAllListeners();
         holder.button.onClick.AddListener(delegate ()
         {
 
-            if (num == 0)
-            {
-                spriteSkinProcesador.sprite = RealSkinsList[i].spriteSkin;
-            }
-            else if (num == 1)
-            {
-                spriteSkinEspacio.sprite = RealSkinsList[i].spriteSkin;
-            }
-            else if (num == 2)
-            {
-                spriteSkinFuenteAlimentacion.sprite = RealSkinsList[i].spriteSkin;
-            }
-            else
-            {
-                spriteSkinGraficos.sprite = RealSkinsList[i].spriteSkin;
-            }
+            SetNewSkin(i);
 
         });
 
@@ -104,9 +93,16 @@ public class ComponentSkins : UI.RecyclerView<ComponentSkins.Holder>.Adapter {
                 RealSkinsList[i].available = true;
                 holder.buttonBuy.gameObject.SetActive(false);
                 holder.skinSprite.sprite = RealSkinsList[i].spriteSkin;
+                holder.button.gameObject.SetActive(true);
             }
            
         });
+    }
+
+    private void SetNewSkin(int i)
+    {
+        numberController.whatSkinsPut[num] = RealSkinsList[i].numSkin;
+        numberController.SetSkins();
     }
 
     public override GameObject OnCreateViewHolder()
