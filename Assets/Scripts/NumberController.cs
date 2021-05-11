@@ -17,11 +17,26 @@ public class NumberController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI bitText;
 
+    
     [SerializeField] private GameObject allSkins;
     [SerializeField] private Image[] wherePutSkins;
 
-
+    [HideInInspector]
     public int[] whatSkinsPut = new int[] {0,1,2,3};
+
+    [SerializeField] SkinsRecyclerView skinsRecyclerView;
+
+    [Header("Info Panel Component")]
+    [SerializeField] private SourceEnergy sourceEnergy;
+
+    private int numComponenet;
+    [SerializeField] private TextMeshProUGUI textNameInfoPanel;
+    [SerializeField] private TextMeshProUGUI textDescriptionInfoPanel;
+    [SerializeField] private TextMeshProUGUI textStatsInfoPanel;
+    [SerializeField] private TextMeshProUGUI textCost;
+
+
+
 
 
     void Start()
@@ -55,4 +70,32 @@ public class NumberController : MonoBehaviour
         }
     }
 
+
+    public void SetInfoInPanel(int num)
+    {
+        numComponenet = num;
+        switch (num)
+        {
+            case 0:
+                
+                SetUI(sourceEnergy.cName, sourceEnergy.description, sourceEnergy.statsDescription, sourceEnergy.cost);
+                skinsRecyclerView.SetSkinsList(numComponenet);
+                 break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+
+        }
+    }
+
+    private void SetUI(string name, string description, string stats, float cost)
+    {
+        textNameInfoPanel.text = name;
+        textDescriptionInfoPanel.text = description;
+        textStatsInfoPanel.text = stats;
+        textCost.text = BitUtil.StringFormat(cost, BitUtil.TextFormat.Long);
+    }
 }
