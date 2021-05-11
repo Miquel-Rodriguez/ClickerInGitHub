@@ -12,6 +12,7 @@ public class Skin : MonoBehaviour
     public Sprite spriteUnavailable;
     public float price;
     public int numSkin;
+    public bool equiped;
 
 
     void Start()
