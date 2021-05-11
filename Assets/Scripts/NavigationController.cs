@@ -40,7 +40,7 @@ public class NavigationController : MonoBehaviour
         foreach (GameObject panel in panels)
         {
 
-            if (!panel.name.Equals(thispa.name) && !panel.name.Equals(ClickPanel.name) && !panel.name.Equals(PcPanel.name))
+            if (!panel.name.Equals(thispa.name) && !panel.name.Equals(ClickPanel.name))
             {
                 panel.SetActive(false);
             }

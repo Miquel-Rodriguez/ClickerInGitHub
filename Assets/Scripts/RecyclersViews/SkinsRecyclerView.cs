@@ -23,17 +23,19 @@ public class SkinsRecyclerView : UI.RecyclerView<SkinsRecyclerView.Holder>.Adapt
     [SerializeField] Image spriteSkinFuenteAlimentacion;
     [SerializeField] Image spriteSkinGraficos;
 
+    private List<Text> textosEqiped = new List<Text>();
+
     private int num;
    
 
     public void Start()
     {
-       
         NotifyDatasetChanged();
     }
 
     public void SetSkinsList(int num)
     {
+        Container.SetActive(true);
         this.num = num;
         if(num == 0)
         {
@@ -49,7 +51,6 @@ public class SkinsRecyclerView : UI.RecyclerView<SkinsRecyclerView.Holder>.Adapt
         {
             RealSkinsList = SkinsGrafica;
         }
-        Container.SetActive(true);
         NotifyDatasetChanged();
 
 
@@ -63,6 +64,22 @@ public class SkinsRecyclerView : UI.RecyclerView<SkinsRecyclerView.Holder>.Adapt
     public override void OnBindViewHolder(Holder holder, int i)
     {
         holder.text.text = RealSkinsList[i].names;
+        
+        textosEqiped.Add(holder.button.transform.GetChild(0).GetComponent<Text>());
+
+        foreach (int num in numberController.whatSkinsPut)
+        {
+            if (!(num == RealSkinsList[i].numSkin))
+            {
+                holder.button.transform.GetChild(0).GetComponent<Text>().text = "equip";
+            }
+            else
+            {
+                holder.button.transform.GetChild(0).GetComponent<Text>().text = "equiped";
+                break;
+            }
+        }
+
 
         if (RealSkinsList[i].available)
         {
@@ -76,12 +93,26 @@ public class SkinsRecyclerView : UI.RecyclerView<SkinsRecyclerView.Holder>.Adapt
             holder.button.gameObject.SetActive(false);
         }
 
+        
+
         holder.button.onClick.RemoveAllListeners();
         holder.button.onClick.AddListener(delegate ()
         {
 
             SetNewSkin(i);
 
+            foreach(Text text in textosEqiped)
+            {
+                if (text!= null)
+                {
+                    text.text = "equip";
+                }
+               
+            }
+
+            holder.button.transform.GetChild(0).GetComponent<Text>().text = "equiped";
+            
+            RealSkinsList[i].equiped = true;
         });
 
         holder.buttonBuy.onClick.RemoveAllListeners();
@@ -103,6 +134,12 @@ public class SkinsRecyclerView : UI.RecyclerView<SkinsRecyclerView.Holder>.Adapt
     {
         numberController.whatSkinsPut[num] = RealSkinsList[i].numSkin;
         numberController.SetSkins();
+    }
+
+    private void IsEquiped()
+    {
+        int[] e = new int[8];
+       
     }
 
     public override GameObject OnCreateViewHolder()
