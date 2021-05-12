@@ -8,6 +8,17 @@ public class Graphic : Component
 
     private void Start()
     {
+        SetDescription();
+    }
+
+    public void LevelUP()
+    {
+        lvl++;
+        SetDescription();
+    }
+
+    public void SetDescription()
+    {
         statsDescription = "Bites Per Second: " + bitesForSeocnd;
     }
 }

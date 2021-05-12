@@ -8,6 +8,17 @@ public class Storage : Component
 
     private void Start()
     {
+        SetDescription();
+    }
+
+    public void LevelUP()
+    {
+        lvl++;
+        SetDescription();
+    }
+
+    public void SetDescription()
+    {
         statsDescription = "Max bites capacity: " + maxBitesCapacity;
     }
 }

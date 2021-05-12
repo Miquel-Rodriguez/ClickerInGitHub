@@ -9,7 +9,7 @@ public class NumberController : MonoBehaviour
 
     [SerializeField] EnergyBar energyBarController;
     [SerializeField] public float bitPerClick;
-    [SerializeField] public double bitPerSecond;
+    //[SerializeField] public double bitPerSecond;
     [SerializeField] public int energyPerClick;
     [SerializeField] public int totalEnergy;
     [SerializeField] public int energyRecovery;
@@ -17,7 +17,7 @@ public class NumberController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI bitText;
 
-    
+    [Header("Skins Recycler")]
     [SerializeField] private GameObject allSkins;
     [SerializeField] private Image[] wherePutSkins;
 
@@ -37,6 +37,7 @@ public class NumberController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textDescriptionInfoPanel;
     [SerializeField] private TextMeshProUGUI textStatsInfoPanel;
     [SerializeField] private TextMeshProUGUI textCost;
+    [SerializeField] private TextMeshProUGUI textLvl;
 
 
 
@@ -50,7 +51,13 @@ public class NumberController : MonoBehaviour
     
     void Update()
     {
-        
+      
+    }
+
+    private void FixedUpdate()
+    {
+        currentBits += graphicCompoenent.bitesForSeocnd * Time.deltaTime;
+        bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long);
     }
 
     public void RestBits(float bits)
@@ -60,10 +67,29 @@ public class NumberController : MonoBehaviour
     }
 
 
+
     public void ClickOnByteButton()
     {
+        if (MaxCapacity() && energyBarController.DownBar())
+        {
+            currentBits += processorComponent.bitesPerClick;
+            bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long);
+        }
 
     }
+
+    private bool MaxCapacity()
+    {
+        if (storage.maxBitesCapacity >= (currentBits + processorComponent.bitesPerClick))
+        {
+            return true;
+        }
+        else return false;
+    }
+
+
+
+
 
     public void SetSkins()
     {
@@ -81,30 +107,94 @@ public class NumberController : MonoBehaviour
         {
             case 0:
                 
-                SetUI(sourceEnergy.cName, sourceEnergy.description, sourceEnergy.statsDescription, sourceEnergy.cost);
+                SetUI(sourceEnergy.cName, sourceEnergy.description, sourceEnergy.statsDescription, sourceEnergy.cost, sourceEnergy.lvl);
                 skinsRecyclerView.SetSkinsList(numComponenet);
                  break;
             case 1:
-                SetUI(processorComponent.cName, processorComponent.description, processorComponent.statsDescription, processorComponent.cost);
+                SetUI(processorComponent.cName, processorComponent.description, processorComponent.statsDescription, processorComponent.cost, processorComponent.lvl);
                 skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
             case 2:
-                SetUI(storage.cName, storage.description, storage.statsDescription, storage.cost);
+                SetUI(storage.cName, storage.description, storage.statsDescription, storage.cost, storage.lvl);
                 skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
             case 3:
-                SetUI(graphicCompoenent.cName, graphicCompoenent.description, graphicCompoenent.statsDescription, graphicCompoenent.cost);
+                SetUI(graphicCompoenent.cName, graphicCompoenent.description, graphicCompoenent.statsDescription, graphicCompoenent.cost,graphicCompoenent.lvl);
                 skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
 
         }
     }
 
-    private void SetUI(string name, string description, string stats, float cost)
+    private void SetUI(string name, string description, string stats, float cost, int level)
     {
         textNameInfoPanel.text = name;
         textDescriptionInfoPanel.text = description;
         textStatsInfoPanel.text = stats;
         textCost.text = BitUtil.StringFormat(cost, BitUtil.TextFormat.Long);
+        textLvl.text = "Lvl "+level.ToString();
+    }
+
+
+    public void LevelUp()
+    {
+        switch (numComponenet)
+        {
+            case 0:
+                if (currentBits >= sourceEnergy.cost)
+                {
+                    RestBits(sourceEnergy.cost);
+                    sourceEnergy.LevelUP();
+                    SetUI(sourceEnergy.cName, sourceEnergy.description, sourceEnergy.statsDescription, sourceEnergy.cost, sourceEnergy.lvl);
+                }
+                else
+                {
+                    StartCoroutine(ChangeTextColor());
+                }
+                break;
+            case 1:
+                if (currentBits >= processorComponent.cost)
+                {
+                    RestBits(processorComponent.cost);
+                    processorComponent.LevelUP();
+                    SetUI(processorComponent.cName, processorComponent.description, processorComponent.statsDescription, processorComponent.cost, processorComponent.lvl);
+                }
+                else
+                {
+                    StartCoroutine(ChangeTextColor());
+                }
+                break;
+            case 2:
+                if (currentBits >= storage.cost)
+                {
+                    RestBits(storage.cost);
+                    storage.LevelUP();
+                    SetUI(storage.cName, storage.description, storage.statsDescription, storage.cost, storage.lvl);
+                }
+                else
+                {
+                    StartCoroutine(ChangeTextColor());
+                }
+                break;
+            case 3:
+                if (currentBits >= graphicCompoenent.cost)
+                {
+                    RestBits(graphicCompoenent.cost);
+                    graphicCompoenent.LevelUP();
+                    SetUI(graphicCompoenent.cName, graphicCompoenent.description, graphicCompoenent.statsDescription, graphicCompoenent.cost, graphicCompoenent.lvl);
+                }
+                else
+                {
+                    StartCoroutine(ChangeTextColor());
+                }
+                break;
+        }
+    }
+
+    private IEnumerator ChangeTextColor()
+    {
+        textCost.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        textCost.color = Color.white;
     }
 }

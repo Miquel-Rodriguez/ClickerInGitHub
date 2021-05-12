@@ -18,10 +18,12 @@ public class EnergyBar : MonoBehaviour
     public float energyCostForClick;
     [SerializeField] private TextMeshProUGUI bitText;
     [SerializeField] private GameObject eventSystem;
+
+	[SerializeField] private SourceEnergy sourceEnergyComponent;
 	void Start()
 	{
-		currentEnergy = maxEnergy;
-		SetMaxHealth(maxEnergy);
+		currentEnergy = sourceEnergyComponent.maxEnergy;
+		SetMaxHealth(sourceEnergyComponent.maxEnergy);
 	
 	}
 
@@ -58,19 +60,17 @@ public class EnergyBar : MonoBehaviour
 		fill.color = gradient.Evaluate(slider.normalizedValue);
 	}
 
-	public void DownBar()
+	public bool DownBar()
 	{
         if (currentEnergy - energyCostForClick < 0)
         {
-
+			return false;
 		}
         else
         {
 			currentEnergy -= energyCostForClick;
 			SetHealth(currentEnergy);
-            eventSystem.GetComponent<NumberController>().currentBits += eventSystem.GetComponent<NumberController>().bitPerClick;
-            //bitText.text = eventSystem.GetComponent<NumberController>().currentBits + " BYTES";
-            bitText.text = BitUtil.StringFormat(eventSystem.GetComponent<NumberController>().currentBits, BitUtil.TextFormat.Long);
+			return true;
         }
 		
 	}
