@@ -6,14 +6,28 @@ public class SourceEnergy : Component
 {
     public float maxEnergy;
     public float energyForSecond;
+    [SerializeField] EnergyBar energyBar;
 
     private void Start()
     {
-        statsDescription = "Max Energy Capacity: " + maxEnergy + "\n" +
-            "Energy recover: " + energyForSecond;
+        SetDescription();
     }
 
+    public void SetMaxEnergy(float newMaxEnergy)
+    {
+        maxEnergy = newMaxEnergy;
+        energyBar.ChangeMaxEnergy(maxEnergy);
+    }
 
+    public void LevelUP()
+    {
 
+        SetDescription();
+    }
 
+    public void SetDescription()
+    {
+        statsDescription = "Max Energy Capacity: " + maxEnergy + "\n" +
+           "Energy recover: " + energyForSecond;
+    }
 }

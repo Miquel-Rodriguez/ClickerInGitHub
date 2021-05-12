@@ -10,7 +10,17 @@ public class ProcessorComponent : Component
 
     private void Start()
     {
-        statsDescription = "bites per click: "+ bitesPerClick+"\n" +
-            "cost for click: "+energyPerClick;
+        SetDescription();
+    }
+
+    public void LevelUP()
+    {
+        SetDescription();
+    }
+
+    public void SetDescription()
+    {
+        statsDescription = "bites per click: " + bitesPerClick + "\n" +
+              "cost for click: " + energyPerClick;
     }
 }
