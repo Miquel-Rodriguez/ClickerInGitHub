@@ -2588,17 +2588,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1445307968}
-        m_MethodName: ChangeStatePanel
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1661506939}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &371441424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3209,6 +3198,56 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &418029505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418029507}
+  - component: {fileID: 418029506}
+  m_Layer: 0
+  m_Name: ComponentProcessador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &418029506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418029505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a767d099dc3b63a45be51556d2682de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: this is a processor
+  cName: Processaor
+  cost: 90
+  lvl: 1
+  statsDescription: 
+  bitesPerClick: 1
+  energyPerClick: 25
+--- !u!4 &418029507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418029505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 337.96854, y: 971.8869, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &422081384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3873,7 +3912,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: price
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8878285736184444414, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -4359,8 +4398,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2127956425}
-        m_MethodName: SetSkinsList
+      - m_Target: {fileID: 1445307967}
+        m_MethodName: SetInfoInPanel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5136,6 +5175,55 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!1 &875694324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875694326}
+  - component: {fileID: 875694325}
+  m_Layer: 0
+  m_Name: ComponenetStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &875694325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875694324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d287f3c516c38a3458b382214b76f837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: this is a storage
+  cName: Storage
+  cost: 12
+  lvl: 1
+  statsDescription: 
+  maxBitesCapacity: 1000
+--- !u!4 &875694326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875694324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 337.96854, y: 971.8869, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &891937916
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,7 +5260,6 @@ MonoBehaviour:
   statsDescription: 
   maxEnergy: 100
   energyForSecond: 5
-  energyCostForClick: 20
 --- !u!4 &891937918
 Transform:
   m_ObjectHideFlags: 0
@@ -5257,7 +5344,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: price
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -5367,8 +5454,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2127956425}
-        m_MethodName: SetSkinsList
+      - m_Target: {fileID: 1445307967}
+        m_MethodName: SetInfoInPanel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6440,6 +6527,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
+        type: 3}
+      propertyPath: price
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c, type: 3}
 --- !u!1 &1142445276
@@ -6950,6 +7042,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223360127}
   m_CullTransparentMesh: 0
+--- !u!1 &1227037588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227037590}
+  - component: {fileID: 1227037589}
+  m_Layer: 0
+  m_Name: ComponenetGraphic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1227037589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227037588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a30410ffe14bef488687d4a643deaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: this is a grapich
+  cName: Graphic
+  cost: 123
+  lvl: 1
+  statsDescription: 
+  bitesForSeocnd: 1
+--- !u!4 &1227037590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227037588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 337.96854, y: 971.8869, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248934121
 GameObject:
   m_ObjectHideFlags: 0
@@ -8560,6 +8701,9 @@ MonoBehaviour:
   whatSkinsPut: 00000000010000000200000003000000
   skinsRecyclerView: {fileID: 2127956425}
   sourceEnergy: {fileID: 891937917}
+  processorComponent: {fileID: 418029506}
+  storage: {fileID: 875694325}
+  graphicCompoenent: {fileID: 1227037589}
   textNameInfoPanel: {fileID: 9212593}
   textDescriptionInfoPanel: {fileID: 832902695}
   textStatsInfoPanel: {fileID: 1607195752}
@@ -9062,8 +9206,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2127956425}
-        m_MethodName: SetSkinsList
+      - m_Target: {fileID: 1445307967}
+        m_MethodName: SetInfoInPanel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
