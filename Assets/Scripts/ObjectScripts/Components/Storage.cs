@@ -13,6 +13,7 @@ public class Storage : Component
 
     public void LevelUP()
     {
+        lvl++;
         SetDescription();
     }
 

@@ -21,7 +21,7 @@ public class SourceEnergy : Component
 
     public void LevelUP()
     {
-
+        lvl++;
         SetDescription();
     }
 

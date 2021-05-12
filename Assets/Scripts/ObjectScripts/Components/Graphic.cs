@@ -13,6 +13,7 @@ public class Graphic : Component
 
     public void LevelUP()
     {
+        lvl++;
         SetDescription();
     }
 

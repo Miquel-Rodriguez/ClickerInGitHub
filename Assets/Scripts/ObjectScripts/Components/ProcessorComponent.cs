@@ -15,6 +15,7 @@ public class ProcessorComponent : Component
 
     public void LevelUP()
     {
+        lvl++;
         SetDescription();
     }
 
