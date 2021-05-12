@@ -28,6 +28,9 @@ public class NumberController : MonoBehaviour
 
     [Header("Info Panel Component")]
     [SerializeField] private SourceEnergy sourceEnergy;
+    [SerializeField] private ProcessorComponent processorComponent;
+    [SerializeField] private Storage storage;
+    [SerializeField] private Graphic graphicCompoenent;
 
     private int numComponenet;
     [SerializeField] private TextMeshProUGUI textNameInfoPanel;
@@ -82,10 +85,16 @@ public class NumberController : MonoBehaviour
                 skinsRecyclerView.SetSkinsList(numComponenet);
                  break;
             case 1:
+                SetUI(processorComponent.cName, processorComponent.description, processorComponent.statsDescription, processorComponent.cost);
+                skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
             case 2:
+                SetUI(storage.cName, storage.description, storage.statsDescription, storage.cost);
+                skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
             case 3:
+                SetUI(graphicCompoenent.cName, graphicCompoenent.description, graphicCompoenent.statsDescription, graphicCompoenent.cost);
+                skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
 
         }
