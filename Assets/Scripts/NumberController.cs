@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NumberController : MonoBehaviour
 {
+
+    public static int score = 0;
+    public TextMeshProUGUI scoreText;
 
     [SerializeField] EnergyBar energyBarController;
     [SerializeField] public float bitPerClick;
@@ -16,15 +20,11 @@ public class NumberController : MonoBehaviour
 
 
 
-    void Start()
+    public void incrementalScore()
     {
-        
-    }
-
-    
-    void Update()
-    {
-        
+        score++;
+        scoreText.text = score.ToString();
+        PlayerPrefs.SetInt("ScoreToUpdate", PlayerPrefs.GetInt("ScoreToUpdate", 0) + 1);
     }
    
 
