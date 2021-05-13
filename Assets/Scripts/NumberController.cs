@@ -8,7 +8,7 @@ public class NumberController : MonoBehaviour
 {
 
     [SerializeField] EnergyBar energyBarController;
-    [SerializeField] public float bitPerClick;
+   // [SerializeField] public float bitPerClick;
     //[SerializeField] public double bitPerSecond;
     [SerializeField] public int energyPerClick;
     [SerializeField] public int totalEnergy;
@@ -26,7 +26,7 @@ public class NumberController : MonoBehaviour
 
     [SerializeField] SkinsRecyclerView skinsRecyclerView;
 
-    [Header("Info Panel Component")]
+    [Header("Components")]
     [SerializeField] private SourceEnergy sourceEnergy;
     [SerializeField] private ProcessorComponent processorComponent;
     [SerializeField] private Storage storage;
