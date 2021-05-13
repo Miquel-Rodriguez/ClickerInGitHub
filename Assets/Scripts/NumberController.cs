@@ -38,8 +38,7 @@ public class NumberController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textStatsInfoPanel;
     [SerializeField] private TextMeshProUGUI textCost;
     [SerializeField] private TextMeshProUGUI textLvl;
-
-
+    public GameObject animationScript;
 
 
 
@@ -74,6 +73,8 @@ public class NumberController : MonoBehaviour
         {
             currentBits += processorComponent.bitesPerClick;
             bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long);
+            animationScript.GetComponent<RandomAnimation>().startAnimation();
+
         }
 
     }
