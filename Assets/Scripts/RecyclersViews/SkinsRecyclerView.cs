@@ -80,54 +80,30 @@ public class SkinsRecyclerView : UI.RecyclerView<SkinsRecyclerView.Holder>.Adapt
             }
         }
 
-
         if (RealSkinsList[i].available)
         {
             holder.skinSprite.sprite = RealSkinsList[i].spriteSkin;
-            holder.buttonBuy.gameObject.SetActive(false);
-            
         }
         else
         {
             holder.skinSprite.sprite = RealSkinsList[i].spriteUnavailable;
             holder.button.gameObject.SetActive(false);
         }
-
-        
-
         holder.button.onClick.RemoveAllListeners();
         holder.button.onClick.AddListener(delegate ()
         {
-
             SetNewSkin(i);
-
             foreach(Text text in textosEqiped)
             {
                 if (text!= null)
                 {
                     text.text = "equip";
-                }
-               
+                }  
             }
-
             holder.button.transform.GetChild(0).GetComponent<Text>().text = "equiped";
-            
             RealSkinsList[i].equiped = true;
         });
 
-        holder.buttonBuy.onClick.RemoveAllListeners();
-        holder.buttonBuy.onClick.AddListener(delegate () 
-        {
-            if (numberController.currentBits>= RealSkinsList[i].price)
-            {
-                numberController.RestBits(RealSkinsList[i].price);
-                RealSkinsList[i].available = true;
-                holder.buttonBuy.gameObject.SetActive(false);
-                holder.skinSprite.sprite = RealSkinsList[i].spriteSkin;
-                holder.button.gameObject.SetActive(true);
-            }
-           
-        });
     }
 
     private void SetNewSkin(int i)
@@ -152,13 +128,11 @@ public class SkinsRecyclerView : UI.RecyclerView<SkinsRecyclerView.Holder>.Adapt
         public Text text;
         public Button button;
         public Image skinSprite;
-        public Button buttonBuy;
         public Holder(GameObject itemView) : base(itemView)
         {
             text = itemView.transform.Find("Name").GetComponent<Text>();
             button = itemView.transform.Find("Button").GetComponent<Button>();
             skinSprite = itemView.transform.Find("Image").GetComponent<Image>();
-            buttonBuy = itemView.transform.Find("ButtonBuy").GetComponent<Button>();
         }
     }
 }
