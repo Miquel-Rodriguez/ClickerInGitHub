@@ -28,10 +28,10 @@ public class RandomAnimation : MonoBehaviour
         animator.SetFloat("Blend", numRandom);
 
         //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.25f);
 
         //After we have waited 5 seconds print the time again.
-        animator.SetInteger("animation_id", 0);
+        animator.SetInteger("animation_id", 1);
         animator.SetFloat("Blend", 0);
     }
 }
