@@ -63,6 +63,13 @@ public class NumberController : MonoBehaviour
         bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long);
     }
 
+    public void incrementalScore()
+    {
+        score++;
+        scoreText.text = score.ToString();
+        PlayerPrefs.SetInt("ScoreToUpdate", PlayerPrefs.GetInt("ScoreToUpdate", 0) + 1);
+    }
+
     public void RestBits(float bits)
     {
         currentBits -= bits;
