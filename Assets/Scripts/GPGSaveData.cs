@@ -14,19 +14,6 @@ public class GPGSaveData : MonoBehaviour
     [SerializeField] Text debugText;
     [SerializeField] InputField dataToCloud;
 
-     void Start()
-    {
-        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
-        PlayGamesPlatform.InitializeInstance(config);
-        PlayGamesPlatform.Activate();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void openSaveToCloud(bool saving)
     {
         if (Social.localUser.authenticated)
@@ -34,7 +21,7 @@ public class GPGSaveData : MonoBehaviour
             isSaving = saving;
             ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithAutomaticConflictResolution
 
-            (saveName, GooglePlayGames.BasicApi.DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseLongestPlaytime, savedGame);
+            (saveName, DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseLongestPlaytime, savedGame);
         }
     }
 
@@ -44,7 +31,7 @@ public class GPGSaveData : MonoBehaviour
         {
             if (isSaving)
             {
-                byte[] data = System.Text.ASCIIEncoding.ASCII.GetBytes(GetDataToStoreInCloud());
+                byte[] data = System.Text.Encoding.ASCII.GetBytes(GetDataToStoreInCloud());
                 SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
                 ((PlayGamesPlatform)Social.Active).SavedGame.CommitUpdate(meta, update, data, saveUpdate);
             }
@@ -60,7 +47,7 @@ public class GPGSaveData : MonoBehaviour
     {
         if(status == SavedGameRequestStatus.Success)
         {
-            string savedata = System.Text.ASCIIEncoding.ASCII.GetString(data);
+            string savedata = System.Text.Encoding.ASCII.GetString(data);
             LoadDataFromCloudToOurGame(savedata);
         }
     }

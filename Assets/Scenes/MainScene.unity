@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 146229236}
   - component: {fileID: 146229235}
   m_Layer: 5
-  m_Name: SubmitScores (1)
+  m_Name: Save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3354,7 +3354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!1 &527089588
 GameObject:
   m_ObjectHideFlags: 0
@@ -12680,7 +12680,7 @@ GameObject:
   - component: {fileID: 2129839583}
   - component: {fileID: 2129839582}
   m_Layer: 5
-  m_Name: SubmitScores (2)
+  m_Name: Load
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
