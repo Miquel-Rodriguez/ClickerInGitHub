@@ -39,6 +39,14 @@ public class MoveTowards : MonoBehaviour
 
     }
 
+    public void HideAll()
+    {
+        foreach (MoveTowards move in powerUps.listMoveTowards)
+        {
+            move.up = false;
+        }
+    }
+
     private void Update()
     {
         if (!up)
