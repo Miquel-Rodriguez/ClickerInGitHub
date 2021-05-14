@@ -12,11 +12,11 @@ public class GPHAchievements : MonoBehaviour
 
     public void UpdateIncremental()
     {
-        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_incremental, 1, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_tapping_begginer, 1, null);
     }
 
     public void UnlockRegular()
     {
-        Social.ReportProgress(GPGSIds.achievement_regular, 100f, null);
+        Social.ReportProgress(GPGSIds.achievement_shopping, 100f, null);
     }
 }
