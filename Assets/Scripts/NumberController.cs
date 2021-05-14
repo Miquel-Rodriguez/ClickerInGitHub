@@ -7,6 +7,9 @@ using TMPro;
 public class NumberController : MonoBehaviour
 {
 
+    public static int score = 0;
+    public TextMeshProUGUI scoreText;
+
     [SerializeField] EnergyBar energyBarController;
    // [SerializeField] public float bitPerClick;
     //[SerializeField] public double bitPerSecond;
@@ -57,6 +60,13 @@ public class NumberController : MonoBehaviour
     {
         currentBits += graphicCompoenent.bitesForSeocnd * Time.deltaTime;
         bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long);
+    }
+
+    public void incrementalScore()
+    {
+        score++;
+        scoreText.text = score.ToString();
+        PlayerPrefs.SetInt("ScoreToUpdate", PlayerPrefs.GetInt("ScoreToUpdate", 0) + 1);
     }
 
     public void RestBits(float bits)
