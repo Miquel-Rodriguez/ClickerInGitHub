@@ -64,9 +64,8 @@ public class NumberController : MonoBehaviour
 
     public void incrementalScore()
     {
-        score++;
-        scoreText.text = score.ToString();
-        PlayerPrefs.SetInt("ScoreToUpdate", PlayerPrefs.GetInt("ScoreToUpdate", 0) + 1);
+       
+        PlayerPrefs.SetFloat("ScoreToUpdate", currentBits);
     }
 
     public void RestBits(float bits)

@@ -8500,7 +8500,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 729435313}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.44070557
+  m_Size: 0.4407056
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9135,6 +9135,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1620933390}
         m_MethodName: UpdateIncremental
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1445307967}
+        m_MethodName: incrementalScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15794,12 +15805,12 @@ PrefabInstance:
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}
       propertyPath: energyForSecond
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}
       propertyPath: energyCostForClick
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}
@@ -16568,6 +16579,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044791886}
   m_CullTransparentMesh: 0
+--- !u!111 &2044791890
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044791886}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 58d3aef54534437458daf17bb4390409, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8d088ca36e0b4614396ee180bd0dd920, type: 2}
+  - {fileID: 7400000, guid: 58d3aef54534437458daf17bb4390409, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &2044791891
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044791886}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3a91050b1c33c84eb7b359abc550d12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2044791892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044791886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce3e37d7b9655f47a650eb73c93cb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 2044791890}
 --- !u!1 &2045122156
 GameObject:
   m_ObjectHideFlags: 0
@@ -16640,55 +16700,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045122156}
   m_CullTransparentMesh: 0
---- !u!111 &2044791890
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044791886}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 58d3aef54534437458daf17bb4390409, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 8d088ca36e0b4614396ee180bd0dd920, type: 2}
-  - {fileID: 7400000, guid: 58d3aef54534437458daf17bb4390409, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!95 &2044791891
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044791886}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d3a91050b1c33c84eb7b359abc550d12, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2044791892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044791886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce3e37d7b9655f47a650eb73c93cb99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  click: {fileID: 2044791890}
 --- !u!1 &2062559477
 GameObject:
   m_ObjectHideFlags: 0
