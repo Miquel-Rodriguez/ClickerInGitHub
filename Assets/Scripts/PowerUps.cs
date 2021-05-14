@@ -16,18 +16,18 @@ public class PowerUps : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textNumRareInfinityEnergy;
     [SerializeField] private TextMeshProUGUI textNumEpicInfinityEnergy;
 
-    [SerializeField] private int numCommonInfinityEnergy;
-    [SerializeField] private int numRareInfinityEnergy;
-    [SerializeField] private int numEpicInfinityEnergy;
+     public int numCommonInfinityEnergy;
+     public int numRareInfinityEnergy;
+     public int numEpicInfinityEnergy;
 
     [Header("More Bytes Per Click")]
     [SerializeField] private TextMeshProUGUI textNumCommonBytesPerClick;
     [SerializeField] private TextMeshProUGUI textNumRareBytesPerClick;
     [SerializeField] private TextMeshProUGUI textNumEpicBytesPerClick;
 
-    [SerializeField] private int numCommonBytesPerClick;
-    [SerializeField] private int numRareBytesPerClick;
-    [SerializeField] private int numEpicBytesPerClick   ;
+     public int numCommonBytesPerClick;
+     public int numRareBytesPerClick;
+     public int numEpicBytesPerClick   ;
 
 
     private bool activateInfinityEnergy;
