@@ -7,6 +7,9 @@ using TMPro;
 public class NumberController : MonoBehaviour
 {
 
+    public static int score = 0;
+    public TextMeshProUGUI scoreText;
+
     [SerializeField] EnergyBar energyBarController;
    // [SerializeField] public float bitPerClick;
     //[SerializeField] public double bitPerSecond;
