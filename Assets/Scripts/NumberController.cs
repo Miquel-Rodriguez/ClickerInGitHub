@@ -43,11 +43,26 @@ public class NumberController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textLvl;
     public GameObject animationScript, mouseAnimation;
 
+    [Header("Money Texts")]
 
+    [SerializeField] private TextMeshProUGUI textDolares;
+    [SerializeField] private TextMeshProUGUI textPasiveMoney;
+    [SerializeField] private TextMeshProUGUI textHardCurrency;
 
+    private int numDolars;
+    private int numPasiveMoney;
+    private int numHaardCurrency;
     void Start()
     {
+        SetMoney();
         SetSkins();
+    }
+
+    private void SetMoney()
+    {
+        textDolares.text = numDolars.ToString();
+        textPasiveMoney.text = numPasiveMoney.ToString();
+        textHardCurrency.text = numHaardCurrency.ToString();
     }
 
     
@@ -58,8 +73,20 @@ public class NumberController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentBits += graphicCompoenent.bitesForSeocnd * Time.deltaTime;
-        bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long);
+        if (MaxCapacity())
+        {
+            currentBits += graphicCompoenent.bitesForSeocnd * Time.deltaTime;
+
+            string delay = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long) + "/" + BitUtil.StringFormat(storage.maxBitesCapacity, BitUtil.TextFormat.Long);
+            bitText.text = delay;
+        }
+        else
+        {
+            currentBits = storage.maxBitesCapacity;
+            bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long) + "/" + BitUtil.StringFormat(storage.maxBitesCapacity, BitUtil.TextFormat.Long);
+        }
+       
+        
     }
 
     public void incrementalScore()
@@ -81,7 +108,8 @@ public class NumberController : MonoBehaviour
         if (MaxCapacity() && energyBarController.DownBar())
         {
             currentBits += processorComponent.bitesPerClick;
-            bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long);
+            string delay = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long) + "/" + BitUtil.StringFormat(storage.maxBitesCapacity, BitUtil.TextFormat.Long);
+            bitText.text = delay;       
             animationScript.GetComponent<RandomAnimation>().startAnimation();
             mouseAnimation.GetComponent<PlayAnimation>().mouseClick();
 
