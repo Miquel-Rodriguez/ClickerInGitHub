@@ -236,4 +236,18 @@ public class NumberController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         textCost.color = Color.white;
     }
+
+    public bool missionComplete(float requiredBits, int reward) {
+        if (currentBits >= requiredBits)
+        {
+            RestBits(requiredBits);
+            numDolars += reward;
+            textDolares.SetText(numDolars+"");
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
 }
