@@ -7,6 +7,7 @@ using TMPro;
 public class MissionRecyclerView : UI.RecyclerView<MissionRecyclerView.Holder>.Adapter
 {
     public List<Mission> missions;
+    public GameObject row;
     // Start is called before the first frame update
     void Start()
     {
