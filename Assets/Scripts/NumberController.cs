@@ -49,9 +49,9 @@ public class NumberController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textPasiveMoney;
     [SerializeField] private TextMeshProUGUI textHardCurrency;
 
-    private int numDolars;
-    private int numPasiveMoney;
-    private int numHaardCurrency;
+    public int numDolars;
+    public int numPasiveMoney;
+    public int dogeCoins;
     void Start()
     {
         SetMoney();
@@ -62,7 +62,7 @@ public class NumberController : MonoBehaviour
     {
         textDolares.text = numDolars.ToString();
         textPasiveMoney.text = numPasiveMoney.ToString();
-        textHardCurrency.text = numHaardCurrency.ToString();
+        textHardCurrency.text = dogeCoins.ToString();
     }
 
     
