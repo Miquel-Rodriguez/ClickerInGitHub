@@ -33,6 +33,7 @@ public class Mission : MonoBehaviour
             if (numberController.GetComponent<NumberController>().missionComplete(requiredBits,reward))
             {
                 completed = true;
+                Destroy(this.gameObject);
             }
             else {
                 completed = false;
