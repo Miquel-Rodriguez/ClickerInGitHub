@@ -18,7 +18,7 @@ public class Ads : MonoBehaviour
     private void RequestBanner()
     {
 
-        this.bannerView = new BannerView(baner, AdSize.Banner, AdPosition.Bottom);
+        this.bannerView = new BannerView(baner, AdSize.Leaderboard, AdPosition.Bottom);
         AdRequest request = new AdRequest.Builder().Build();
         this.bannerView.LoadAd(request);
     }
