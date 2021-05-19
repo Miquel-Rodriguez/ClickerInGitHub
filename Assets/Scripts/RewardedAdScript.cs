@@ -7,6 +7,7 @@ using System;
 public class RewardedAdScript : MonoBehaviour
 {
     private RewardedAd rewardedAd;
+    [SerializeField] GachaController gacha;
 
     private string rewardedId = "ca-app-pub-3940256099942544/5224354917";
 
@@ -71,7 +72,7 @@ public class RewardedAdScript : MonoBehaviour
 
     public void HandleRewardedAdClosed(object sender, EventArgs args)
     {
-        MonoBehaviour.print("HandleRewardedAdClosed event received");
+        this.CreateAndLoadReward();
     }
 
     public void HandleUserEarnedReward(object sender, Reward args)
@@ -81,6 +82,21 @@ public class RewardedAdScript : MonoBehaviour
         MonoBehaviour.print(
             "HandleRewardedAdRewarded event received for "
                         + amount.ToString() + " " + type);
+
+        gacha.numTicketsSkins++;
+    }
+
+    public void CreateAndLoadReward()
+    {
+        this.rewardedAd = new RewardedAd(rewardedId);
+
+        this.rewardedAd.OnAdLoaded += HandleRewardedAdLoaded;
+        this.rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
+        this.rewardedAd.OnAdClosed += HandleRewardedAdClosed;
+
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the rewarded ad with the request.
+        this.rewardedAd.LoadAd(request);
     }
 
 }

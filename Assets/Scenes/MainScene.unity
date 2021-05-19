@@ -8420,6 +8420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761b4bd164bcbe643937dd8a9be70547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gacha: {fileID: 1445307969}
 --- !u!4 &875081294
 Transform:
   m_ObjectHideFlags: 0
@@ -9366,10 +9367,10 @@ RectTransform:
   m_Father: {fileID: 506229483}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5349, y: 105.5}
-  m_SizeDelta: {x: 654.2893, y: 12.8494835}
+  m_AnchorMin: {x: 0, y: 0.9494417}
+  m_AnchorMax: {x: 0.98100007, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021144267
 MonoBehaviour:
@@ -9411,7 +9412,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 729435313}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.4407056
+  m_Size: 0.44070563
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

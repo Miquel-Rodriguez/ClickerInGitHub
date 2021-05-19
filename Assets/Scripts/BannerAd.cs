@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
 
-public class Ads : MonoBehaviour
+public class BannerAd : MonoBehaviour
 {
     private BannerView bannerView;
     private string baner = "ca-app-pub-3940256099942544/6300978111";
+    //si
     public void Start()
     {
         // Initialize the Google Mobile Ads SDK.
@@ -17,8 +18,8 @@ public class Ads : MonoBehaviour
 
     private void RequestBanner()
     {
-
-        this.bannerView = new BannerView(baner, AdSize.Leaderboard, AdPosition.Bottom);
+        AdSize size = AdSize.GetPortraitAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth);
+        this.bannerView = new BannerView(baner, size, AdPosition.Bottom);
         AdRequest request = new AdRequest.Builder().Build();
         this.bannerView.LoadAd(request);
     }
