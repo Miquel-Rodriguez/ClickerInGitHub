@@ -111,7 +111,7 @@ public class NumberController : MonoBehaviour
             string delay = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long) + "/" + BitUtil.StringFormat(storage.maxBitesCapacity, BitUtil.TextFormat.Long);
             bitText.text = delay;       
             animationScript.GetComponent<RandomAnimation>().startAnimation();
-            mouseAnimation.GetComponent<PlayAnimation>().mouseClick();
+            mouseAnimation.GetComponent<Animator>().SetTrigger("Click");
 
         }
 

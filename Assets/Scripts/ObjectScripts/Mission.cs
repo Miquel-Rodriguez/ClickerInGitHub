@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 using TMPro;
 
 public class Mission : MonoBehaviour
 {
     [Header("Mission's attributes")]
+    public int missionID;
     public string missionName;
     public string missionDescription;
     public float requiredBits;
@@ -24,8 +26,12 @@ public class Mission : MonoBehaviour
     {
         nameText.SetText(missionName);
         descText.SetText(missionDescription);
+        if (missionID > 0 && missionID <= 5) {
+            requiredBits = Random.Range(5f, 20f);
+        }
         bitsText.SetText(BitUtil.StringFormat(requiredBits, BitUtil.TextFormat.Long));
-        rewardText.SetText(reward + "");
+        reward = Random.Range(10,50);
+        rewardText.SetText(reward + "$");
     }
 
     public void completeMission() {
@@ -40,4 +46,6 @@ public class Mission : MonoBehaviour
             }
         }
     }
+
+    
 }
