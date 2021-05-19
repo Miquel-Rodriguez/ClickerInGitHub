@@ -9,8 +9,8 @@ public class GachaController : MonoBehaviour
     private int numGachaSkins;
     private int numGachaPoweUps;
 
-    [SerializeField] int numTicketsSkins;
-    [SerializeField] int numTicketsPowerUps;
+    public int numTicketsSkins;
+    public int numTicketsPowerUps;
 
     [SerializeField] PowerUps powerUps;
 
