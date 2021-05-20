@@ -23,4 +23,9 @@ public class BannerAd : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         this.bannerView.LoadAd(request);
     }
+
+    public void destroyBanner()
+    {
+        bannerView.Destroy();
+    }
 }

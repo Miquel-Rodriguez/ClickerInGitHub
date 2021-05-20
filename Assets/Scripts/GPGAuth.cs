@@ -11,17 +11,16 @@ public class GPGAuth : MonoBehaviour
     public bool bought = false;
 
     void Start()
-    {
-
-        IAPManager.Instance.InitializeIAPManager(InitializeResultCallback);
+    {    
 
         if (platform == null)
         {
-            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
+            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
             PlayGamesPlatform.InitializeInstance(config);
             PlayGamesPlatform.DebugLogEnabled = true;
 
             platform = PlayGamesPlatform.Activate();
+            
         }
 
         Social.Active.localUser.Authenticate(success =>
@@ -29,6 +28,7 @@ public class GPGAuth : MonoBehaviour
             if (success)
             {
                 Debug.Log("Loged in");
+                IAPManager.Instance.InitializeIAPManager(InitializeResultCallback);
             }
             else
             {
