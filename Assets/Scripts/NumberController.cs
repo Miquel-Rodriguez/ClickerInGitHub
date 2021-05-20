@@ -17,6 +17,7 @@ public class NumberController : MonoBehaviour
     [SerializeField] public int totalEnergy;
     [SerializeField] public int energyRecovery;
     [SerializeField] public float currentBits=0;
+    [SerializeField] public int missionCounter = 0;
 
     [SerializeField] private TextMeshProUGUI bitText;
 
@@ -243,6 +244,7 @@ public class NumberController : MonoBehaviour
             RestBits(requiredBits);
             numDolars += reward;
             textDolares.SetText(numDolars+"");
+            missionCounter++;
             return true;
         }
         else {

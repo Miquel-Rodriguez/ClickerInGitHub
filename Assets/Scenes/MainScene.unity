@@ -5894,6 +5894,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionPrefab: {fileID: 4897392486476929861, guid: ac46ef69622bcf7438add6b9dfe51ded,
     type: 3}
+  gameController: {fileID: 1445307963}
+  descsTier1: []
+  descTier2: []
+  descTier3: []
+  currentMissions: []
 --- !u!1001 &620122622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13121,6 +13126,7 @@ MonoBehaviour:
   totalEnergy: 0
   energyRecovery: 0
   currentBits: 0
+  missionCounter: 0
   bitText: {fileID: 1375112145}
   allSkins: {fileID: 1438149544}
   wherePutSkins:

@@ -20,14 +20,14 @@ public class Mission : MonoBehaviour
     public TextMeshProUGUI bitsText;
     public TextMeshProUGUI rewardText;
     [Header("External components")]
-    public GameObject numberController;
+    public GameObject numberController, generator;
 
     void Start()
     {
         nameText.SetText(missionName);
         descText.SetText(missionDescription);
-        if (missionID > 0 && missionID <= 5) {
-            requiredBits = Random.Range(5f, 20f);
+        if (missionID >= 0 && missionID <= 5) {
+            requiredBits = Random.Range(1f, 160f);
         }
         bitsText.SetText(BitUtil.StringFormat(requiredBits, BitUtil.TextFormat.Long));
         reward = Random.Range(10,50);
@@ -39,7 +39,21 @@ public class Mission : MonoBehaviour
             if (numberController.GetComponent<NumberController>().missionComplete(requiredBits,reward))
             {
                 completed = true;
-                Destroy(this.gameObject);
+                int misionesCompletadas = PlayerPrefs.GetInt("misionesCompletadas");
+                misionesCompletadas++;
+                PlayerPrefs.SetInt("misionesCompletadas",misionesCompletadas);
+                Debug.Log(PlayerPrefs.GetInt("misionesCompletadas"));
+                if (numberController.GetComponent<NumberController>().missionCounter == 3)
+                {
+                    numberController.GetComponent<NumberController>().missionCounter = 0;
+                    generator.GetComponent<GenerateMissions>().deleteAllMissions();
+                    generator.GetComponent<GenerateMissions>().generate5Missions();
+                }
+                else {
+                    generator.GetComponent<GenerateMissions>().deleteMission(missionID);
+                    Destroy(this.gameObject);
+                }
+                
             }
             else {
                 completed = false;
