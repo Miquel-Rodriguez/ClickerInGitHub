@@ -17,6 +17,7 @@ public class NumberController : MonoBehaviour
     [SerializeField] public int totalEnergy;
     [SerializeField] public int energyRecovery;
     [SerializeField] public float currentBits=0;
+    [SerializeField] public int missionCounter = 0;
 
     [SerializeField] private TextMeshProUGUI bitText;
 
@@ -111,7 +112,7 @@ public class NumberController : MonoBehaviour
             string delay = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long) + "/" + BitUtil.StringFormat(storage.maxBitesCapacity, BitUtil.TextFormat.Long);
             bitText.text = delay;       
             animationScript.GetComponent<RandomAnimation>().startAnimation();
-            mouseAnimation.GetComponent<PlayAnimation>().mouseClick();
+            mouseAnimation.GetComponent<Animator>().SetTrigger("Click");
 
         }
 
@@ -235,5 +236,20 @@ public class NumberController : MonoBehaviour
         textCost.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         textCost.color = Color.white;
+    }
+
+    public bool missionComplete(float requiredBits, int reward) {
+        if (currentBits >= requiredBits)
+        {
+            RestBits(requiredBits);
+            numDolars += reward;
+            textDolares.SetText(numDolars+"");
+            missionCounter++;
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 }
