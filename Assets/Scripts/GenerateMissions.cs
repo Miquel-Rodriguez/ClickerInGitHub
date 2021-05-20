@@ -11,8 +11,8 @@ public class GenerateMissions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        readFile("Tier1.txt");
-
+        readFile("Tier1.txt",descsTier1);
+        readFile("Tier2.txt",descTier2);
         generate5Missions();
         
     }
@@ -23,7 +23,7 @@ public class GenerateMissions : MonoBehaviour
         
     }
 
-    public void readFile(string file)
+    public void readFile(string file, List<string> tier)
     {
         FileInfo theSourceFile = null;
         StreamReader reader = null;
@@ -33,12 +33,12 @@ public class GenerateMissions : MonoBehaviour
         while (text != null)
         {
             text = reader.ReadLine();
-            descsTier1.Add(text);
+            tier.Add(text);
         }
-        for (var i = descsTier1.Count - 1; i > -1; i--)
+        for (var i = tier.Count - 1; i > -1; i--)
         {
-            if (descsTier1[i] == "")
-                descsTier1.RemoveAt(i);
+            if (tier[i] == "")
+                tier.RemoveAt(i);
         }
     }
 
@@ -49,9 +49,25 @@ public class GenerateMissions : MonoBehaviour
             GameObject mission = Instantiate(missionPrefab, this.gameObject.transform) as GameObject;
             mission.GetComponent<Mission>().missionID = i;
             mission.GetComponent<Mission>().missionName = "Mission " + (i + 1);
-            mission.GetComponent<Mission>().missionDescription = descsTier1[Random.Range(0, descsTier1.Count - 1)];
             mission.GetComponent<Mission>().numberController = gameController;
             mission.GetComponent<Mission>().generator = this.gameObject;
+            if (PlayerPrefs.GetInt("misionesCompletadas") >= 3)
+            {
+                mission.GetComponent<Mission>().tier = 2;
+                mission.GetComponent<Mission>().missionDescription = descTier2[Random.Range(0, descTier2.Count - 1)];
+            }
+            else {
+                if (PlayerPrefs.GetInt("misionesCompletadas") >= 6)
+                {
+                    mission.GetComponent<Mission>().tier = 3;
+                    mission.GetComponent<Mission>().missionDescription = descTier3[Random.Range(0, descTier3.Count - 1)];
+                }
+                else {
+                    mission.GetComponent<Mission>().tier = 1;
+                    mission.GetComponent<Mission>().missionDescription = descsTier1[Random.Range(0, descsTier1.Count - 1)];
+                }
+            }
+
             currentMissions.Add(mission);
         }
         

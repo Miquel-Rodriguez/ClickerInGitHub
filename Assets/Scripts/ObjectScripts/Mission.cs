@@ -14,6 +14,8 @@ public class Mission : MonoBehaviour
     public float requiredBits;
     public int reward;
     public bool completed = false;
+    public int tier = 1;
+    public Sprite tier1, tier2, tier3;
     [Header("Text to adapt")]
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descText;
@@ -26,16 +28,13 @@ public class Mission : MonoBehaviour
     {
         nameText.SetText(missionName);
         descText.SetText(missionDescription);
-        if (missionID >= 0 && missionID <= 5) {
-            requiredBits = Random.Range(1f, 160f);
-        }
+        missionTier();
         bitsText.SetText(BitUtil.StringFormat(requiredBits, BitUtil.TextFormat.Long));
-        reward = Random.Range(10,50);
+        reward = (int) requiredBits * 5/8;
         rewardText.SetText(reward + "$");
     }
 
     public void completeMission() {
-        if (!completed) {
             if (numberController.GetComponent<NumberController>().missionComplete(requiredBits,reward))
             {
                 completed = true;
@@ -55,11 +54,24 @@ public class Mission : MonoBehaviour
                 }
                 
             }
-            else {
-                completed = false;
-            }
+        }
+
+    public void missionTier() {
+        switch (tier) {
+            case 1:
+                requiredBits = Random.Range(1f, 160f);
+                this.gameObject.GetComponent<Image>().sprite = tier1;
+                break;
+            case 2:
+                requiredBits = Random.Range(160f, 400f);
+                this.gameObject.GetComponent<Image>().sprite = tier2;
+                break;
+            case 3:
+                requiredBits = Random.Range(400f, 800f);
+                this.gameObject.GetComponent<Image>().sprite = tier3;
+                break;
         }
     }
+    }
 
-    
-}
+   

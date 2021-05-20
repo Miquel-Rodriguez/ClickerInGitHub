@@ -1232,11 +1232,16 @@ MonoBehaviour:
   requiredBits: 25
   reward: 20
   completed: 0
+  tier: 1
+  tier1: {fileID: 21300000, guid: b9a693cf9ca798042beb837749297366, type: 3}
+  tier2: {fileID: 21300002, guid: b9a693cf9ca798042beb837749297366, type: 3}
+  tier3: {fileID: 21300004, guid: b9a693cf9ca798042beb837749297366, type: 3}
   nameText: {fileID: 4897392485374941386}
   descText: {fileID: 4897392485582056142}
   bitsText: {fileID: 4897392486744896169}
   rewardText: {fileID: 4897392485282316614}
   numberController: {fileID: 0}
+  generator: {fileID: 0}
 --- !u!1 &4897392486744896168
 GameObject:
   m_ObjectHideFlags: 0
