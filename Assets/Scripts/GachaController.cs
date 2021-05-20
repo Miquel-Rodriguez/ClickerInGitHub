@@ -43,13 +43,14 @@ public class GachaController : MonoBehaviour
 
     [SerializeField] private GameObject buttonSkip;
 
- 
+    private bool stop;
 
     [Header("Sprites Power Ups")]
     [SerializeField] private Sprite[] listPowerUpSprites;
     private int rarity;
     private void PreapreAndWait()
     {
+        stop = false;
         buttonSkip.SetActive(true);
         containerAnimationGacha.SetActive(true);
         buttonToStartAnimation.SetActive(true);
@@ -70,20 +71,27 @@ public class GachaController : MonoBehaviour
     {
         animatorShake.speed = 1;
         yield return new WaitForSeconds(2.2f);
-        shakeGameObject.SetActive(false);
-        fallBallGameObject.SetActive(true);
-        yield return new WaitForSeconds(1.3f);
-        buttonSkip.SetActive(false);
-        containerRewardAnimation.SetActive(true);
+        if (!stop)
+        {
+            shakeGameObject.SetActive(false);
+            fallBallGameObject.SetActive(true);
+            fallBallAnimator.SetInteger("rarity", rarity);
 
-        fallBallAnimator.SetInteger("rarity", rarity);
-        topBall.SetInteger("rarity", rarity);
-        botBall.SetInteger("rarity", rarity);
+            yield return new WaitForSeconds(1.3f);
+            buttonSkip.SetActive(false);
+            containerRewardAnimation.SetActive(true);
 
+            fallBallAnimator.SetInteger("rarity", rarity);
+            topBall.SetInteger("rarity", rarity);
+            botBall.SetInteger("rarity", rarity);
+        }
+      
+      
     }
 
     public void SkipGachaAnimation()
     {
+        stop = true;
         StopCoroutine(StartGachaAnimation());
         StopCoroutine(StartGachaAnimation());
         buttonSkip.SetActive(false);
