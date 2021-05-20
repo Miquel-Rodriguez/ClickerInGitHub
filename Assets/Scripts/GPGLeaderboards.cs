@@ -4,6 +4,27 @@ using UnityEngine;
 
 public class GPGLeaderboards : MonoBehaviour
 {
+    bool isPaused = false;
+
+    private void Start()
+    {
+        OnApplicationQuit();
+
+        if (isPaused)
+        {
+            UpdateLeaderboardScore();
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        UpdateLeaderboardScore();
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        isPaused = pause;
+    }
     public void OepnLeaderboard()
     {
         Social.ShowLeaderboardUI();

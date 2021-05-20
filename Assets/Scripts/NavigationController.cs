@@ -14,11 +14,6 @@ public class NavigationController : MonoBehaviour
 
     private void Start()
     {
-      
-           
-           
-       
-        
 
 
         if(panels != null)
@@ -32,6 +27,15 @@ public class NavigationController : MonoBehaviour
 
         ClickPanel.SetActive(true);
 
+    }
+
+    private void Update()
+    {
+       
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
     }
 
 
