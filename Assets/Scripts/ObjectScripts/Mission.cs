@@ -14,13 +14,15 @@ public class Mission : MonoBehaviour
     public float requiredBits;
     public int reward;
     public bool completed = false;
-    public int tier = 1;
+    public int tier = 1, userID;
     public Sprite tier1, tier2, tier3;
     [Header("Text to adapt")]
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descText;
     public TextMeshProUGUI bitsText;
     public TextMeshProUGUI rewardText;
+    public Sprite[] users;
+    public GameObject imageUser;
     [Header("External components")]
     public GameObject numberController, generator;
 
@@ -32,6 +34,9 @@ public class Mission : MonoBehaviour
         bitsText.SetText(BitUtil.StringFormat(requiredBits, BitUtil.TextFormat.Long));
         reward = (int) requiredBits * 5/8;
         rewardText.SetText(reward + "$");
+        imageUser.GetComponent<Image>().sprite = users[userID];
+        
+
     }
 
     public void completeMission() {
@@ -45,6 +50,7 @@ public class Mission : MonoBehaviour
                 if (numberController.GetComponent<NumberController>().missionCounter == 3)
                 {
                     numberController.GetComponent<NumberController>().missionCounter = 0;
+                numberController.GetComponent<NumberController>().setCounterText();
                     generator.GetComponent<GenerateMissions>().deleteAllMissions();
                     generator.GetComponent<GenerateMissions>().generate5Missions();
                 }
@@ -52,6 +58,7 @@ public class Mission : MonoBehaviour
                     generator.GetComponent<GenerateMissions>().deleteMission(missionID);
                     Destroy(this.gameObject);
                 }
+
                 
             }
         }

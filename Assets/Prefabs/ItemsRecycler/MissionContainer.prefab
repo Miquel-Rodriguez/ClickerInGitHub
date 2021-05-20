@@ -812,7 +812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93d54e2495782764ea70ca62facd83bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e14e5b699c152b44844c2772a0705a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1240,6 +1240,10 @@ MonoBehaviour:
   descText: {fileID: 4897392485582056142}
   bitsText: {fileID: 4897392486744896169}
   rewardText: {fileID: 4897392485282316614}
+  users:
+  - {fileID: 21300000, guid: 4e14e5b699c152b44844c2772a0705a9, type: 3}
+  - {fileID: 21300000, guid: 682072e7d03d8ee4a88e20e26153e813, type: 3}
+  imageUser: {fileID: 4897392485470044156}
   numberController: {fileID: 0}
   generator: {fileID: 0}
 --- !u!1 &4897392486744896168
