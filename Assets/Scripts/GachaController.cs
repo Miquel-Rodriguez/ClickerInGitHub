@@ -24,8 +24,99 @@ public class GachaController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI textTicketsSkin;
     [SerializeField] private TextMeshProUGUI textTicketsPowerUps;
+
+    [Header("Game Objects of animations")]
+    [SerializeField] private GameObject containerAnimationGacha;
+
+    [SerializeField] private GameObject shakeGameObject;
+    private Animator animatorShake;
+
+    [SerializeField] private GameObject fallBallGameObject;
+    private Animator fallBallAnimator;
+
+    [SerializeField] private GameObject containerRewardAnimation;
+    [SerializeField] private Animator topBall;
+    [SerializeField] private Animator botBall;
+    [SerializeField] private Image rewardSprite;
+
+    [SerializeField] private GameObject buttonToStartAnimation;
+
+    [SerializeField] private GameObject buttonSkip;
+
+    private bool stop;
+
+    [Header("Sprites Power Ups")]
+    [SerializeField] private Sprite[] listPowerUpSprites;
+    private int rarity;
+    private void PreapreAndWait()
+    {
+        stop = false;
+        buttonSkip.SetActive(true);
+        containerAnimationGacha.SetActive(true);
+        buttonToStartAnimation.SetActive(true);
+        shakeGameObject.SetActive(true);
+        fallBallGameObject.SetActive(false);
+        containerRewardAnimation.SetActive(false);
+        animatorShake.speed = 0;
+     
+    }
+
+    public void RoutineWrap()
+    {
+        buttonToStartAnimation.SetActive(false);
+        StartCoroutine(StartGachaAnimation());
+    }
+
+    private IEnumerator StartGachaAnimation()
+    {
+        animatorShake.speed = 1;
+        yield return new WaitForSeconds(2.2f);
+        if (!stop)
+        {
+            shakeGameObject.SetActive(false);
+            fallBallGameObject.SetActive(true);
+            fallBallAnimator.SetInteger("rarity", rarity);
+
+            yield return new WaitForSeconds(1.3f);
+            buttonSkip.SetActive(false);
+            containerRewardAnimation.SetActive(true);
+
+            fallBallAnimator.SetInteger("rarity", rarity);
+            topBall.SetInteger("rarity", rarity);
+            botBall.SetInteger("rarity", rarity);
+        }
+      
+      
+    }
+
+    public void SkipGachaAnimation()
+    {
+        stop = true;
+        StopCoroutine(StartGachaAnimation());
+        StopCoroutine(StartGachaAnimation());
+        buttonSkip.SetActive(false);
+
+        shakeGameObject.SetActive(false);
+        fallBallGameObject.SetActive(false);
+        containerRewardAnimation.SetActive(true);
+
+        fallBallAnimator.SetInteger("rarity", rarity);
+        topBall.SetInteger("rarity", rarity);
+        botBall.SetInteger("rarity", rarity);
+    }
+
+    public void exitReward()
+    {
+        fallBallGameObject.SetActive(false);
+        containerRewardAnimation.SetActive(false);
+        containerAnimationGacha.SetActive(false);
+    }
     private void Start()
     {
+        animatorShake = shakeGameObject.GetComponent<Animator>();
+        fallBallAnimator = fallBallGameObject.GetComponent<Animator>();
+            
+
         SetNumTickets();
         skinsLsit = allSkins.GetComponentsInChildren<Skin>();
         foreach(Skin a in skinsLsit)
@@ -36,7 +127,7 @@ public class GachaController : MonoBehaviour
 
     public int generateNumberRandom()
     {
-    
+        PreapreAndWait();
         int num = Random.Range(0, 100);
 
         if (num >= 0 && num < 71)
@@ -65,13 +156,12 @@ public class GachaController : MonoBehaviour
         if (numTicketsSkins <= 0)
         {
             ChangeStateNoTicket();
-
-
         }
         else
         {
             numTicketsSkins--;
             numGachaSkins++;
+            int numSkin=90;
             if (numGachaSkins == 10)
             {
                 numGachaSkins = 0;
@@ -79,27 +169,33 @@ public class GachaController : MonoBehaviour
             }
             else
             {
-                int rarity = generateNumberRandom();
-
+                 rarity = generateNumberRandom();
+               
                 switch (rarity)
                 {
                     case 0:
-
-                        skinsLsit[Random.Range(4, 4)].available = true;
+                        numSkin = Random.Range(4, 4);
+                        skinsLsit[numSkin].available = true;
 
                         break;
                     case 1:
-
-                        skinsLsit[Random.Range(4, 4)].available = true;
+                        numSkin = Random.Range(4, 4);
+                        skinsLsit[numSkin].available = true;
                         break;
                     case 2:
-
-                        skinsLsit[Random.Range(4, 4)].available = true;
+                        numSkin = Random.Range(4, 4);
+                        skinsLsit[numSkin].available = true;
                         break;
                 }
             }
+            SetSpriteSkinInRewardImage(numSkin);
         }
         SetNumTickets();
+    }
+
+    private void SetSpriteSkinInRewardImage(int numskin)
+    {
+        rewardSprite.sprite = skinsLsit[numskin].spriteSkin;
     }
 
     private IEnumerator ChangeButtonColor(Button button)
@@ -120,36 +216,52 @@ public class GachaController : MonoBehaviour
         else
         {
             numTicketsPowerUps--;
-            int rarity = generateNumberRandom();
+             rarity = generateNumberRandom();
+
             int num;
             switch (rarity)
             {
                 case 0:
 
-                    num = Random.Range(1, 2);
+                    num = Random.Range(0, 2);
                     if (num == 1)
                     {
                         powerUps.numCommonBytesPerClick++;
+                        rewardSprite.sprite = listPowerUpSprites[0];
                     }
-                    else powerUps.numCommonInfinityEnergy++;
+                    else
+                    {
+                        powerUps.numCommonInfinityEnergy++;
+                        rewardSprite.sprite = listPowerUpSprites[3];
+                    }
 
                     break;
                 case 1:
 
-                    num = Random.Range(1, 2);
+                    num = Random.Range(0, 2);
                     if (num == 1)
                     {
                         powerUps.numRareBytesPerClick++;
+                        rewardSprite.sprite = listPowerUpSprites[1];
                     }
-                    else powerUps.numRareInfinityEnergy++;
+                    else {
+                        powerUps.numRareInfinityEnergy++;
+                        rewardSprite.sprite = listPowerUpSprites[4];
+                    }
+                
                     break;
                 case 2:
-                    num = Random.Range(1, 2);
+                    num = Random.Range(0, 2);
                     if (num == 1)
                     {
                         powerUps.numEpicBytesPerClick++;
+                        rewardSprite.sprite = listPowerUpSprites[2];
                     }
-                    else powerUps.numEpicInfinityEnergy++;
+                    else {
+                        powerUps.numEpicInfinityEnergy++;
+                        rewardSprite.sprite = listPowerUpSprites[5];
+                    }
+                   
 
                     break;
             }
