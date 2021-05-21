@@ -4572,9 +4572,9 @@ MonoBehaviour:
   cost: 90
   lvl: 1
   statsDescription: 
-  baseBitesPerClick: 0
+  baseBitesPerClick: 1
   bitesPerClick: 1
-  baseEnergyPerClick: 0
+  baseEnergyPerClick: 50
   energyPerClick: 25
   bitesMultiplier: 0
   energyMultiplier: 0
@@ -9442,10 +9442,10 @@ MonoBehaviour:
   cost: 100
   lvl: 1
   statsDescription: 
-  baseSaveEnergy: 6
+  baseSaveEnergy: 1
   saveEnergy: 0
   increment: 0
-  maxEnergy: 100
+  maxEnergy: 1000
   energyBar: {fileID: 931928365}
 --- !u!4 &891937918
 Transform:
@@ -18283,12 +18283,12 @@ PrefabInstance:
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}
       propertyPath: energyForSecond
-      value: 3
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}
       propertyPath: energyCostForClick
-      value: 6
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}

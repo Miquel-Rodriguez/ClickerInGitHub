@@ -9,7 +9,7 @@ public class SourceEnergy : Component
     public float saveEnergy;
     [SerializeField] private float increment;
 
-    public float maxEnergy=200;
+    public float maxEnergy;
 
     [SerializeField] EnergyBar energyBar;
 
