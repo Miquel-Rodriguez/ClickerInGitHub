@@ -13,6 +13,7 @@ public class GenerateMissions : MonoBehaviour
     {
         readFile("Tier1.txt",descsTier1);
         readFile("Tier2.txt",descTier2);
+        readFile("Tier3.txt", descTier3);
         generate5Missions();
         
     }
@@ -35,11 +36,7 @@ public class GenerateMissions : MonoBehaviour
             text = reader.ReadLine();
             tier.Add(text);
         }
-        for (var i = tier.Count - 1; i > -1; i--)
-        {
-            if (tier[i] == "")
-                tier.RemoveAt(i);
-        }
+        tier.RemoveAt(tier.Count-1);
     }
 
     public void generate5Missions() {
@@ -51,13 +48,16 @@ public class GenerateMissions : MonoBehaviour
             mission.GetComponent<Mission>().missionName = "Mission " + (i + 1);
             mission.GetComponent<Mission>().numberController = gameController;
             mission.GetComponent<Mission>().generator = this.gameObject;
-            if (PlayerPrefs.GetInt("misionesCompletadas") >= 3)
+            int num = Random.Range(0, 2);
+            Debug.Log(num);
+            mission.GetComponent<Mission>().userID = num;
+            if (PlayerPrefs.GetInt("misionesCompletadas") >= 10)
             {
                 mission.GetComponent<Mission>().tier = 2;
                 mission.GetComponent<Mission>().missionDescription = descTier2[Random.Range(0, descTier2.Count - 1)];
             }
             else {
-                if (PlayerPrefs.GetInt("misionesCompletadas") >= 6)
+                if (PlayerPrefs.GetInt("misionesCompletadas") >= 20)
                 {
                     mission.GetComponent<Mission>().tier = 3;
                     mission.GetComponent<Mission>().missionDescription = descTier3[Random.Range(0, descTier3.Count - 1)];

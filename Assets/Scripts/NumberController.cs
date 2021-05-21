@@ -49,6 +49,7 @@ public class NumberController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textDolares;
     [SerializeField] private TextMeshProUGUI textPasiveMoney;
     [SerializeField] private TextMeshProUGUI textHardCurrency;
+    [SerializeField] public TextMeshProUGUI counterMissions;
 
     public int numDolars;
     public int numPasiveMoney;
@@ -245,11 +246,16 @@ public class NumberController : MonoBehaviour
             numDolars += reward;
             textDolares.SetText(numDolars+"");
             missionCounter++;
+            setCounterText();
             return true;
         }
         else {
             return false;
         }
 
+    }
+
+    public void setCounterText() {
+        counterMissions.SetText(missionCounter.ToString());
     }
 }
