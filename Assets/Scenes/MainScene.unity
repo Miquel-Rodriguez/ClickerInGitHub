@@ -1598,10 +1598,16 @@ PrefabInstance:
       propertyPath: price
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
+        type: 3}
+      propertyPath: spriteSkin
+      value: 
+      objectReference: {fileID: 21300000, guid: e6969421a73f0ad499c5407ab08d8db9,
+        type: 3}
     - target: {fileID: 8878285736184444414, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: m_Name
-      value: Skin2 (1)
+      value: SkinEnergyUSB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d88ee05f7eda9449d6567097533cd8, type: 3}
@@ -4724,11 +4730,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: this is a processor
   cName: Processaor
-  cost: 90
+  cost: 15
   lvl: 1
   statsDescription: 
+  baseBitesPerClick: 1
   bitesPerClick: 1
+  baseEnergyPerClick: 50
   energyPerClick: 25
+  bitesMultiplier: 0
+  energyMultiplier: 0
 --- !u!4 &418029507
 Transform:
   m_ObjectHideFlags: 0
@@ -6986,10 +6996,16 @@ PrefabInstance:
       propertyPath: price
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
+        type: 3}
+      propertyPath: spriteSkin
+      value: 
+      objectReference: {fileID: 21300000, guid: 0db568cf549630647b3d12ab6ac72245,
+        type: 3}
     - target: {fileID: 8878285736184444414, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: m_Name
-      value: Skin2 (2)
+      value: SkinEnergyHamster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d88ee05f7eda9449d6567097533cd8, type: 3}
@@ -9698,7 +9714,9 @@ MonoBehaviour:
   cost: 12
   lvl: 1
   statsDescription: 
+  baseMaxBitesCapacity: 200
   maxBitesCapacity: 200
+  multiplier: 200
 --- !u!4 &875694326
 Transform:
   m_ObjectHideFlags: 0
@@ -9744,12 +9762,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: that give energy for second, less cost for click and more max energy
   cName: Source Energy
-  cost: 100
+  cost: 10
   lvl: 1
   statsDescription: 
-  maxEnergy: 100
-  energyForSecond: 5
-  energyBar: {fileID: 0}
+  baseSaveEnergy: 1
+  saveEnergy: 0
+  increment: 1
+  maxEnergy: 1000
+  energyBar: {fileID: 931928365}
 --- !u!4 &891937918
 Transform:
   m_ObjectHideFlags: 0
@@ -9829,7 +9849,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: available
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -9840,7 +9860,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spriteSkin
       value: 
-      objectReference: {fileID: 21300000, guid: 723a0c18c8d4f1e4389ecb4001c03463,
+      objectReference: {fileID: 21300000, guid: 69848330a08847648a4d66aeaccf3341,
         type: 3}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -11260,7 +11280,7 @@ PrefabInstance:
     - target: {fileID: 7217491586030391958, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
         type: 3}
       propertyPath: m_Name
-      value: Skin1
+      value: SkinEnergyPotato
       objectReference: {fileID: 0}
     - target: {fileID: 7464666714344351043, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
         type: 3}
@@ -11316,6 +11336,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
+        type: 3}
+      propertyPath: spriteSkin
+      value: 
+      objectReference: {fileID: 21300000, guid: 89e8b37619f33134b8345e48f978520e,
+        type: 3}
+    - target: {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
+        type: 3}
+      propertyPath: available
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c, type: 3}
@@ -11946,10 +11977,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: this is a grapich
   cName: Graphic
-  cost: 123
+  cost: 15
   lvl: 1
   statsDescription: 
+  baseBitesPerSecond: 0
   bitesForSeocnd: 1
+  bitesPerSecondMultiplier: 0.2
 --- !u!4 &1227037590
 Transform:
   m_ObjectHideFlags: 0
@@ -14803,10 +14836,16 @@ PrefabInstance:
       propertyPath: price
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
+        type: 3}
+      propertyPath: spriteSkin
+      value: 
+      objectReference: {fileID: 21300000, guid: 13db98ce59b0f484bbce8782f5ea2d06,
+        type: 3}
     - target: {fileID: 8878285736184444414, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: m_Name
-      value: Skin2
+      value: SkinStorageArmario
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d88ee05f7eda9449d6567097533cd8, type: 3}
@@ -15388,6 +15427,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516248789}
   m_CullTransparentMesh: 0
+--- !u!114 &1529346466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 161007274}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3943c871ff9ed04793e7542d9c4ec0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1550932196
 GameObject:
   m_ObjectHideFlags: 0
@@ -18510,12 +18561,12 @@ PrefabInstance:
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}
       propertyPath: energyForSecond
-      value: 3
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}
       propertyPath: energyCostForClick
-      value: 6
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3783465183846195432, guid: 9791743a6ce03bc44afd74b5f2104b9e,
         type: 3}
@@ -20202,6 +20253,18 @@ RectTransform:
   m_AnchoredPosition: {x: -599, y: -0.000012398}
   m_SizeDelta: {x: 235.095, y: 226.98932}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2119971946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 620122622}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3943c871ff9ed04793e7542d9c4ec0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125290071
 GameObject:
   m_ObjectHideFlags: 0
@@ -20383,12 +20446,14 @@ MonoBehaviour:
   PoolSize: 3
   CacheSize: 3
   SkinsProcesador:
-  - {fileID: 292868091}
+  - {fileID: 2119971946}
   - {fileID: 570775576}
   SkinsEspacio:
   - {fileID: 292868091}
   - {fileID: 570775576}
-  SkinsFuenteAlimentacion: []
+  SkinsFuenteAlimentacion:
+  - {fileID: 570775576}
+  - {fileID: 1529346466}
   SkinsGrafica: []
   row: {fileID: 8495104374442903244, guid: debd64e5d8b652449addde3b73343ab7, type: 3}
   RealSkinsList:

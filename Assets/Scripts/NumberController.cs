@@ -167,7 +167,7 @@ public class NumberController : MonoBehaviour
         }
     }
 
-    private void SetUI(string name, string description, string stats, float cost, int level)
+    public void SetUI(string name, string description, string stats, float cost, int level)
     {
         textNameInfoPanel.text = name;
         textDescriptionInfoPanel.text = description;
