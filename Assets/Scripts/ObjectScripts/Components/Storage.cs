@@ -24,7 +24,7 @@ public class Storage : Component
         lvl++;
 
 
-        if ((lvl / 5) % 0 == 0)
+        if (lvl % 5 == 0)
         {
             multiplier *= 2;
   

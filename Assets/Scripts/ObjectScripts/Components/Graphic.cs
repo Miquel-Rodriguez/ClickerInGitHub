@@ -25,7 +25,7 @@ public class Graphic : Component
         lvl++;
 
 
-        if ((lvl / 5) % 0 == 0)
+        if (lvl % 5 == 0)
         {
             bitesPerSecondMultiplier *= 2;
         }

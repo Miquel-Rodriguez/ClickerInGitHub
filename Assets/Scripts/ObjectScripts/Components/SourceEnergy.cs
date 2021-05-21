@@ -29,15 +29,17 @@ public class SourceEnergy : Component
     {
         lvl++;
 
-        if ((lvl / 5) % 0 == 0)
+        if (lvl % 5 == 0)
         {
+            print(lvl % 5);
             increment *= 2;
         }
 
-        cost = cost * (cost / 2);
 
         saveEnergy += increment;
         energyBar.SetRealEnergyCost();
+
+        cost = cost * (cost / 2);
 
         SetDescription();
     }

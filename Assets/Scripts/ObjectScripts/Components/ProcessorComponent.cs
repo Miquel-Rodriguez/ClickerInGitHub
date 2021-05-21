@@ -31,7 +31,7 @@ public class ProcessorComponent : Component
     {
         lvl++;
 
-        if ((lvl / 5) % 0 == 0)
+        if (lvl % 5 == 0)
         {
             energyMultiplier *=2;
             bitesMultiplier *=2;
