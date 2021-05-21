@@ -11,7 +11,7 @@ public class EnergyBar : MonoBehaviour
 	[SerializeField] private Gradient gradient;
 	[SerializeField] private Image fill;
 
-	[SerializeField] private float maxEnergy = 100;
+	//[SerializeField] private float maxEnergy = 100;
 	[SerializeField] float currentEnergy;
 
 	[SerializeField] float energyForSecond;
@@ -28,18 +28,18 @@ public class EnergyBar : MonoBehaviour
 	}
 
 
-	public void ChangeMaxEnergy(float newMaxEnergy)
-    {
-		slider.maxValue = newMaxEnergy;
-		maxEnergy = newMaxEnergy;
-		SetMaxHealth(maxEnergy);
-		SetHealth(currentEnergy);
-	}
+//	public void ChangeMaxEnergy(float newMaxEnergy)
+//    {
+//		slider.maxValue = newMaxEnergy;
+//		maxEnergy = newMaxEnergy;
+//		SetMaxHealth(maxEnergy);
+//		SetHealth(currentEnergy);
+//	}
 
  
 	private void FixedUpdate()
 	{
-		if (currentEnergy < maxEnergy)
+		if (currentEnergy < sourceEnergyComponent.maxEnergy)
 		{
 			currentEnergy += energyForSecond * Time.deltaTime;
 			SetHealth(currentEnergy);
@@ -77,12 +77,18 @@ public class EnergyBar : MonoBehaviour
 
 	public void UpBar(float up)
 	{
-        if (currentEnergy < maxEnergy)
+        if (currentEnergy < sourceEnergyComponent.maxEnergy)
         {
 			currentEnergy += up;
 			SetHealth(currentEnergy);
 		}
 
 	}
+
+
+    public void SetRealEnergyCost()
+    {
+        energyCostForClick -= sourceEnergyComponent.saveEnergy;
+    }
 
 }
