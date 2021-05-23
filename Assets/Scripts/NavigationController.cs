@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using GooglePlayGames;
 
 public class NavigationController : MonoBehaviour
 {
@@ -64,7 +65,11 @@ public class NavigationController : MonoBehaviour
 
     public void ChangeScene(int numScene)
     {
-        SceneManager.LoadScene(numScene);
+        //if (Social.Active.localUser.authenticated)
+        {
+            SceneManager.LoadScene(numScene);
+        }
+        
     }
 
 
