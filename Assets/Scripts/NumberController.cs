@@ -51,11 +51,13 @@ public class NumberController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textHardCurrency;
     [SerializeField] public TextMeshProUGUI counterMissions;
 
+    [SerializeField] private AudioManager audioManager;
     public int numDolars;
     public int numPasiveMoney;
     public int dogeCoins;
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         SetMoney();
         SetSkins();
     }
@@ -107,6 +109,7 @@ public class NumberController : MonoBehaviour
 
     public void ClickOnByteButton()
     {
+        audioManager.PlayKeyBoard();
         if (MaxCapacity() && energyBarController.DownBar())
         {
             currentBits += processorComponent.bitesPerClick;
@@ -118,6 +121,7 @@ public class NumberController : MonoBehaviour
         }
 
     }
+
 
     private bool MaxCapacity()
     {
