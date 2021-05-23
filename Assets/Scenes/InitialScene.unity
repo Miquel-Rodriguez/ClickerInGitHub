@@ -298,6 +298,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242747577}
   m_CullTransparentMesh: 0
+--- !u!114 &267586961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3987634459847730856, guid: 415535d17d6c95245a05813ded05f974,
+    type: 3}
+  m_PrefabInstance: {fileID: 1852614581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6e1223c231058478930d8fc3982e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &415748594
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +673,7 @@ MonoBehaviour:
   panels: []
   ClickPanel: {fileID: 0}
   PcPanel: {fileID: 0}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 267586961}
 --- !u!114 &794222940
 MonoBehaviour:
   m_ObjectHideFlags: 0

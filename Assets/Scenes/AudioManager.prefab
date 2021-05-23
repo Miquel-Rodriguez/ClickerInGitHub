@@ -68,3 +68,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: click1
+    clip: {fileID: 8300000, guid: 242359780c6598642b71a0ad544bae69, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: click2
+    clip: {fileID: 8300000, guid: cd76e9d8b1884d647b0f42a8d800dc04, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: click3
+    clip: {fileID: 8300000, guid: 4d16abbde808b214384e3e4661c2f7da, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

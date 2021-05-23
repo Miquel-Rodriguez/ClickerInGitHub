@@ -49,6 +49,25 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    public void PlayKeyBoard()
+    {
+        switch (UnityEngine.Random.Range(1,4    ))
+        {
+            case 1:
+                Sound s = Array.Find(sounds, sound => sound.name == "click1");
+                s.source.Play();
+                break;
+            case 2:
+                s = Array.Find(sounds, sound => sound.name == "click2");
+                s.source.Play();
+                break;
+            case 3:
+                s = Array.Find(sounds, sound => sound.name == "click3");
+                s.source.Play();
+                break;
+        }
+    }
+
     public void SetVolume(string name, int volume)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

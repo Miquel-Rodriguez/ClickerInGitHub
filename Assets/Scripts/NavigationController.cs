@@ -66,6 +66,7 @@ public class NavigationController : MonoBehaviour
 
     public void ChangeScene(int numScene)
     {
+        audioManager.Play("ButtonClick");
         SceneManager.LoadScene(numScene);
     }
 
