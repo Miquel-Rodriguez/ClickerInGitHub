@@ -16,6 +16,7 @@ public class GachaController : MonoBehaviour
 
     [SerializeField] private GameObject allSkins;
     private Skin[] skinsLsit;
+    private List<Skin> skkinslist;
 
     [SerializeField] Button buttonGachaSkin;
     [SerializeField] Button buttonGachaPowerUp;
@@ -56,6 +57,22 @@ public class GachaController : MonoBehaviour
     private void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
+    }
+
+    private void Start()
+    {
+        animatorShake = shakeGameObject.GetComponent<Animator>();
+        fallBallAnimator = fallBallGameObject.GetComponent<Animator>();
+
+
+        SetNumTickets();
+        skinsLsit = allSkins.GetComponentsInChildren<Skin>();
+        
+        foreach (Skin a in skinsLsit)
+        {
+            skkinslist.Add(a);
+            print("skin");
+        }
     }
 
     private void PreapreAndWait()
@@ -144,19 +161,7 @@ public class GachaController : MonoBehaviour
         containerRewardAnimation.SetActive(false);
         containerAnimationGacha.SetActive(false);
     }
-    private void Start()
-    {
-        animatorShake = shakeGameObject.GetComponent<Animator>();
-        fallBallAnimator = fallBallGameObject.GetComponent<Animator>();
-            
-
-        SetNumTickets();
-        skinsLsit = allSkins.GetComponentsInChildren<Skin>();
-        foreach(Skin a in skinsLsit)
-        {
-            print("skin");
-        }
-    }
+  
 
     public int generateNumberRandom()
     {
@@ -208,8 +213,10 @@ public class GachaController : MonoBehaviour
                 {
                     case 0:
                         numSkin = Random.Range(4, 4);
-                        skinsLsit[numSkin].available = true;
-
+                        Skin skin = skinsLsit[numSkin];
+                        //               skinsLsit[numSkin].available = true;
+                        skkinslist[numSkin].available = true;
+                        skkinslist.Remove(skin);
                         break;
                     case 1:
                         numSkin = Random.Range(4, 4);
