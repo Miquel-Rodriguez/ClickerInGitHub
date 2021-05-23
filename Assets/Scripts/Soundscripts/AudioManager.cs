@@ -37,10 +37,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
     void Start()
     {
-        Play("MainTheme"); //iniciar música principal
+        Play("Main Theme"); //iniciar música principal
 
     }
 
@@ -48,6 +47,12 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
+    }
+
+    public void SetVolume(string name, int volume)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.volume = volume;
     }
 
 }

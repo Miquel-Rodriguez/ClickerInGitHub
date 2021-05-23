@@ -35,6 +35,8 @@ public class GachaController : MonoBehaviour
     private Animator fallBallAnimator;
 
     [SerializeField] private GameObject containerRewardAnimation;
+    [SerializeField] private Button buttonGoBackReward;
+
     [SerializeField] private Animator topBall;
     [SerializeField] private Animator botBall;
     [SerializeField] private Image rewardSprite;
@@ -48,8 +50,14 @@ public class GachaController : MonoBehaviour
     [Header("Sprites Power Ups")]
     [SerializeField] private Sprite[] listPowerUpSprites;
     private int rarity;
+
+    [SerializeField] private AudioManager audioManager;
+
+
+
     private void PreapreAndWait()
     {
+        audioManager.SetVolume("Shake", 1);
         stop = false;
         buttonSkip.SetActive(true);
         containerAnimationGacha.SetActive(true);
@@ -63,13 +71,19 @@ public class GachaController : MonoBehaviour
 
     public void RoutineWrap()
     {
+        audioManager.Play("ClickClack");
         buttonToStartAnimation.SetActive(false);
         StartCoroutine(StartGachaAnimation());
     }
 
     private IEnumerator StartGachaAnimation()
     {
+
         animatorShake.speed = 1;
+        yield return new WaitForSeconds(0.5f);
+        audioManager.Play("Shake");
+        yield return new WaitForSeconds(0.5f);
+        audioManager.Play("Shake");
         yield return new WaitForSeconds(2.2f);
         if (!stop)
         {
@@ -80,17 +94,29 @@ public class GachaController : MonoBehaviour
             yield return new WaitForSeconds(1.3f);
             buttonSkip.SetActive(false);
             containerRewardAnimation.SetActive(true);
+            buttonGoBackReward.enabled = false;
+
 
             fallBallAnimator.SetInteger("rarity", rarity);
             topBall.SetInteger("rarity", rarity);
             botBall.SetInteger("rarity", rarity);
+
+
+            yield return new WaitForSeconds(0.5f);
+            buttonGoBackReward.enabled = true;
         }
       
       
     }
 
-    public void SkipGachaAnimation()
+    public void SkipContainer()
     {
+        StartCoroutine(SkipGachaAnimation());
+    }
+
+    public IEnumerator SkipGachaAnimation()
+    {
+        audioManager.SetVolume("Shake",0);
         stop = true;
         StopCoroutine(StartGachaAnimation());
         StopCoroutine(StartGachaAnimation());
@@ -99,10 +125,14 @@ public class GachaController : MonoBehaviour
         shakeGameObject.SetActive(false);
         fallBallGameObject.SetActive(false);
         containerRewardAnimation.SetActive(true);
+        buttonGoBackReward.enabled = false;
 
         fallBallAnimator.SetInteger("rarity", rarity);
         topBall.SetInteger("rarity", rarity);
         botBall.SetInteger("rarity", rarity);
+
+        yield return new WaitForSeconds(0.5f);
+        buttonGoBackReward.enabled = true;
     }
 
     public void exitReward()
@@ -152,7 +182,7 @@ public class GachaController : MonoBehaviour
     }
     public void ClickGackaSkin()
     {
-      
+        audioManager.Play("ButtonClick");
         if (numTicketsSkins <= 0)
         {
             ChangeStateNoTicket();
@@ -207,7 +237,7 @@ public class GachaController : MonoBehaviour
 
     public void ClickGachaPowerUP()
     {
-
+        audioManager.Play("ButtonClick");
         if (numTicketsPowerUps <= 0)
         {
 
