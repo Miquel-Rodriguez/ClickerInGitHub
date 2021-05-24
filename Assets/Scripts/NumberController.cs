@@ -311,7 +311,7 @@ public class NumberController : MonoBehaviour
     }
     private void SetOtherGraficInFalse()
     {
-        graphicAnimator.SetBool("Hamster", false);
+        graphicAnimator.SetBool("Ventilando", false);
     }
 
 
