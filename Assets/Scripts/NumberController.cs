@@ -7,7 +7,7 @@ using System;
 
 public class NumberController : MonoBehaviour
 {
-
+    
     public static int score = 0;
     public TextMeshProUGUI scoreText;
 
@@ -342,6 +342,7 @@ public class NumberController : MonoBehaviour
                 }
                 else textButton.text = "equip";
 
+                
                 image.sprite = listaSkins[i].spriteSkin;
             }
             else
