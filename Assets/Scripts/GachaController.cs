@@ -6,6 +6,12 @@ using TMPro;
 
 public class GachaController : MonoBehaviour
 {
+
+    [SerializeField] Skin[] commonSkins;
+    [SerializeField] Skin[] rareSkins;
+    [SerializeField] Skin[] legendarySkins;
+
+
     private int numGachaSkins;
     private int numGachaPoweUps;
 
@@ -198,6 +204,7 @@ public class GachaController : MonoBehaviour
             numTicketsSkins--;
             numGachaSkins++;
             int numSkin=90;
+            Sprite skinImage = null;
             if (numGachaSkins == 10)
             {
                 numGachaSkins = 0;
@@ -210,27 +217,39 @@ public class GachaController : MonoBehaviour
                 switch (rarity)
                 {
                     case 0:
-                        numSkin = Random.Range(4, 4);
-                        skinsLsit[numSkin].available = true;
+                        numSkin = Random.Range(0, commonSkins.Length);
+                        commonSkins[numSkin].available = true;
+                        skinImage = commonSkins[numSkin].spriteSkin;
+
+                //        numSkin = Random.Range(4, 4);
+                //        skinsLsit[numSkin].available = true;
                         break;
                     case 1:
-                        numSkin = Random.Range(4, 4);
-                        skinsLsit[numSkin].available = true;
+                        numSkin = Random.Range(0, rareSkins.Length);
+                        rareSkins[numSkin].available = true;
+                        skinImage = rareSkins[numSkin].spriteSkin;
+                        //        numSkin = Random.Range(4, 4);
+                        //       skinsLsit[numSkin].available = true;
                         break;
                     case 2:
-                        numSkin = Random.Range(4, 4);
-                        skinsLsit[numSkin].available = true;
+                        numSkin = Random.Range(0, legendarySkins.Length);
+                        legendarySkins[numSkin].available = true;
+                        skinImage = legendarySkins[numSkin].spriteSkin;
+                        //       numSkin = Random.Range(4, 4);
+                        //        skinsLsit[numSkin].available = true;
                         break;
                 }
             }
-            SetSpriteSkinInRewardImage(numSkin);
+          //  SetSpriteSkinInRewardImage(numSkin);
+            SetSpriteSkinInRewardImage(skinImage);
         }
         SetNumTickets();
     }
 
-    private void SetSpriteSkinInRewardImage(int numskin)
+    private void SetSpriteSkinInRewardImage(Sprite spriteSkin)
     {
-        rewardSprite.sprite = skinsLsit[numskin].spriteSkin;
+        // rewardSprite.sprite = skinsLsit[numskin].spriteSkin;
+        rewardSprite.sprite = spriteSkin;
     }
 
     private IEnumerator ChangeButtonColor(Button button)

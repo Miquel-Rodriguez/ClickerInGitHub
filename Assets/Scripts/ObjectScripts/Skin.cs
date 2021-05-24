@@ -15,5 +15,4 @@ public class Skin : MonoBehaviour
 
 
     public bool isAnimated;
-    public string animationName;
 }
