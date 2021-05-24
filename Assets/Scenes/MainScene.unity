@@ -2503,7 +2503,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -3197,7 +3197,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -7736,7 +7736,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 8
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -8435,7 +8435,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -9348,7 +9348,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8878285736184444414, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -10622,7 +10622,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -10864,7 +10864,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -22062,7 +22062,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 8
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -24346,7 +24346,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -24441,7 +24441,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -26542,7 +26542,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -28086,7 +28086,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: numSkin
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
