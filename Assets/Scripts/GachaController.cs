@@ -67,10 +67,8 @@ public class GachaController : MonoBehaviour
 
         SetNumTickets();
         skinsLsit = allSkins.GetComponentsInChildren<Skin>();
-        
         foreach (Skin a in skinsLsit)
         {
-            skkinslist.Add(a);
             print("skin");
         }
     }
@@ -213,10 +211,7 @@ public class GachaController : MonoBehaviour
                 {
                     case 0:
                         numSkin = Random.Range(4, 4);
-                        Skin skin = skinsLsit[numSkin];
-                        //               skinsLsit[numSkin].available = true;
-                        skkinslist[numSkin].available = true;
-                        skkinslist.Remove(skin);
+                        skinsLsit[numSkin].available = true;
                         break;
                     case 1:
                         numSkin = Random.Range(4, 4);
@@ -250,7 +245,7 @@ public class GachaController : MonoBehaviour
         audioManager.Play("ButtonClick");
         if (numTicketsPowerUps <= 0)
         {
-
+           
             ChangeStateNoTicket();
         }
         else
