@@ -6,6 +6,12 @@ using TMPro;
 
 public class GachaController : MonoBehaviour
 {
+
+    [SerializeField] Skin[] commonSkins;
+    [SerializeField] Skin[] rareSkins;
+    [SerializeField] Skin[] legendarySkins;
+
+
     private int numGachaSkins;
     private int numGachaPoweUps;
 
@@ -16,6 +22,7 @@ public class GachaController : MonoBehaviour
 
     [SerializeField] private GameObject allSkins;
     private Skin[] skinsLsit;
+    private List<Skin> skkinslist;
 
     [SerializeField] Button buttonGachaSkin;
     [SerializeField] Button buttonGachaPowerUp;
@@ -56,6 +63,20 @@ public class GachaController : MonoBehaviour
     private void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
+    }
+
+    private void Start()
+    {
+        animatorShake = shakeGameObject.GetComponent<Animator>();
+        fallBallAnimator = fallBallGameObject.GetComponent<Animator>();
+
+
+        SetNumTickets();
+        skinsLsit = allSkins.GetComponentsInChildren<Skin>();
+        foreach (Skin a in skinsLsit)
+        {
+            print("skin");
+        }
     }
 
     private void PreapreAndWait()
@@ -144,19 +165,7 @@ public class GachaController : MonoBehaviour
         containerRewardAnimation.SetActive(false);
         containerAnimationGacha.SetActive(false);
     }
-    private void Start()
-    {
-        animatorShake = shakeGameObject.GetComponent<Animator>();
-        fallBallAnimator = fallBallGameObject.GetComponent<Animator>();
-            
-
-        SetNumTickets();
-        skinsLsit = allSkins.GetComponentsInChildren<Skin>();
-        foreach(Skin a in skinsLsit)
-        {
-            print("skin");
-        }
-    }
+  
 
     public int generateNumberRandom()
     {
@@ -195,6 +204,7 @@ public class GachaController : MonoBehaviour
             numTicketsSkins--;
             numGachaSkins++;
             int numSkin=90;
+            Sprite skinImage = null;
             if (numGachaSkins == 10)
             {
                 numGachaSkins = 0;
@@ -207,28 +217,39 @@ public class GachaController : MonoBehaviour
                 switch (rarity)
                 {
                     case 0:
-                        numSkin = Random.Range(4, 4);
-                        skinsLsit[numSkin].available = true;
+                        numSkin = Random.Range(0, commonSkins.Length);
+                        commonSkins[numSkin].available = true;
+                        skinImage = commonSkins[numSkin].spriteSkin;
 
+                //        numSkin = Random.Range(4, 4);
+                //        skinsLsit[numSkin].available = true;
                         break;
                     case 1:
-                        numSkin = Random.Range(4, 4);
-                        skinsLsit[numSkin].available = true;
+                        numSkin = Random.Range(0, rareSkins.Length);
+                        rareSkins[numSkin].available = true;
+                        skinImage = rareSkins[numSkin].spriteSkin;
+                        //        numSkin = Random.Range(4, 4);
+                        //       skinsLsit[numSkin].available = true;
                         break;
                     case 2:
-                        numSkin = Random.Range(4, 4);
-                        skinsLsit[numSkin].available = true;
+                        numSkin = Random.Range(0, legendarySkins.Length);
+                        legendarySkins[numSkin].available = true;
+                        skinImage = legendarySkins[numSkin].spriteSkin;
+                        //       numSkin = Random.Range(4, 4);
+                        //        skinsLsit[numSkin].available = true;
                         break;
                 }
             }
-            SetSpriteSkinInRewardImage(numSkin);
+          //  SetSpriteSkinInRewardImage(numSkin);
+            SetSpriteSkinInRewardImage(skinImage);
         }
         SetNumTickets();
     }
 
-    private void SetSpriteSkinInRewardImage(int numskin)
+    private void SetSpriteSkinInRewardImage(Sprite spriteSkin)
     {
-        rewardSprite.sprite = skinsLsit[numskin].spriteSkin;
+        // rewardSprite.sprite = skinsLsit[numskin].spriteSkin;
+        rewardSprite.sprite = spriteSkin;
     }
 
     private IEnumerator ChangeButtonColor(Button button)
@@ -243,7 +264,7 @@ public class GachaController : MonoBehaviour
         audioManager.Play("ButtonClick");
         if (numTicketsPowerUps <= 0)
         {
-
+           
             ChangeStateNoTicket();
         }
         else

@@ -14,14 +14,5 @@ public class Skin : MonoBehaviour
     public bool equiped;
 
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool isAnimated;
 }

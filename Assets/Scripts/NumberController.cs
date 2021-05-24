@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class NumberController : MonoBehaviour
 {
-
+    
     public static int score = 0;
     public TextMeshProUGUI scoreText;
 
@@ -25,8 +26,7 @@ public class NumberController : MonoBehaviour
     [SerializeField] private GameObject allSkins;
     [SerializeField] private Image[] wherePutSkins;
 
-    [HideInInspector]
-    public int[] whatSkinsPut = new int[] {0,1,2,3};
+    public int[] whatSkinsPut = new int[] {5,1,2,3};
 
     [SerializeField] SkinsRecyclerView skinsRecyclerView;
 
@@ -141,34 +141,219 @@ public class NumberController : MonoBehaviour
        for(int i=0; i<wherePutSkins.Length; i++)
         {
             wherePutSkins[i].sprite = allSkins.transform.GetChild(whatSkinsPut[i]).gameObject.GetComponent<Skin>().spriteSkin;
+            print("pene" + whatSkinsPut[i]);
+            print(allSkins.transform.GetChild(whatSkinsPut[i]).gameObject.GetComponent<Skin>().names);
         }
+        wherePutSkins[0].sprite = allSkins.transform.GetChild(whatSkinsPut[0]).gameObject.GetComponent<Skin>().spriteSkin;
+        print(allSkins.transform.GetChild(whatSkinsPut[0]).gameObject.GetComponent<Skin>().spriteSkin);
     }
+
+    [Header("Skins Layout")]
+
+    [SerializeField] GameObject containerE;
+    [SerializeField] GameObject containerP;
+    [SerializeField] GameObject containerS;
+    [SerializeField] GameObject containerG;
+
+    [SerializeField] GameObject[] containerEnergy;
+    [SerializeField] GameObject[] containerProcessor;
+    [SerializeField] GameObject[] containerStorage;
+    [SerializeField] GameObject[] containerGrafic;
+
+    [SerializeField] Skin[] laListaDeSkinsEnergy;
+    [SerializeField] Skin[] laListaDeSkinsProcessor;
+    [SerializeField] Skin[] laListaDeSkinsStorage;
+    [SerializeField] Skin[] laListaDeSkinsGrafic;
+
+    [SerializeField] Animator energyAnimator;
+    [SerializeField] Animator processorAnimator;
+    [SerializeField] Animator storageAnimator;
+    [SerializeField] Animator graphicAnimator;
+
+    [SerializeField] ScrollRect scrollRect;
 
 
     public void SetInfoInPanel(int num)
     {
+        containerE.SetActive(false);
+        containerP.SetActive(false);
+        containerS.SetActive(false);
+        containerG.SetActive(false);
         numComponenet = num;
         switch (num)
         {
             case 0:
-                
+                containerE.SetActive(true);
+                scrollRect.content = containerE.GetComponent<RectTransform>();
                 SetUI(sourceEnergy.cName, sourceEnergy.description, sourceEnergy.statsDescription, sourceEnergy.cost, sourceEnergy.lvl);
-                skinsRecyclerView.SetSkinsList(numComponenet);
+                SetSkinLayaout(containerEnergy, laListaDeSkinsEnergy);
+             //   skinsRecyclerView.SetSkinsList(numComponenet);
                  break;
             case 1:
+                containerP.SetActive(true);
+                scrollRect.content = containerP.GetComponent<RectTransform>();
                 SetUI(processorComponent.cName, processorComponent.description, processorComponent.statsDescription, processorComponent.cost, processorComponent.lvl);
-                skinsRecyclerView.SetSkinsList(numComponenet);
+                SetSkinLayaout(containerProcessor, laListaDeSkinsProcessor);
+                //     skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
             case 2:
+                containerS.SetActive(true);
+                scrollRect.content = containerS.GetComponent<RectTransform>();
                 SetUI(storage.cName, storage.description, storage.statsDescription, storage.cost, storage.lvl);
-                skinsRecyclerView.SetSkinsList(numComponenet);
+                SetSkinLayaout(containerStorage, laListaDeSkinsStorage);
+                //    skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
             case 3:
+                containerG.SetActive(true);
+                scrollRect.content = containerG.GetComponent<RectTransform>();
                 SetUI(graphicCompoenent.cName, graphicCompoenent.description, graphicCompoenent.statsDescription, graphicCompoenent.cost,graphicCompoenent.lvl);
-                skinsRecyclerView.SetSkinsList(numComponenet);
+                SetSkinLayaout(containerGrafic, laListaDeSkinsGrafic);
+                //    skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
 
         }
+    }
+
+    public void SetNewSkin(string name)
+    {
+        Skin[] sgdg = allSkins.GetComponentsInChildren<Skin>();
+        Skin skinn = Array.Find(sgdg, skin => skin.names == name);
+        DesequipAll(skinn);
+       
+        // print(skinn);
+        //  print(whatSkinsPut[numComponenet]);
+        whatSkinsPut[numComponenet] = skinn.numSkin;
+      //  print(whatSkinsPut[numComponenet]);
+        SetSkins();
+
+    }
+
+    private void DesequipAll(Skin skin)
+    {
+        switch (numComponenet)
+        {
+            case 0:
+                CleanEquip(laListaDeSkinsEnergy);
+                skin.equiped = true;
+                SetSkinLayaout(containerEnergy, laListaDeSkinsEnergy);
+                if (skin.isAnimated)
+                {
+                    energyAnimator.enabled = true;
+                    SetOtherEnergyInFalse();
+                    energyAnimator.SetBool(skin.names, true);
+                    
+                } else energyAnimator.enabled = false;
+                break;
+            case 1:
+                CleanEquip(laListaDeSkinsProcessor);
+                skin.equiped = true;
+                SetSkinLayaout(containerProcessor, laListaDeSkinsProcessor);
+                if (skin.isAnimated)
+                {
+                    processorAnimator.enabled = true;
+                    SetOtherProcessorInFalse();
+                    processorAnimator.SetBool(skin.names, true);
+
+                }
+                else processorAnimator.enabled = false;
+                break;
+            case 2:
+                CleanEquip(laListaDeSkinsStorage);
+                skin.equiped = true;
+                SetSkinLayaout(containerStorage, laListaDeSkinsStorage);
+                if (skin.isAnimated)
+                {
+                    storageAnimator.enabled = true;
+                    SetOtherStorageInFalse();
+                    storageAnimator.SetBool(skin.names, true);
+
+                }
+                else storageAnimator.enabled = false;
+                break;
+            case 3:
+                CleanEquip(laListaDeSkinsGrafic);
+                skin.equiped = true;
+                SetSkinLayaout(containerGrafic, laListaDeSkinsGrafic);
+                if (skin.isAnimated)
+                {
+                    graphicAnimator.enabled = true;
+                    SetOtherGraficInFalse();
+                    graphicAnimator.SetBool(skin.names, true);
+
+                }
+                else graphicAnimator.enabled = false;
+                break;
+        }
+    }
+
+    private void CleanEquip(Skin [] list)
+    {
+        foreach (Skin s in list)
+        {
+            s.equiped = false;
+        }
+    }
+
+    private void SetOtherEnergyInFalse()
+    {
+        energyAnimator.SetBool("Hamster", false);
+        energyAnimator.SetBool("Uranio", false);
+        energyAnimator.SetBool("fiufiu", false);
+    }
+
+    private void SetOtherProcessorInFalse()
+    {
+        processorAnimator.SetBool("CD", false);
+    }
+    private void SetOtherStorageInFalse()
+    {
+        storageAnimator.SetBool("Hamster", false);
+    }
+    private void SetOtherGraficInFalse()
+    {
+        graphicAnimator.SetBool("Ventilando", false);
+    }
+
+
+    public void SetSkinLayaout(GameObject[] llistacontainers, Skin[] listaSkins)
+    {
+     
+       
+        Text nombre;
+        Image image;
+        Button button;
+        Text textButton;
+
+        for(int i =0; i< llistacontainers.Length; i++)
+        {
+            nombre = llistacontainers[i].transform.GetChild(1).GetComponent<Text>();
+            nombre.text = listaSkins[i].names;
+
+            image = llistacontainers[i].transform.GetChild(2).GetComponent<Image>();
+            button = llistacontainers[i].transform.GetChild(3).GetComponent<Button>();
+            textButton = button.GetComponentInChildren<Text>();
+
+            if (listaSkins[i].available)
+            {
+                button.enabled = true;
+                if (listaSkins[i].equiped)
+                {
+                    textButton.text = "equiped";
+                }
+                else textButton.text = "equip";
+
+                
+                image.sprite = listaSkins[i].spriteSkin;
+            }
+            else
+            {
+                image.sprite = listaSkins[i].spriteUnavailable;
+                button.enabled = false;
+                textButton.text = "locked";
+            }
+        }
+
+
     }
 
     public void SetUI(string name, string description, string stats, float cost, int level)
