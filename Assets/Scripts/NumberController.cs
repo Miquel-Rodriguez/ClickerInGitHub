@@ -170,6 +170,8 @@ public class NumberController : MonoBehaviour
     [SerializeField] Animator storageAnimator;
     [SerializeField] Animator graphicAnimator;
 
+    [SerializeField] ScrollRect scrollRect;
+
 
     public void SetInfoInPanel(int num)
     {
@@ -182,24 +184,28 @@ public class NumberController : MonoBehaviour
         {
             case 0:
                 containerE.SetActive(true);
+                scrollRect.content = containerE.GetComponent<RectTransform>();
                 SetUI(sourceEnergy.cName, sourceEnergy.description, sourceEnergy.statsDescription, sourceEnergy.cost, sourceEnergy.lvl);
                 SetSkinLayaout(containerEnergy, laListaDeSkinsEnergy);
              //   skinsRecyclerView.SetSkinsList(numComponenet);
                  break;
             case 1:
                 containerP.SetActive(true);
+                scrollRect.content = containerP.GetComponent<RectTransform>();
                 SetUI(processorComponent.cName, processorComponent.description, processorComponent.statsDescription, processorComponent.cost, processorComponent.lvl);
                 SetSkinLayaout(containerProcessor, laListaDeSkinsProcessor);
                 //     skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
             case 2:
                 containerS.SetActive(true);
+                scrollRect.content = containerS.GetComponent<RectTransform>();
                 SetUI(storage.cName, storage.description, storage.statsDescription, storage.cost, storage.lvl);
                 SetSkinLayaout(containerStorage, laListaDeSkinsStorage);
                 //    skinsRecyclerView.SetSkinsList(numComponenet);
                 break;
             case 3:
                 containerG.SetActive(true);
+                scrollRect.content = containerG.GetComponent<RectTransform>();
                 SetUI(graphicCompoenent.cName, graphicCompoenent.description, graphicCompoenent.statsDescription, graphicCompoenent.cost,graphicCompoenent.lvl);
                 SetSkinLayaout(containerGrafic, laListaDeSkinsGrafic);
                 //    skinsRecyclerView.SetSkinsList(numComponenet);
@@ -291,11 +297,13 @@ public class NumberController : MonoBehaviour
     private void SetOtherEnergyInFalse()
     {
         energyAnimator.SetBool("Hamster", false);
+        energyAnimator.SetBool("Uranio", false);
+        energyAnimator.SetBool("fiufiu", false);
     }
 
     private void SetOtherProcessorInFalse()
     {
-        processorAnimator.SetBool("Hamster", false);
+        processorAnimator.SetBool("CD", false);
     }
     private void SetOtherStorageInFalse()
     {
@@ -319,7 +327,7 @@ public class NumberController : MonoBehaviour
         for(int i =0; i< llistacontainers.Length; i++)
         {
             nombre = llistacontainers[i].transform.GetChild(1).GetComponent<Text>();
-            nombre.text = listaSkins[i].name;
+            nombre.text = listaSkins[i].names;
 
             image = llistacontainers[i].transform.GetChild(2).GetComponent<Image>();
             button = llistacontainers[i].transform.GetChild(3).GetComponent<Button>();
