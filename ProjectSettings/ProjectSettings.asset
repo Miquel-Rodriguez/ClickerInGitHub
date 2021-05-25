@@ -254,7 +254,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/adrim/Desktop/myKey.keystore
+  AndroidKeystoreName: C:/Users/argo/Desktop/myKey.keystore
   AndroidKeyaliasName: clickgame
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1

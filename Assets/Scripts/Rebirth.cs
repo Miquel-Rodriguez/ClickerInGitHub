@@ -56,9 +56,13 @@ public class Rebirth : MonoBehaviour
             // 1000000 monedas de rebirth
         }
         bits.currentBits = 0;
-        lvlGraphic.lvl = 0;
-        lvlEnergy.lvl = 0;
-        lvlProcessor.lvl = 0;
-        lvlStorage.lvl = 0;
+        lvlGraphic.lvl = 1;
+        lvlGraphic.SetStats();
+        lvlEnergy.lvl = 1;
+        lvlEnergy.SetStats();
+        lvlProcessor.lvl = 1;
+        lvlProcessor.SetStats();
+        lvlStorage.lvl = 1;
+        lvlStorage.SetStats();
     }
 }

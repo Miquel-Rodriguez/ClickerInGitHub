@@ -15,6 +15,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] GameObject shopStop4;
     [SerializeField] GameObject shop;
     [SerializeField] GameObject PcPanel;
+    bool aux = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,24 +32,29 @@ public class TutorialController : MonoBehaviour
 
         if (bits.currentBits == 12)
         {
-            secondStop.SetActive(true);
-            secondStop2.SetActive(true);
-            secondStop3.SetActive(true);
+            if (aux == false)
+            {
+                secondStop.SetActive(true);
+                secondStop2.SetActive(true);
+                secondStop3.SetActive(true);
+                aux = true;
+            }
+           
         }
 
         if (secondStop.activeInHierarchy && PcPanel.activeInHierarchy)
         {
-            Destroy(secondStop);
-            Destroy(secondStop2);
-            Destroy(secondStop3);
+            secondStop.SetActive(false);
+            secondStop2.SetActive(false);
+            secondStop3.SetActive(false);
         }
 
         if (shop.activeInHierarchy && shopStop.activeInHierarchy)
         {
-            Destroy(shopStop);
-            Destroy(shopStop2);
-            Destroy(shopStop3);
-            Destroy(shopStop4);
+            shopStop.SetActive(false);
+            shopStop2.SetActive(false);
+            shopStop3.SetActive(false);
+            shopStop4.SetActive(false);
         }
     }
 }

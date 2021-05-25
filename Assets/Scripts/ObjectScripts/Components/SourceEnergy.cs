@@ -20,7 +20,7 @@ public class SourceEnergy : Component
         energyBar.SetRealEnergyCost();
     }
 
-    private void SetStats()
+    public void SetStats()
     {
         saveEnergy = baseSaveEnergy;
     }

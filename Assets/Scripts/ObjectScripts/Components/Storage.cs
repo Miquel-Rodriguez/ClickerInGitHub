@@ -14,7 +14,7 @@ public class Storage : Component
         SetDescription();
     }
 
-    private void SetStats()
+    public void SetStats()
     {
         maxBitesCapacity = baseMaxBitesCapacity;
     }

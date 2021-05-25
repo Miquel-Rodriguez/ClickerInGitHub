@@ -15,7 +15,7 @@ public class Graphic : Component
         SetDescription();
     }
 
-    private void SetStats()
+    public void SetStats()
     {
         bitesForSeocnd = baseBitesPerSecond;
     }

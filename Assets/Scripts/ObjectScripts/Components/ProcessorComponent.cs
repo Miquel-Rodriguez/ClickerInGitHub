@@ -21,7 +21,7 @@ public class ProcessorComponent : Component
         SetDescription();
     }
 
-    private void SetStats()
+    public void SetStats()
     {
         bitesPerClick = baseBitesPerClick;
         energyPerClick = baseEnergyPerClick;
