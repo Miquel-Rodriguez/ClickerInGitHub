@@ -6,6 +6,7 @@ using TMPro;
 
 public class GachaController : MonoBehaviour
 {
+    [SerializeField] NumberController numberController;
 
     [SerializeField] Skin[] commonSkins;
     [SerializeField] Skin[] rareSkins;
@@ -73,10 +74,10 @@ public class GachaController : MonoBehaviour
 
         SetNumTickets();
         skinsLsit = allSkins.GetComponentsInChildren<Skin>();
-        foreach (Skin a in skinsLsit)
-        {
-            print("skin");
-        }
+   //     foreach (Skin a in skinsLsit)
+   //     {
+   //         print("skin");
+   //     }
     }
 
     private void PreapreAndWait()
@@ -164,6 +165,7 @@ public class GachaController : MonoBehaviour
         fallBallGameObject.SetActive(false);
         containerRewardAnimation.SetActive(false);
         containerAnimationGacha.SetActive(false);
+        numberController.GuardarDatosSkin();
     }
   
 

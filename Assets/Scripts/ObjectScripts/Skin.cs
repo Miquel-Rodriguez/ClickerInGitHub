@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Skin : MonoBehaviour
 {
-    public int componentNum;
+  //  public int componentNum;
     public string names;
     public bool available;
     public Sprite spriteSkin;
