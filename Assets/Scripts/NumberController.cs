@@ -57,10 +57,71 @@ public class NumberController : MonoBehaviour
     public int dogeCoins;
     void Start()
     {
+        RecargarDatosSkin();
         audioManager = FindObjectOfType<AudioManager>();
         SetMoney();
         SetSkins();
     }
+
+
+
+    public void RecargarDatosSkin()
+    {
+        int i = 0;
+        foreach (Skin s in allSkins.GetComponentsInChildren<Skin>())
+        {
+            if (PlayerPrefs.GetInt("skin" + i, 9) == 1)
+            {
+                s.available = true;
+            }
+            else s.available = false;
+
+            if (PlayerPrefs.GetInt("equiped" + i, 9) == 1)
+            {
+                s.equiped = true;
+            }
+            else s.equiped = false;
+            print(PlayerPrefs.GetInt("equiped" + i, 9));
+            i++;
+        }
+
+        i = 0;
+        foreach (int intt in whatSkinsPut)
+        {
+            whatSkinsPut[i] = PlayerPrefs.GetInt("whatSkinPut" + i, 1);
+
+            i++;
+        }
+    }
+
+    public void GuardarDatosSkin()
+    {
+        int i = 0;
+        foreach (Skin s in allSkins.GetComponentsInChildren<Skin>())
+        {
+            if (s.available)
+            {
+                PlayerPrefs.SetInt("skin" + i, 1);
+            }
+            else PlayerPrefs.SetInt("skin" + i, 0);
+
+            if (s.equiped)
+            {
+                print("holis");
+                PlayerPrefs.SetInt("equiped" + i, 1);
+            }
+            else PlayerPrefs.SetInt("equiped" + i, 0);
+
+            i++;
+        }
+        i = 0;
+        foreach (int intt in whatSkinsPut)
+        {
+            PlayerPrefs.SetInt("whatSkinPut" + i, whatSkinsPut[i]);
+            i++;
+        }
+    }
+
 
     private void SetMoney()
     {
@@ -144,8 +205,8 @@ public class NumberController : MonoBehaviour
             print("pene" + whatSkinsPut[i]);
             print(allSkins.transform.GetChild(whatSkinsPut[i]).gameObject.GetComponent<Skin>().names);
         }
-        wherePutSkins[0].sprite = allSkins.transform.GetChild(whatSkinsPut[0]).gameObject.GetComponent<Skin>().spriteSkin;
-        print(allSkins.transform.GetChild(whatSkinsPut[0]).gameObject.GetComponent<Skin>().spriteSkin);
+ //       wherePutSkins[0].sprite = allSkins.transform.GetChild(whatSkinsPut[0]).gameObject.GetComponent<Skin>().spriteSkin;
+//        print(allSkins.transform.GetChild(whatSkinsPut[0]).gameObject.GetComponent<Skin>().spriteSkin);
     }
 
     [Header("Skins Layout")]
@@ -225,7 +286,7 @@ public class NumberController : MonoBehaviour
         whatSkinsPut[numComponenet] = skinn.numSkin;
       //  print(whatSkinsPut[numComponenet]);
         SetSkins();
-
+        GuardarDatosSkin();
     }
 
     private void DesequipAll(Skin skin)
