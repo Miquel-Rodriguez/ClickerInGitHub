@@ -388,7 +388,7 @@ public class NumberController : MonoBehaviour
         for(int i =0; i< llistacontainers.Length; i++)
         {
             nombre = llistacontainers[i].transform.GetChild(1).GetComponent<Text>();
-            nombre.text = listaSkins[i].names;
+
 
             image = llistacontainers[i].transform.GetChild(2).GetComponent<Image>();
             button = llistacontainers[i].transform.GetChild(3).GetComponent<Button>();
@@ -396,6 +396,8 @@ public class NumberController : MonoBehaviour
 
             if (listaSkins[i].available)
             {
+
+                nombre.text = listaSkins[i].names;
                 button.enabled = true;
                 if (listaSkins[i].equiped)
                 {
@@ -408,6 +410,7 @@ public class NumberController : MonoBehaviour
             }
             else
             {
+                nombre.text = "???";
                 image.sprite = listaSkins[i].spriteUnavailable;
                 button.enabled = false;
                 textButton.text = "locked";
