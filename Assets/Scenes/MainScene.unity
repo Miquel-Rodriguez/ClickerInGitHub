@@ -2001,8 +2001,8 @@ RectTransform:
   m_Father: {fileID: 181315580}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5006537}
-  m_AnchorMax: {x: 1, y: 0.9999783}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8840,9 +8840,31 @@ MonoBehaviour:
   missionPrefab: {fileID: 4897392486476929861, guid: ac46ef69622bcf7438add6b9dfe51ded,
     type: 3}
   gameController: {fileID: 1445307963}
-  descsTier1: []
-  descTier2: []
-  descTier3: []
+  descsTier1:
+  - Hack @EvilJMS Twitter
+  - Hack my boss pc
+  - Crack cyberbug 2069
+  - Hack my exgf insta
+  - Crack ourcraft premium
+  - Give me cheats in ourcraft
+  - Hack a celebrity account
+  - Help me with P21
+  - Leak Nintendo E3 2021
+  descTier2:
+  - Hack @ITB Twitter
+  - Hack DVD Project Blue
+  - Create sonic.exe
+  - DDOS Attack my city
+  - Steal Mr Burns Bank Account
+  - Cheats for Darker souls
+  - Give me followers on yt
+  descTier3:
+  - Hack the Nasa
+  - Hack the FBI
+  - Obtain the nuclear missile codes
+  - Hack softyroll
+  - Get subs in Witch.tv
+  - Get Elden Ring info
   currentMissions: []
 --- !u!1001 &620122622
 PrefabInstance:
@@ -9445,7 +9467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -9.9616}
+  m_AnchoredPosition: {x: 0, y: -9.961548}
   m_SizeDelta: {x: 0, y: -250.49048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662467333
@@ -13726,7 +13748,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 729435313}
   m_Direction: 0
   m_Value: 0.5000092
-  m_Size: 0.44070563
+  m_Size: 0.4407056
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18080,10 +18102,10 @@ RectTransform:
   m_Father: {fileID: 1550932197}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -93.29999}
-  m_SizeDelta: {x: -184.32721, y: -323.75366}
+  m_SizeDelta: {x: 615.6728, y: 848.24634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1397165411
 GameObject:
@@ -20223,8 +20245,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 145146841}
   m_HandleRect: {fileID: 145146840}
   m_Direction: 2
-  m_Value: 0.99995655
-  m_Size: 0.4993246
+  m_Value: 0.99995667
+  m_Size: 0.49940312
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20542,7 +20564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1550932197
 RectTransform:
   m_ObjectHideFlags: 0
