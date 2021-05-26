@@ -6,7 +6,6 @@ using TMPro;
 
 public class PowerUps : MonoBehaviour
 {
-    [SerializeField] NumberController bits;
     [SerializeField] int numPowerUp;
     [SerializeField] EnergyBar energy;
     [SerializeField] private ProcessorComponent processorComponent;
@@ -18,7 +17,7 @@ public class PowerUps : MonoBehaviour
 
      public int numCommonInfinityEnergy;
      public int numRareInfinityEnergy;
-     public int numEpicInfinityEnergy;
+     public int numLegendaryInfinityEnergy;
 
     [Header("More Bytes Per Click")]
     [SerializeField] private TextMeshProUGUI textNumCommonBytesPerClick;
@@ -27,16 +26,36 @@ public class PowerUps : MonoBehaviour
 
      public int numCommonBytesPerClick;
      public int numRareBytesPerClick;
-     public int numEpicBytesPerClick   ;
+     public int numLegendaryBytesPerClick;
 
 
     private bool activateInfinityEnergy;
     private bool activateBytesPerClick;
 
     public MoveTowards[] listMoveTowards;
+
+
     private void Start()
     {
-    
+        numCommonInfinityEnergy = PlayerPrefs.GetInt("PowerUpIFC", numPowerUp);
+        numRareInfinityEnergy = PlayerPrefs.GetInt("PowerUpIFR", numPowerUp);
+        numLegendaryInfinityEnergy = PlayerPrefs.GetInt("PowerUpIFL", numPowerUp);
+
+        numCommonBytesPerClick = PlayerPrefs.GetInt("PowerUpBCC", numPowerUp);
+        numRareBytesPerClick = PlayerPrefs.GetInt("PowerUpBCR", numPowerUp);
+        numLegendaryBytesPerClick = PlayerPrefs.GetInt("PowerUpBCL", numPowerUp);
+
+    }
+
+    private void SavePowerUps()
+    {
+        PlayerPrefs.SetInt("PowerUpIFC", numCommonInfinityEnergy);
+        PlayerPrefs.SetInt("PowerUpIFR", numRareInfinityEnergy);
+        PlayerPrefs.SetInt("PowerUpIFL", numLegendaryInfinityEnergy);
+
+        PlayerPrefs.SetInt("PowerUpBCC", numCommonBytesPerClick);
+        PlayerPrefs.SetInt("PowerUpBCR", numRareBytesPerClick);
+        PlayerPrefs.SetInt("PowerUpBCL", numLegendaryBytesPerClick);
     }
 
 
@@ -44,11 +63,11 @@ public class PowerUps : MonoBehaviour
     {
         textNumCommonInfinityEnergy.text = "x" + numCommonInfinityEnergy;
         textNumRareInfinityEnergy.text = "x" + numRareInfinityEnergy;
-        textNumEpicInfinityEnergy.text = "x" + numEpicInfinityEnergy;
+        textNumEpicInfinityEnergy.text = "x" + numLegendaryInfinityEnergy;
 
         textNumCommonBytesPerClick.text = "x" + numCommonBytesPerClick;
         textNumRareBytesPerClick.text = "x" + numRareBytesPerClick;
-        textNumEpicBytesPerClick.text = "x" + numEpicBytesPerClick;
+        textNumEpicBytesPerClick.text = "x" + numLegendaryBytesPerClick;
 
 
     }
@@ -125,12 +144,13 @@ public class PowerUps : MonoBehaviour
                 moreTypesForByte(rarity);
                 numRareBytesPerClick--;
             }
-            else if (rarity == 3 && numEpicBytesPerClick > 0)
+            else if (rarity == 3 && numLegendaryBytesPerClick > 0)
             {
                 moreTypesForByte(rarity);
-                numEpicBytesPerClick--;
+                numLegendaryBytesPerClick--;
             }
             SetTexts();
+            SavePowerUps();
         }
     }
 
@@ -150,12 +170,13 @@ public class PowerUps : MonoBehaviour
                 noEnergyCost(rarity);
                 numRareInfinityEnergy--;
             }
-            else if (rarity == 3 && numEpicInfinityEnergy > 0)
+            else if (rarity == 3 && numLegendaryInfinityEnergy > 0)
             {
                 noEnergyCost(rarity);
-                numEpicInfinityEnergy--;
+                numLegendaryInfinityEnergy--;
             }
             SetTexts();
+            SavePowerUps();
         }
     }
 

@@ -18,6 +18,7 @@ public class GachaController : MonoBehaviour
 
     public int numTicketsSkins;
     public int numTicketsPowerUps;
+    public int numTicketsPassive;
 
     [SerializeField] PowerUps powerUps;
 
@@ -32,6 +33,7 @@ public class GachaController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI textTicketsSkin;
     [SerializeField] private TextMeshProUGUI textTicketsPowerUps;
+    [SerializeField] private TextMeshProUGUI textTicketsPassive;
 
     [Header("Game Objects of animations")]
     [SerializeField] private GameObject containerAnimationGacha;
@@ -210,7 +212,10 @@ public class GachaController : MonoBehaviour
             if (numGachaSkins == 10)
             {
                 numGachaSkins = 0;
-                skinsLsit[Random.Range(4, 4)].available = true;
+                numSkin = Random.Range(0, rareSkins.Length);
+                rareSkins[numSkin].available = true;
+                skinImage = rareSkins[numSkin].spriteSkin;
+               
             }
             else
             {
@@ -310,11 +315,11 @@ public class GachaController : MonoBehaviour
                     num = Random.Range(0, 2);
                     if (num == 1)
                     {
-                        powerUps.numEpicBytesPerClick++;
+                        powerUps.numLegendaryBytesPerClick++;
                         rewardSprite.sprite = listPowerUpSprites[2];
                     }
                     else {
-                        powerUps.numEpicInfinityEnergy++;
+                        powerUps.numLegendaryInfinityEnergy++;
                         rewardSprite.sprite = listPowerUpSprites[5];
                     }
                    
