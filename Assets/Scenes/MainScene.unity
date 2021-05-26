@@ -7034,7 +7034,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: available
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -7397,8 +7397,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.5518, y: -479.1}
-  m_SizeDelta: {x: 551.2196, y: 117.570404}
+  m_AnchoredPosition: {x: -18.295, y: -479.1}
+  m_SizeDelta: {x: 511.52673, y: 117.570404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &506229484
 MonoBehaviour:
@@ -9755,7 +9755,7 @@ Animator:
   m_GameObject: {fileID: 670120705}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8a82499557ba8be45940b1c45a70f915, type: 2}
+  m_Controller: {fileID: 9100000, guid: 96723a2fa69aca8409bc122a28fbbd3e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12637,7 +12637,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: available
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -12977,7 +12977,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913724694}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d33285d0983835d4f9fb79485ed411db, type: 2}
   m_CullingMode: 0
@@ -13725,8 +13725,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729435314}
   m_HandleRect: {fileID: 729435313}
   m_Direction: 0
-  m_Value: 0.5000092
-  m_Size: 0.44070563
+  m_Value: 0
+  m_Size: 0.40527943
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14566,7 +14566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1083165247
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14645,7 +14645,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1083165250}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1445307967}
+        m_MethodName: ChargeAnimations
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1083165250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14721,7 +14732,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: potato
+      value: Grafica
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -15183,7 +15194,7 @@ PrefabInstance:
     - target: {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
         type: 3}
       propertyPath: available
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
         type: 3}
@@ -18972,7 +18983,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Ventilando
+      value: Grafic V2
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -19283,6 +19294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30275c35614204648a3b5978b1da129c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberController: {fileID: 1445307967}
   panels:
   - {fileID: 1604207973}
   - {fileID: 1661506939}
@@ -19668,7 +19680,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: available
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -20134,7 +20146,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511543794}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 472a4c10634227847a8cb1c17568d81b, type: 2}
   m_CullingMode: 0
@@ -21846,8 +21858,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0075683594, y: 0.000022888184}
-  m_SizeDelta: {x: 826.45526, y: 0}
+  m_AnchoredPosition: {x: 448.68768, y: 0.0000076293945}
+  m_SizeDelta: {x: 897.37476, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616636390
 MonoBehaviour:

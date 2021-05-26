@@ -58,6 +58,7 @@ public class NumberController : MonoBehaviour
     void Start()
     {
         RecargarDatosSkin();
+        ChargeAnimations();
         audioManager = FindObjectOfType<AudioManager>();
         SetMoney();
         SetSkins();
@@ -83,14 +84,22 @@ public class NumberController : MonoBehaviour
             else s.equiped = false;
             print(PlayerPrefs.GetInt("equiped" + i, 9));
             i++;
+
+            if (i <= 4)
+            {
+                s.available=true;
+            }
         }
 
-        i = 0;
-        foreach (int intt in whatSkinsPut)
+        if (!(PlayerPrefs.GetInt("whatSkinPut1", 1) == 1))
         {
-            whatSkinsPut[i] = PlayerPrefs.GetInt("whatSkinPut" + i, 1);
+            i = 0;
+            foreach (int intt in whatSkinsPut)
+            {
+                whatSkinsPut[i] = PlayerPrefs.GetInt("whatSkinPut" + i, 1);
 
-            i++;
+                i++;
+            }
         }
     }
 
@@ -107,7 +116,6 @@ public class NumberController : MonoBehaviour
 
             if (s.equiped)
             {
-                print("holis");
                 PlayerPrefs.SetInt("equiped" + i, 1);
             }
             else PlayerPrefs.SetInt("equiped" + i, 0);
@@ -202,8 +210,6 @@ public class NumberController : MonoBehaviour
        for(int i=0; i<wherePutSkins.Length; i++)
         {
             wherePutSkins[i].sprite = allSkins.transform.GetChild(whatSkinsPut[i]).gameObject.GetComponent<Skin>().spriteSkin;
-            print("pene" + whatSkinsPut[i]);
-            print(allSkins.transform.GetChild(whatSkinsPut[i]).gameObject.GetComponent<Skin>().names);
         }
  //       wherePutSkins[0].sprite = allSkins.transform.GetChild(whatSkinsPut[0]).gameObject.GetComponent<Skin>().spriteSkin;
 //        print(allSkins.transform.GetChild(whatSkinsPut[0]).gameObject.GetComponent<Skin>().spriteSkin);
@@ -289,6 +295,11 @@ public class NumberController : MonoBehaviour
         GuardarDatosSkin();
     }
 
+    private int animatedE;
+    private int animatedP;
+    private int animatedS;
+    private int animatedG;
+
     private void DesequipAll(Skin skin)
     {
         switch (numComponenet)
@@ -299,11 +310,17 @@ public class NumberController : MonoBehaviour
                 SetSkinLayaout(containerEnergy, laListaDeSkinsEnergy);
                 if (skin.isAnimated)
                 {
-                    energyAnimator.enabled = true;
-                    SetOtherEnergyInFalse();
-                    energyAnimator.SetBool(skin.names, true);
-                    
-                } else energyAnimator.enabled = false;
+                    EnableAnimatorAndPlay(skin.names, energyAnimator);
+                    PlayerPrefs.SetString("energy", skin.names);
+                    animatedE = 1;
+                    PlayerPrefs.SetInt("animatedE", animatedE);
+                }
+                else
+                {
+                    energyAnimator.enabled = false;
+                    animatedE = 0;
+                    PlayerPrefs.SetInt("animatedE", animatedE);
+                }
                 break;
             case 1:
                 CleanEquip(laListaDeSkinsProcessor);
@@ -311,12 +328,17 @@ public class NumberController : MonoBehaviour
                 SetSkinLayaout(containerProcessor, laListaDeSkinsProcessor);
                 if (skin.isAnimated)
                 {
-                    processorAnimator.enabled = true;
-                    SetOtherProcessorInFalse();
-                    processorAnimator.SetBool(skin.names, true);
-
+                    EnableAnimatorAndPlay(skin.names, processorAnimator);
+                    PlayerPrefs.SetString("proces", skin.names);
+                    animatedP = 1;
+                    PlayerPrefs.SetInt("animatedP", animatedP);
                 }
-                else processorAnimator.enabled = false;
+                else
+                {
+                    animatedP = 0;
+                    PlayerPrefs.SetInt("animatedP", animatedP);
+                    processorAnimator.enabled = false;
+                }
                 break;
             case 2:
                 CleanEquip(laListaDeSkinsStorage);
@@ -324,12 +346,17 @@ public class NumberController : MonoBehaviour
                 SetSkinLayaout(containerStorage, laListaDeSkinsStorage);
                 if (skin.isAnimated)
                 {
-                    storageAnimator.enabled = true;
-                    SetOtherStorageInFalse();
-                    storageAnimator.SetBool(skin.names, true);
-
+                    EnableAnimatorAndPlay(skin.names, storageAnimator);
+                    PlayerPrefs.SetString("storage", skin.names);
+                    animatedS = 1;
+                    PlayerPrefs.SetInt("animatedS", animatedS);
                 }
-                else storageAnimator.enabled = false;
+                else {
+                    animatedS = 0;
+                    storageAnimator.enabled = false;
+                    PlayerPrefs.SetInt("animatedS", animatedS);
+                }
+       
                 break;
             case 3:
                 CleanEquip(laListaDeSkinsGrafic);
@@ -337,12 +364,16 @@ public class NumberController : MonoBehaviour
                 SetSkinLayaout(containerGrafic, laListaDeSkinsGrafic);
                 if (skin.isAnimated)
                 {
-                    graphicAnimator.enabled = true;
-                    SetOtherGraficInFalse();
-                    graphicAnimator.SetBool(skin.names, true);
-
+                    EnableAnimatorAndPlay(skin.names, graphicAnimator);
+                    PlayerPrefs.SetString("grafic", skin.names);
+                    animatedG = 1;
+                    PlayerPrefs.SetInt("animatedG", animatedG);
                 }
-                else graphicAnimator.enabled = false;
+                else {
+                    graphicAnimator.enabled = false;
+                    animatedG = 0;
+                    PlayerPrefs.SetInt("animatedG", animatedG);
+                }
                 break;
         }
     }
@@ -355,26 +386,42 @@ public class NumberController : MonoBehaviour
         }
     }
 
-    private void SetOtherEnergyInFalse()
+    public void ChargeAnimations()
     {
-        energyAnimator.SetBool("Hamster", false);
-        energyAnimator.SetBool("Uranio", false);
-        energyAnimator.SetBool("fiufiu", false);
+        if (PlayerPrefs.GetInt("animatedG") == 1)
+        {
+            graphicAnimator.enabled = true;
+            graphicAnimator.SetBool("Normal", false);
+            graphicAnimator.SetTrigger("Grafic V2");
+        }
+
+        if (PlayerPrefs.GetInt("animatedS") == 1)
+        {
+            numComponenet = 2;
+            storageAnimator.enabled = true;
+            storageAnimator.SetBool("Normal", false);
+            storageAnimator.SetTrigger("CD");
+            
+        }
+
+
+        if (PlayerPrefs.GetInt("animatedE") ==1)
+        {
+            numComponenet = 0;
+            EnableAnimatorAndPlay(PlayerPrefs.GetString("energy"), energyAnimator);
+        }
+
+
+        
     }
 
-    private void SetOtherProcessorInFalse()
+    private void EnableAnimatorAndPlay(string nameSkin, Animator animator)
     {
-        processorAnimator.SetBool("CD", false);
-    }
-    private void SetOtherStorageInFalse()
-    {
-        storageAnimator.SetBool("Hamster", false);
-    }
-    private void SetOtherGraficInFalse()
-    {
-        graphicAnimator.SetBool("Ventilando", false);
-    }
 
+        animator.enabled = true;
+        energyAnimator.SetBool("Normal", false);
+        animator.SetTrigger(nameSkin);
+    }
 
     public void SetSkinLayaout(GameObject[] llistacontainers, Skin[] listaSkins)
     {
