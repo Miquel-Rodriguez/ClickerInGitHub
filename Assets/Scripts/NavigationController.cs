@@ -8,7 +8,7 @@ using GooglePlayGames;
 public class NavigationController : MonoBehaviour
 {
 
-
+    [SerializeField] NumberController numberController;
     [SerializeField] GameObject[] panels;
     [SerializeField] GameObject ClickPanel;
     [SerializeField] GameObject PcPanel;
@@ -63,6 +63,7 @@ public class NavigationController : MonoBehaviour
             canvas.SetActive(false);
         }else canvas.SetActive(true);
         audioManager.Play("ButtonClick");
+        numberController.ChargeAnimations();
     }
 
     public void ChangeScene(int numScene)
