@@ -45,22 +45,11 @@ public class Storage : Component
     public void LevelUP()
     {
         lvl++;
-
-
-        if (lvl % 5 == 0)
-        {
-            multiplier *= 2;
   
-        }
-        else
-        {
-            multiplier *=1.1f;
-        }
 
+        cost = cost * (cost / 4);
 
-        cost = cost * (cost / 2);
-
-        maxBitesCapacity += multiplier;
+        maxBitesCapacity += cost;
 
 
         SetDescription();
