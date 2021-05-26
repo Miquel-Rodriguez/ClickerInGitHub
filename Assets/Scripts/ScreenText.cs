@@ -31,8 +31,6 @@ public class ScreenText : MonoBehaviour
                 aux1++;
             break;
         }
-        Debug.Log(i);
-        Debug.Log(code.Length);
         if (i == code.Length + 1)
         {
             randomString();

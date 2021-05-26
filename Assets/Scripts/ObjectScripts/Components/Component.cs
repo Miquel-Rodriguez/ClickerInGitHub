@@ -9,6 +9,7 @@ public class Component : MonoBehaviour
     public float cost;
     public float basecost;
     public int lvl;
+    public int passives;
 
     [HideInInspector] public string statsDescription;
 
