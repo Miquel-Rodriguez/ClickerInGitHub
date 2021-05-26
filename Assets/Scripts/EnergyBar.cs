@@ -20,7 +20,14 @@ public class EnergyBar : MonoBehaviour
     [SerializeField] private GameObject eventSystem;
 
 	[SerializeField] private SourceEnergy sourceEnergyComponent;
-	void Start()
+
+    private void Awake()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
+
+    void Start()
 	{
 		currentEnergy = sourceEnergyComponent.maxEnergy;
         currentEnergy = PlayerPrefs.GetFloat("EnergyInBar", sourceEnergyComponent.maxEnergy);
