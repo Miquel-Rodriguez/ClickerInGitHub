@@ -11,9 +11,6 @@ public class GenerateMissions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        readFile("Tier1.txt",descsTier1);
-        readFile("Tier2.txt",descTier2);
-        readFile("Tier3.txt", descTier3);
         generate5Missions();
         
     }
