@@ -36,7 +36,7 @@ public class Storage : Component
         PlayerPrefs.SetInt("LVLStorage", lvl);
     }
 
-    private void SetStats()
+    public void SetStats()
     {
         maxBitesCapacity = baseMaxBitesCapacity;
         cost = basecost;

@@ -32,7 +32,7 @@ public class Graphic : Component
         PlayerPrefs.SetInt("LVLGraphic", lvl);
     }
 
-    private void SetStats()
+    public void SetStats()
     {
         bitesForSeocnd = baseBitesPerSecond;
         cost = basecost;

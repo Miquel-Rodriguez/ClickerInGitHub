@@ -39,7 +39,7 @@ public class ProcessorComponent : Component
         PlayerPrefs.SetInt("LVLProcessor", lvl);
     }
 
-    private void SetStats()
+    public void SetStats()
     {
         bitesPerClick = baseBitesPerClick;
         energyPerClick = baseEnergyPerClick;

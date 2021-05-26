@@ -5,20 +5,21 @@ using UnityEngine;
 public class BuyHardCoin : MonoBehaviour
 {
 
-    public int numShop;
     [SerializeField] NumberController coins;
 
-   public void buyHardCoin()
+   public void buy2000HardCoin()
     {
-        switch (numShop)
-        {
-            case 1:
-                IAPManager.Instance.BuyProduct(ShopProductNames.dogecoinsx2000, ProductBoughtCallback);
-                break;
-            case 2:
-                IAPManager.Instance.BuyProduct(ShopProductNames.dogecoinsx5000, ProductBoughtCallback);
-                break;
-        }
+       
+          IAPManager.Instance.BuyProduct(ShopProductNames.dogecoinsx2000, ProductBoughtCallback);
+             
+    }
+
+    public void buy5000HardCoin()
+    {
+       
+          IAPManager.Instance.BuyProduct(ShopProductNames.dogecoinsx5000, ProductBoughtCallback);
+              
+        
     }
 
     private void ProductBoughtCallback(IAPOperationStatus status, string message, StoreProduct product)

@@ -37,7 +37,7 @@ public class SourceEnergy : Component
         PlayerPrefs.SetInt("LVLEnergy", lvl);
     }
 
-    private void SetStats()
+    public void SetStats()
     {
         saveEnergy = baseSaveEnergy;
         cost = basecost;
