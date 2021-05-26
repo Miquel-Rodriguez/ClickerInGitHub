@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class ShopController : MonoBehaviour
 {
+    public TextMeshProUGUI dollarText, passiveText, dogeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class ShopController : MonoBehaviour
                     break;
             }
         }
+        dollarText.SetText(GetComponent<NumberController>().numDolars.ToString());
     }
 
     public void buyItemHardCurrency(ShopItem item)
@@ -51,5 +54,24 @@ public class ShopController : MonoBehaviour
                     break;
             }
         }
+        dogeText.SetText(GetComponent<NumberController>().dogeCoins.ToString());
+    }
+
+    public void buyItemPassiveMoney(ShopItem item) {
+        int dinero = GetComponent<NumberController>().numPasiveMoney;
+        if (dinero >= item.price)
+        {
+            GetComponent<NumberController>().numPasiveMoney -= item.price;
+            switch (item.itemID)
+            {
+                case 2:
+                    //Compra de pasiva
+                    break;
+                case 3:
+                    //Compra de pasiva
+                    break;
+            }
+        }
+        passiveText.SetText(GetComponent<NumberController>().numPasiveMoney.ToString());
     }
 }
