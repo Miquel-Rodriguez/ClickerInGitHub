@@ -28,6 +28,9 @@ public class ShopController : MonoBehaviour
                 case 1:
                     GetComponent<GachaController>().numTicketsPowerUps += item.quantity;
                     break;
+                case 2:
+                    GetComponent<GachaController>().numTicketsPassive += item.quantity;
+                    break;
             }
         }
     }

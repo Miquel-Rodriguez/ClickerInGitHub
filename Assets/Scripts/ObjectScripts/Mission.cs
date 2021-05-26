@@ -66,7 +66,7 @@ public class Mission : MonoBehaviour
     public void missionTier() {
         switch (tier) {
             case 1:
-                requiredBits = Random.Range(1f, 160f);
+                requiredBits = Random.Range(8f, 160f);
                 this.gameObject.GetComponent<Image>().sprite = tier1;
                 break;
             case 2:
