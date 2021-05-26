@@ -15,14 +15,32 @@ public class SourceEnergy : Component
 
     private void Start()
     {
+
         SetStats();
         SetDescription();
         energyBar.SetRealEnergyCost();
+
+        int olvl = PlayerPrefs.GetInt("LVLEnergy", 1);
+
+        if (olvl != 1)
+        {
+            for (int i = 1; i < olvl; i++)
+        {
+            LevelUP();
+        }
+        }
+
+    }
+
+    public void SaveLvl()
+    {
+        PlayerPrefs.SetInt("LVLEnergy", lvl);
     }
 
     private void SetStats()
     {
         saveEnergy = baseSaveEnergy;
+        cost = basecost;
     }
 
     public void LevelUP()
@@ -42,6 +60,7 @@ public class SourceEnergy : Component
         cost = cost * (cost / 2);
 
         SetDescription();
+        SaveLvl();
     }
 
     public void SetDescription()

@@ -17,14 +17,33 @@ public class ProcessorComponent : Component
 
     private void Start()
     {
+
         SetStats();
         SetDescription();
+
+        
+        int olvl = PlayerPrefs.GetInt("LVLProcessor", 1);
+
+        if (olvl != 1)
+        {
+            for (int i = 1; i < olvl; i++)
+        {
+            LevelUP();
+        }
+        }
+
+    }
+
+    public void SaveLvl()
+    {
+        PlayerPrefs.SetInt("LVLProcessor", lvl);
     }
 
     private void SetStats()
     {
         bitesPerClick = baseBitesPerClick;
         energyPerClick = baseEnergyPerClick;
+        cost = basecost;
     }
 
     public void LevelUP()
@@ -49,6 +68,7 @@ public class ProcessorComponent : Component
         energyPerClick += energyMultiplier;
 
         SetDescription();
+        SaveLvl();
     }
 
     public void SetDescription()

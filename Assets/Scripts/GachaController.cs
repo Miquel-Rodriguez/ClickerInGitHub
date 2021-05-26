@@ -70,6 +70,14 @@ public class GachaController : MonoBehaviour
 
     private void Start()
     {
+        numTicketsSkins = PlayerPrefs.GetInt("TicketsSkin",1);
+        numTicketsPowerUps = PlayerPrefs.GetInt("TicketsPowerUp", 0);
+        numTicketsPassive = PlayerPrefs.GetInt("TicketsPassive", 0);
+
+        numGachaSkins = PlayerPrefs.GetInt("numSkinsGa", 0);
+
+
+
         animatorShake = shakeGameObject.GetComponent<Animator>();
         fallBallAnimator = fallBallGameObject.GetComponent<Animator>();
 
@@ -80,6 +88,17 @@ public class GachaController : MonoBehaviour
         {
             print("skin");
         }
+    }
+
+
+    private void SaveTickets()
+    {
+        PlayerPrefs.SetInt("TicketsSkin", numTicketsSkins);
+        PlayerPrefs.SetInt("TicketsPowerUp", numTicketsPowerUps);
+        PlayerPrefs.SetInt("TicketsPassive", numTicketsPassive);
+
+        PlayerPrefs.SetInt("numSkinsGa", numGachaSkins);
+
     }
 
     private void PreapreAndWait()
@@ -168,6 +187,7 @@ public class GachaController : MonoBehaviour
         containerRewardAnimation.SetActive(false);
         containerAnimationGacha.SetActive(false);
         numberController.GuardarDatosSkin();
+        SaveTickets();
     }
   
 
@@ -334,6 +354,7 @@ public class GachaController : MonoBehaviour
     {
         textTicketsPowerUps.text = numTicketsPowerUps.ToString();
         textTicketsSkin.text = numTicketsSkins.ToString();
+        textTicketsPassive.text = numTicketsPassive.ToString();
 
     }
 

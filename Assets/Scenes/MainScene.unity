@@ -5904,6 +5904,7 @@ MonoBehaviour:
   description: this is a processor
   cName: Processaor
   cost: 15
+  basecost: 15
   lvl: 1
   statsDescription: 
   baseBitesPerClick: 1
@@ -12373,6 +12374,7 @@ MonoBehaviour:
   description: this is a storage
   cName: Storage
   cost: 12
+  basecost: 12
   lvl: 1
   statsDescription: 
   baseMaxBitesCapacity: 200
@@ -12551,6 +12553,7 @@ MonoBehaviour:
   description: that give energy for second, less cost for click and more max energy
   cName: Source Energy
   cost: 10
+  basecost: 10
   lvl: 1
   statsDescription: 
   baseSaveEnergy: 1
@@ -16192,6 +16195,7 @@ MonoBehaviour:
   description: this is a grapich
   cName: Graphic
   cost: 15
+  basecost: 15
   lvl: 1
   statsDescription: 
   baseBitesPerSecond: 0
@@ -19196,6 +19200,7 @@ MonoBehaviour:
   - {fileID: 2119971946}
   numTicketsSkins: 11
   numTicketsPowerUps: 11
+  numTicketsPassive: 0
   powerUps: {fileID: 1445307970}
   allSkins: {fileID: 1438149544}
   buttonGachaSkin: {fileID: 1862206799}
@@ -19203,6 +19208,7 @@ MonoBehaviour:
   NoTicketsText: {fileID: 821721689}
   textTicketsSkin: {fileID: 1423257266}
   textTicketsPowerUps: {fileID: 1405588940}
+  textTicketsPassive: {fileID: 0}
   containerAnimationGacha: {fileID: 2062486611}
   shakeGameObject: {fileID: 285053703}
   fallBallGameObject: {fileID: 1666416697}
@@ -19233,7 +19239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6351e0c9687a71249a71878693d0b37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bits: {fileID: 1445307967}
   numPowerUp: 0
   energy: {fileID: 931928365}
   processorComponent: {fileID: 418029506}
@@ -19242,13 +19247,13 @@ MonoBehaviour:
   textNumEpicInfinityEnergy: {fileID: 579936891}
   numCommonInfinityEnergy: 0
   numRareInfinityEnergy: 0
-  numEpicInfinityEnergy: 0
+  numLegendaryInfinityEnergy: 0
   textNumCommonBytesPerClick: {fileID: 1894073357}
   textNumRareBytesPerClick: {fileID: 719662867}
   textNumEpicBytesPerClick: {fileID: 1710141148}
   numCommonBytesPerClick: 1
   numRareBytesPerClick: 1
-  numEpicBytesPerClick: 1
+  numLegendaryBytesPerClick: 0
   listMoveTowards:
   - {fileID: 489782056}
   - {fileID: 1008627501}
