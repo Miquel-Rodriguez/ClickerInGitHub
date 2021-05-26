@@ -57,6 +57,7 @@ public class NumberController : MonoBehaviour
     public int dogeCoins;
     void Start()
     {
+        currentBits = PlayerPrefs.GetFloat("TotalBits",0);
         RecargarDatosSkin();
         ChargeAnimations();
         audioManager = FindObjectOfType<AudioManager>();
@@ -158,8 +159,8 @@ public class NumberController : MonoBehaviour
             currentBits = storage.maxBitesCapacity;
             bitText.text = BitUtil.StringFormat(currentBits, BitUtil.TextFormat.Long) + "/" + BitUtil.StringFormat(storage.maxBitesCapacity, BitUtil.TextFormat.Long);
         }
-       
-        
+
+        PlayerPrefs.SetFloat("TotalBits", currentBits);
     }
 
     public void incrementalScore()

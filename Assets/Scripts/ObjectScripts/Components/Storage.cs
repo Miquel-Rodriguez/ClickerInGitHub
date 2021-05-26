@@ -8,15 +8,38 @@ public class Storage : Component
     public float maxBitesCapacity;
     [SerializeField] private float multiplier;
 
+    private void Awake()
+    {
+      //  PlayerPrefs.DeleteAll();
+    }
+
     private void Start()
     {
         SetStats();
         SetDescription();
+
+        int olvl = PlayerPrefs.GetInt("LVLStorage",1);
+
+        if(olvl != 1)
+        {
+            for (int i = 1; i < olvl; i++)
+            {
+                LevelUP();
+            }
+        }
+       
+
+    }
+
+    public void SaveLvl()
+    {
+        PlayerPrefs.SetInt("LVLStorage", lvl);
     }
 
     private void SetStats()
     {
         maxBitesCapacity = baseMaxBitesCapacity;
+        cost = basecost;
     }
 
     public void LevelUP()
@@ -41,6 +64,7 @@ public class Storage : Component
 
 
         SetDescription();
+        SaveLvl();
     }
 
     public void SetDescription()

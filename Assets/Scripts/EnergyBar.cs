@@ -23,7 +23,8 @@ public class EnergyBar : MonoBehaviour
 	void Start()
 	{
 		currentEnergy = sourceEnergyComponent.maxEnergy;
-		SetMaxHealth(sourceEnergyComponent.maxEnergy);
+        currentEnergy = PlayerPrefs.GetFloat("EnergyInBar", sourceEnergyComponent.maxEnergy);
+        SetMaxHealth(sourceEnergyComponent.maxEnergy);
 	
 	}
 
@@ -44,6 +45,7 @@ public class EnergyBar : MonoBehaviour
 			currentEnergy += energyForSecond * Time.deltaTime;
 			SetHealth(currentEnergy);
 		}
+        PlayerPrefs.SetFloat("EnergyInBar", currentEnergy);
 	}
 	
 
