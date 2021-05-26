@@ -9,7 +9,7 @@ public class ScreenText : MonoBehaviour
     private string currentText = "";
     private int random;
     private string code = "";
-    private string ex1 = "from twisted.internet import reactor\nfrom twisted.internet.protocol import Protocol, ClientFactory\nclass SimpleClient(Protocol):\ndef connectionMade(self):\nself.transport.write('Conexion Establecida!!')\ndef dataReceived(self, data):\nprint 'Server Said: ', data\nself.transport.loseConnection()\ndef connectionLost(self, reason):\nprint 'Connection Lost %s ' %(reason)\nclass SimpleClientFactory(ClientFactory):\n protocol = SimpleClient\ndef clientConnectionFailed(self, connector, reason) :\nprint 'Connection Failed!!'\n reactor.stop()\n print 'Connection Lost'\nreactor.stop()\nreactor.connectTCP('localhost', 8000, SimpleClientFactory())\nreactor.run()";
+    private string ex1 = "from twisted.internet import reactor\nfrom twisted.internet.protocol import Protocol, ClientFactory\nclass SimpleClient(Protocol):\ndef connectionMade(self):\ndef dataReceived(self, data):\nprint 'Server Said: ', data\nself.transport.loseConnection()\ndef connectionLost(self, reason):\nprint 'Connection Lost %s ' %(reason)\nclass SimpleClientFactory(ClientFactory):\n protocol = SimpleClient\ndef clientConnectionFailed(self, connector, reason) :\nprint 'Connection Failed!!'\n reactor.stop()\nreactor.stop()\nreactor.connectTCP('localhost', 8000, SimpleClientFactory())\nreactor.run()";
     private string ex2 = "hola";
     private string ex3 = "hola222";
     private string ex4 = "a\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na";
@@ -22,10 +22,10 @@ public class ScreenText : MonoBehaviour
     }
     IEnumerator showText()
     {
-        int i = 0;
-        for ( i = aux1 +1; i<ex1.Length +1; i++)
+        int i;
+        for ( i = aux1 +1; i<code.Length +1; i++)
         {
-                currentText = ex1.Substring(0, i);
+                currentText = code.Substring(0, i);
                 this.GetComponent<Text>().text = currentText;
                 yield return new WaitForSeconds(delay);
                 aux1++;
