@@ -51,6 +51,7 @@ public class Storage : Component
         cost = cost * (cost / 4);
 
         maxBitesCapacity += cost;
+        
 
 
         SetDescription();

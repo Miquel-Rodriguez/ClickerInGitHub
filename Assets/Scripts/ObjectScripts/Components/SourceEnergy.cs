@@ -51,11 +51,11 @@ public class SourceEnergy : Component
         if (lvl % 5 == 0)
         {
             print(lvl % 5);
-            increment *= 2;
+            increment *= 10;
         }
 
 
-        saveEnergy += increment;
+        saveEnergy += increment*3;
         energyBar.SetRealEnergyCost();
 
         cost = cost * (cost / 2);
@@ -66,6 +66,6 @@ public class SourceEnergy : Component
 
     public void SetDescription()
     {
-        statsDescription = "save energy per click: " + saveEnergy;
+        statsDescription = "Less energy per tap: " + saveEnergy;
     }
 }

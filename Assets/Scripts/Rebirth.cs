@@ -22,77 +22,83 @@ public class Rebirth : MonoBehaviour
 
     private void Update()
     {
-        /* if (se hace el gacha de rebirth)
+        /*
+         if (se hace el gacha de rebirth)
            {
              numRebirths++;
              textRebirth.text = numRebirths * 7 + normalRebirth;
-             lvlGraphic.baseBitesPerSecond += lvlGraphic.baseBitesPerSecond * 0.7f;
-             lvlGraphic.bitesForSeocnd += lvlGraphic.bitesForSeocnd * 0.7f;
-
-           }
+             lvlGraphic.baseBitesPerSecond += lvlGraphic.baseBitesPerSecond * (numRebirths * 0.7f);
+             lvlGraphic.bitesForSeocnd += lvlGraphic.bitesForSeocnd * (numRebirths * 0.7f);
+             lvlEnergy.baseSaveEnergy += lvlEnergy.baseSaveEnergy * (numRebirths * 0.7f);
+             lvlEnergy.saveEnergy += lvlEnergy.saveEnergy * (numRebirths * 0.7f);
+             lvlStorage.baseMaxBitesCapacity += lvlStorage.baseMaxBitesCapacity * (numRebirths * 0.7f);
+             lvlProcessor.baseBitesPerClick += lvlProcessor.baseBitesPerClick * (numRebirths * 0.7f);
+             lvlProcessor.bitesPerClick += lvlProcessor.baseBitesPerClick * (numRebirths * 0.7f);
+        }
         */
+        
         textMoneyRebirth.text = firstTextMoney + rebirthMoneyText + secondTextMoney;
     }
 
     public void resetAll()
     {
+       
         if(bits.currentBits < 10000)
         {
             //0 moneda de rebirth
         }
         if(bits.currentBits > 10000 && bits.currentBits< 100000)
         {
-            bits.numPasiveMoney+=2;
-            rebirthMoneyText = 2;
+            bits.numPasiveMoney+=6;
+            rebirthMoneyText = 6;
         }
         if (bits.currentBits > 100000 && bits.currentBits < 1000000)
         {
-            bits.numPasiveMoney+=4;
-            rebirthMoneyText = 4;
-        }
-        if (bits.currentBits > 1000000 && bits.currentBits < 10000000)
-        {
-            bits.numPasiveMoney += 6;
-            rebirthMoneyText = 6;
-        }
-        if (bits.currentBits > 10000000 && bits.currentBits < 100000000)
-        {
-            bits.numPasiveMoney += 8;
-            rebirthMoneyText = 8;
-        }
-        if (bits.currentBits > 100000000 && bits.currentBits < 1000000000)
-        {
-            bits.numPasiveMoney += 10;
-            rebirthMoneyText = 10;
-        }
-        if (bits.currentBits > 1000000000 && bits.currentBits < 10000000000)
-        {
-            bits.numPasiveMoney += 12;
+            bits.numPasiveMoney+=12;
             rebirthMoneyText = 12;
         }
-        if (bits.currentBits > 10000000000 && bits.currentBits < 100000000000)
-        {
-            bits.numPasiveMoney += 14;
-            rebirthMoneyText = 14;
-        }
-        if (bits.currentBits > 100000000000 && bits.currentBits < 1000000000000)
-        {
-            bits.numPasiveMoney += 16;
-            rebirthMoneyText = 16;
-        }
-        if (bits.currentBits > 1000000000000 && bits.currentBits < 10000000000000)
+        if (bits.currentBits > 1000000 && bits.currentBits < 10000000)
         {
             bits.numPasiveMoney += 18;
             rebirthMoneyText = 18;
         }
+        if (bits.currentBits > 10000000 && bits.currentBits < 100000000)
+        {
+            bits.numPasiveMoney += 24;
+            rebirthMoneyText = 24;
+        }
+        if (bits.currentBits > 100000000 && bits.currentBits < 1000000000)
+        {
+            bits.numPasiveMoney += 30;
+            rebirthMoneyText = 30;
+        }
+        if (bits.currentBits > 1000000000 && bits.currentBits < 10000000000)
+        {
+            bits.numPasiveMoney += 36;
+            rebirthMoneyText = 36;
+        }
+        if (bits.currentBits > 10000000000 && bits.currentBits < 100000000000)
+        {
+            bits.numPasiveMoney += 42;
+            rebirthMoneyText = 42;
+        }
+        if (bits.currentBits > 100000000000 && bits.currentBits < 1000000000000)
+        {
+            bits.numPasiveMoney += 48;
+            rebirthMoneyText = 48;
+        }
+        if (bits.currentBits > 1000000000000 && bits.currentBits < 10000000000000)
+        {
+            bits.numPasiveMoney += 56;
+            rebirthMoneyText = 56;
+        }
         if (bits.currentBits > 10000000000000)
         {
-            bits.numPasiveMoney += 20;
-            rebirthMoneyText = 20;
+            bits.numPasiveMoney += 62;
+            rebirthMoneyText = 62;
         }
         energyBar.currentEnergy = lvlEnergy.maxEnergy;
         energyBar.SetMaxHealth(lvlEnergy.maxEnergy);
-        //  energyBar.SetHealth(lvlEnergy.maxEnergy);
 
         bits.currentBits = 0;
         lvlGraphic.lvl = 1;
