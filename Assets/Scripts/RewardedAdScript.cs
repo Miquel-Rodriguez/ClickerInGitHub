@@ -83,7 +83,8 @@ public class RewardedAdScript : MonoBehaviour
             "HandleRewardedAdRewarded event received for "
                         + amount.ToString() + " " + type);
 
-        gacha.numTicketsSkins++;
+        gacha.numTicketsPowerUps++;
+        gacha.SetNumTickets();
     }
 
     public void CreateAndLoadReward()

@@ -392,7 +392,7 @@ public class GachaController : MonoBehaviour
         SetNumTickets();
     }
 
-    private void SetNumTickets()
+    public void SetNumTickets()
     {
         textTicketsPowerUps.text = numTicketsPowerUps.ToString();
         textTicketsSkin.text = numTicketsSkins.ToString();
