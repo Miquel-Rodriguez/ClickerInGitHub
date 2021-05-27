@@ -46,17 +46,18 @@ public class Graphic : Component
 
         if (lvl % 5 == 0)
         {
-            bitesPerSecondMultiplier *= 2;
+            bitesPerSecondMultiplier *= 6;
         }
         else
         {
-            bitesPerSecondMultiplier *= 1.1f;
+            bitesPerSecondMultiplier *= 2f;
         }
 
 
         cost = cost * (cost / 2);
 
         bitesForSeocnd += bitesPerSecondMultiplier;
+        
 
         SetDescription();
         SaveLvl();

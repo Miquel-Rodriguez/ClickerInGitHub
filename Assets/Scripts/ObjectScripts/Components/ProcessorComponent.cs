@@ -53,13 +53,13 @@ public class ProcessorComponent : Component
 
         if (lvl % 5 == 0)
         {
-            energyMultiplier *=2;
-            bitesMultiplier *=2;
+            energyMultiplier *=10;
+            bitesMultiplier *=10;
         }
         else
         {
-            bitesMultiplier *= 1.1f;
-            energyMultiplier *= 1.1f;
+            bitesMultiplier *= 3f;
+            energyMultiplier *= 3f;
         }
 
 
