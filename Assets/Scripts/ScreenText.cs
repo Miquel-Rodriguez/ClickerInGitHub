@@ -13,7 +13,6 @@ public class ScreenText : MonoBehaviour
     private string ex2 = "hola";
     private string ex3 = "hola222";
     private string ex4 = "a\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na";
-    bool qadaws = false;
     int aux1 = 0;
 
     private void Start()
