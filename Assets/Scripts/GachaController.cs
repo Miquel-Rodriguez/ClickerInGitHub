@@ -63,9 +63,14 @@ public class GachaController : MonoBehaviour
 
     [SerializeField] private AudioManager audioManager;
 
+    [SerializeField] private GameObject particulasCorazones;
+
+    private bool activeParticles;
+
     private void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        particulasCorazones.SetActive(false);
     }
 
     private void Start()
@@ -96,7 +101,7 @@ public class GachaController : MonoBehaviour
         PlayerPrefs.SetInt("TicketsSkin", numTicketsSkins);
         PlayerPrefs.SetInt("TicketsPowerUp", numTicketsPowerUps);
         PlayerPrefs.SetInt("TicketsPassive", numTicketsPassive);
-
+        
         PlayerPrefs.SetInt("numSkinsGa", numGachaSkins);
 
     }
@@ -147,6 +152,7 @@ public class GachaController : MonoBehaviour
             topBall.SetInteger("rarity", rarity);
             botBall.SetInteger("rarity", rarity);
 
+            ActiveParticles();
 
             yield return new WaitForSeconds(0.5f);
             buttonGoBackReward.enabled = true;
@@ -177,17 +183,32 @@ public class GachaController : MonoBehaviour
         topBall.SetInteger("rarity", rarity);
         botBall.SetInteger("rarity", rarity);
 
+
+        ActiveParticles();
+
+
         yield return new WaitForSeconds(0.5f);
         buttonGoBackReward.enabled = true;
     }
 
+    private void ActiveParticles()
+    {
+        if (activeParticles)
+        {
+            particulasCorazones.SetActive(true);
+        }
+        activeParticles = false;
+    }
+
     public void exitReward()
     {
+        particulasCorazones.SetActive(false);
         fallBallGameObject.SetActive(false);
         containerRewardAnimation.SetActive(false);
         containerAnimationGacha.SetActive(false);
         numberController.GuardarDatosSkin();
         SaveTickets();
+
     }
   
 
@@ -218,6 +239,7 @@ public class GachaController : MonoBehaviour
     }
     public void ClickGackaSkin()
     {
+        rewardSprite.enabled = true;
         audioManager.Play("ButtonClick");
         if (numTicketsSkins <= 0)
         {
@@ -286,8 +308,28 @@ public class GachaController : MonoBehaviour
         button.image.color = Color.white;
     }
 
+
+    public void ClickGachaPassive()
+    {
+        if (numTicketsPassive <= 0)
+        {
+            print(numTicketsPassive);
+            ChangeStateNoTicket();
+        }
+        else{
+            numTicketsPassive--;
+            rarity = 2;
+            rewardSprite.enabled = false;
+            PreapreAndWait();
+            activeParticles = true;
+            SetNumTickets();
+            SaveTickets();
+        }
+    }
+
     public void ClickGachaPowerUP()
     {
+        rewardSprite.enabled = true;
         audioManager.Play("ButtonClick");
         if (numTicketsPowerUps <= 0)
         {
