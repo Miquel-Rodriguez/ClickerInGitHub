@@ -66,6 +66,6 @@ public class SourceEnergy : Component
 
     public void SetDescription()
     {
-        statsDescription = "save energy per click: " + saveEnergy;
+        statsDescription = "less energy per click: " + saveEnergy;
     }
 }
