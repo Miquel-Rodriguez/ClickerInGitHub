@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Storage : Component
 {
-    [SerializeField] private float baseMaxBitesCapacity;
+    public float baseMaxBitesCapacity;
     public float maxBitesCapacity;
     [SerializeField] private float multiplier;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SourceEnergy : Component
 {
 
-    [SerializeField] private float baseSaveEnergy;
+    public float baseSaveEnergy;
     public float saveEnergy;
     [SerializeField] private float increment;
 
