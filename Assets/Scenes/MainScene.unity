@@ -548,7 +548,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Lineal
+      value: Lineal Graph
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -1882,7 +1882,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: names
-      value: Casete
+      value: Cassette
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -3346,7 +3346,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Uranio
+      value: Uranium
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -3832,7 +3832,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Storage
+      value: Closet
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -6108,7 +6108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a767d099dc3b63a45be51556d2682de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: this is a processor
+  description: This component gives more bites per click
   cName: Processaor
   cost: 15
   basecost: 15
@@ -6698,7 +6698,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: fiufiu
+      value: Windmill
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -7269,7 +7269,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: names
-      value: Grafica
+      value: Graphic
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -7553,7 +7553,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: names
-      value: Roja
+      value: ' Graphic RR'
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -7971,7 +7971,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Pila
+      value: Battery
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -8412,7 +8412,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: names
-      value: Lineal
+      value: Lineal Graph
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -10497,7 +10497,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: names
-      value: Pila
+      value: Battery
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -10928,7 +10928,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: USB
+      value: HDD
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -13681,7 +13681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d287f3c516c38a3458b382214b76f837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: this is a storage
+  description: This component give more space to save you'r bites
   cName: Storage
   cost: 12
   basecost: 12
@@ -13868,7 +13868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de54bfec0a55fc4a8fa6aa7bfb71d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: that give energy for second, less cost for click and more max energy
+  description: This component less the energy you need to generate bites per click
   cName: Source Energy
   cost: 10
   basecost: 10
@@ -16252,7 +16252,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Grafica
+      value: Graphic
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -16865,7 +16865,7 @@ PrefabInstance:
     - target: {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
         type: 3}
       propertyPath: names
-      value: potato
+      value: Potato
       objectReference: {fileID: 0}
     - target: {fileID: 7664933102510509364, guid: f9c0eb6045e9f4d46bb60fe73a3cee6c,
         type: 3}
@@ -17357,7 +17357,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Casete
+      value: ' Cassette'
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -18199,7 +18199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a30410ffe14bef488687d4a643deaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: this is a grapich
+  description: This componenet give bites per second
   cName: Graphic
   cost: 15
   basecost: 15
@@ -22152,7 +22152,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: names
-      value: Storage
+      value: Closet
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -26385,7 +26385,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: names
-      value: fiufiu
+      value: Windmill
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -27843,7 +27843,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Roja
+      value: Graphic RR
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
@@ -28789,7 +28789,7 @@ PrefabInstance:
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
       propertyPath: names
-      value: Uranio
+      value: Uranium
       objectReference: {fileID: 0}
     - target: {fileID: 4557067206145010022, guid: f1d88ee05f7eda9449d6567097533cd8,
         type: 3}
@@ -29540,7 +29540,7 @@ PrefabInstance:
     - target: {fileID: 12680140668999296, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: potato
+      value: Potato
       objectReference: {fileID: 0}
     - target: {fileID: 1652514343262483455, guid: debd64e5d8b652449addde3b73343ab7,
         type: 3}
