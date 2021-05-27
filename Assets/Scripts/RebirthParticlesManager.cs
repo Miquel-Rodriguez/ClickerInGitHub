@@ -6,25 +6,26 @@ public class RebirthParticlesManager : MonoBehaviour
 {
     [SerializeField] GameObject clickEffect;
     private Vector2 mousePos;
+    [SerializeField] GameObject canvas;
 
     private void Start()
     {
-        clickEffect.SetActive(false);
+        
     }
     void Update()
     {
-        StartCoroutine(hearts());
+        hearts();
     }
 
-    private IEnumerator hearts()
+    private void hearts()
     {
         if (Input.GetMouseButtonDown(0))
         {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            clickEffect.SetActive(true);
-            clickEffect.transform.position = new Vector2(mousePos.x, mousePos.y);
-            yield return new WaitForSeconds(1f);
-            clickEffect.SetActive(false);
+            GameObject go = Instantiate(clickEffect);
+            go.transform.SetParent(canvas.transform);
+            go.transform.position = new Vector2(mousePos.x, mousePos.y);
+            Destroy(go,1);
             
            
         }

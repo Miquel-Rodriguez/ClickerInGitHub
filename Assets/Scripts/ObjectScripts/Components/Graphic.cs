@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Graphic : Component
 {
-    [SerializeField] private float baseBitesPerSecond;
+    public float baseBitesPerSecond;
     public float bitesForSeocnd;
     [SerializeField] private float bitesPerSecondMultiplier;
 

@@ -6,7 +6,7 @@ public class ProcessorComponent : Component
 {
 
 
-    [SerializeField] private float baseBitesPerClick;
+    public float baseBitesPerClick;
     public float bitesPerClick;
 
     [SerializeField] private float baseEnergyPerClick;
