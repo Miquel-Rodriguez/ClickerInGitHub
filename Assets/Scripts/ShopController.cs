@@ -64,15 +64,7 @@ public class ShopController : MonoBehaviour
         if (dinero >= item.price)
         {
             GetComponent<NumberController>().numPasiveMoney -= item.price;
-            switch (item.itemID)
-            {
-                case 0:
-                    GetComponent<NumberController>().numDolars += item.quantity;
-                    break;
-                case 1:
-                    GetComponent<NumberController>().currentBits += item.quantity;
-                    break;
-            }
+            GetComponent<GachaController>().numTicketsPassive += item.quantity;
         }
         passiveText.SetText(GetComponent<NumberController>().numPasiveMoney.ToString());
     }
