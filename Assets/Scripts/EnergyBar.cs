@@ -23,7 +23,7 @@ public class EnergyBar : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+    //    PlayerPrefs.DeleteAll();
     }
 
 
