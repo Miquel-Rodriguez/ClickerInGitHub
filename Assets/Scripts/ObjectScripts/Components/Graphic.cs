@@ -36,6 +36,7 @@ public class Graphic : Component
     {
         bitesForSeocnd = baseBitesPerSecond;
         cost = basecost;
+        SetDescription();
     }
 
     public void LevelUP()

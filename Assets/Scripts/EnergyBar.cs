@@ -12,7 +12,7 @@ public class EnergyBar : MonoBehaviour
 	[SerializeField] private Image fill;
 
 	//[SerializeField] private float maxEnergy = 100;
-	[SerializeField] float currentEnergy;
+	public float currentEnergy;
 
 	[SerializeField] float energyForSecond;
     public float energyCostForClick;

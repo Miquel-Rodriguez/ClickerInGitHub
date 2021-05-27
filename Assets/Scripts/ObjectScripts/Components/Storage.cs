@@ -40,6 +40,7 @@ public class Storage : Component
     {
         maxBitesCapacity = baseMaxBitesCapacity;
         cost = basecost;
+        SetDescription();
     }
 
     public void LevelUP()
