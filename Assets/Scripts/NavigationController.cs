@@ -68,7 +68,7 @@ public class NavigationController : MonoBehaviour
         }else canvas.SetActive(true);
         audioManager.Play("ButtonClick");
         numberController.ChargeAnimations();
-        buttonPC.enabled = true;
+    
     }
 
     public void ChangeScene(int numScene)
