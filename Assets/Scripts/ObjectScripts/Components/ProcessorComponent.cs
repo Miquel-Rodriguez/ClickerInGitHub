@@ -44,6 +44,7 @@ public class ProcessorComponent : Component
         bitesPerClick = baseBitesPerClick;
         energyPerClick = baseEnergyPerClick;
         cost = basecost;
+        SetDescription();
     }
 
     public void LevelUP()

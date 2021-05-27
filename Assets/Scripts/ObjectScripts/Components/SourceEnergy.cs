@@ -41,6 +41,7 @@ public class SourceEnergy : Component
     {
         saveEnergy = baseSaveEnergy;
         cost = basecost;
+        SetDescription();
     }
 
     public void LevelUP()

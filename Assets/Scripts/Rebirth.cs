@@ -9,17 +9,9 @@ public class Rebirth : MonoBehaviour
     [SerializeField] ProcessorComponent lvlProcessor;
     [SerializeField] Storage lvlStorage;
     [SerializeField] SourceEnergy lvlEnergy;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] EnergyBar energyBar;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void resetAll()
     {
@@ -55,14 +47,27 @@ public class Rebirth : MonoBehaviour
         {
             // 1000000 monedas de rebirth
         }
+        energyBar.currentEnergy = lvlEnergy.maxEnergy;
+        energyBar.SetMaxHealth(lvlEnergy.maxEnergy);
+        //  energyBar.SetHealth(lvlEnergy.maxEnergy);
+
         bits.currentBits = 0;
         lvlGraphic.lvl = 1;
         lvlGraphic.SetStats();
+        lvlGraphic.SaveLvl();
+
         lvlEnergy.lvl = 1;
         lvlEnergy.SetStats();
+        lvlEnergy.SaveLvl();
+
         lvlProcessor.lvl = 1;
         lvlProcessor.SetStats();
+        lvlProcessor.SaveLvl();
+
         lvlStorage.lvl = 1;
         lvlStorage.SetStats();
+        lvlStorage.SaveLvl();
+
+       
     }
 }
