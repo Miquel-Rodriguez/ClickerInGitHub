@@ -134,11 +134,14 @@ public class NumberController : MonoBehaviour
 
     private void SetMoney()
     {
+        numDolars = PlayerPrefs.GetInt("Dolars");
+        numPasiveMoney = PlayerPrefs.GetInt("PasiveMoney");
+        dogeCoins = PlayerPrefs.GetInt("Dogecoins");
+
         textDolares.text = numDolars.ToString();
         textPasiveMoney.text = numPasiveMoney.ToString();
         textHardCurrency.text = dogeCoins.ToString();
     }
-
     
     void Update()
     {
@@ -558,5 +561,13 @@ public class NumberController : MonoBehaviour
 
     public void setCounterText() {
         counterMissions.SetText(missionCounter.ToString());
+    }
+
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("Dolars",numDolars);
+        PlayerPrefs.SetInt("PasiveMoney",numPasiveMoney);
+        PlayerPrefs.SetInt("Dogecoins",dogeCoins);
     }
 }
