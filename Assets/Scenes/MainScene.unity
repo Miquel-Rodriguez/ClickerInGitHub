@@ -21983,8 +21983,8 @@ MonoBehaviour:
   laListaDeSkinsEnergy:
   - {fileID: 570775576}
   - {fileID: 483542905}
-  - {fileID: 1378420404}
   - {fileID: 1641005250}
+  - {fileID: 1378420404}
   - {fileID: 1054373754}
   - {fileID: 1431414871}
   - {fileID: 2119971946}
@@ -22098,7 +22098,7 @@ MonoBehaviour:
   NoTicketsText: {fileID: 821721689}
   textTicketsSkin: {fileID: 1423257266}
   textTicketsPowerUps: {fileID: 1405588940}
-  textTicketsPassive: {fileID: 0}
+  textTicketsPassive: {fileID: 535722716}
   containerAnimationGacha: {fileID: 2062486611}
   shakeGameObject: {fileID: 285053703}
   fallBallGameObject: {fileID: 1666416697}
