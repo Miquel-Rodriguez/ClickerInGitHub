@@ -14,6 +14,9 @@ public class NavigationController : MonoBehaviour
     [SerializeField] GameObject PcPanel;
     [SerializeField] AudioManager audioManager;
 
+
+    [SerializeField] Button buttonPC;
+
     private void Start()
     {
 
@@ -54,6 +57,7 @@ public class NavigationController : MonoBehaviour
             
         }
         audioManager.Play("ButtonClick");
+        buttonPC.enabled = true;
     }
 
     public void ChangeStatePanel(GameObject canvas)
@@ -64,6 +68,7 @@ public class NavigationController : MonoBehaviour
         }else canvas.SetActive(true);
         audioManager.Play("ButtonClick");
         numberController.ChargeAnimations();
+        buttonPC.enabled = true;
     }
 
     public void ChangeScene(int numScene)
@@ -78,7 +83,10 @@ public class NavigationController : MonoBehaviour
         
     }
 
-
+    public void ChangeEstateButtonPC()
+    {
+        buttonPC.enabled = false;
+    }
 
 
 }
