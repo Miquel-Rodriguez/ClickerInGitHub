@@ -64,6 +64,7 @@ public class GachaController : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private GameObject particulasCorazones;
+    [SerializeField] Rebirth rebirth;
 
     private bool activeParticles;
 
@@ -324,6 +325,7 @@ public class GachaController : MonoBehaviour
             activeParticles = true;
             SetNumTickets();
             SaveTickets();
+            rebirth.addStatsRebirth();
         }
     }
 

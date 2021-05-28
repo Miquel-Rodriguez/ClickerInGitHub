@@ -8112,7 +8112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88.99988, y: -81.35574}
+  m_AnchoredPosition: {x: 88.99988, y: -81.355774}
   m_SizeDelta: {x: 93.214905, y: 92.85657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528492222
@@ -11908,7 +11908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -4.6}
+  m_AnchoredPosition: {x: 0, y: -4.5999985}
   m_SizeDelta: {x: 0, y: -9.1916275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790412762
@@ -19015,7 +19015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.6, y: -6.7}
+  m_AnchoredPosition: {x: 3.5999985, y: -6.700001}
   m_SizeDelta: {x: -7.1490326, y: -13.276772}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369389296
@@ -20975,6 +20975,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2f84025678761b949a41a2cee641d9e8, type: 3}
   audioManager: {fileID: 1071058035}
   particulasCorazones: {fileID: 1591697929}
+  rebirth: {fileID: 1445307972}
 --- !u!114 &1445307970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21039,7 +21040,7 @@ MonoBehaviour:
   lvlEnergy: {fileID: 891937917}
   energyBar: {fileID: 931928365}
   numRebirths: 0
-  textRebirth: {fileID: 0}
+  textRebirth: {fileID: 207201567}
   textMoneyRebirth: {fileID: 1270772307}
 --- !u!114 &1445307973
 MonoBehaviour:
@@ -21109,7 +21110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1456246305
 RectTransform:
   m_ObjectHideFlags: 0
