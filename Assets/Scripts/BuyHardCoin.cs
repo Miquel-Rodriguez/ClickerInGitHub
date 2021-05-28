@@ -7,17 +7,17 @@ public class BuyHardCoin : MonoBehaviour
 
     [SerializeField] NumberController coins;
 
-   public void buy2000HardCoin()
+   public void buy100HardCoin()
     {
        
-          IAPManager.Instance.BuyProduct(ShopProductNames.dogecoinsx2000, ProductBoughtCallback);
+          IAPManager.Instance.BuyProduct(ShopProductNames.dogecoinsx100, ProductBoughtCallback);
              
     }
 
-    public void buy5000HardCoin()
+    public void buy300HardCoin()
     {
        
-          IAPManager.Instance.BuyProduct(ShopProductNames.dogecoinsx5000, ProductBoughtCallback);
+          IAPManager.Instance.BuyProduct(ShopProductNames.dogecoinsx300, ProductBoughtCallback);
               
         
     }
@@ -28,6 +28,7 @@ public class BuyHardCoin : MonoBehaviour
         {//each consumable gives coins in this example
             if (product.productType == ProductType.Consumable)
                 coins.dogeCoins += product.value;
+            coins.textHardCurrency.SetText(coins.dogeCoins.ToString());
         }
         else
         {            //an error occurred in the buy process, log the message for more details

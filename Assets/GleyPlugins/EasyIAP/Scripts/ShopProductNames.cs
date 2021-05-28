@@ -1,5 +1,5 @@
 public enum ShopProductNames
 {
-dogecoinsx2000,
-dogecoinsx5000,
+dogecoinsx300,
+dogecoinsx100,
 }

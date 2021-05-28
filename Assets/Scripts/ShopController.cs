@@ -24,7 +24,7 @@ public class ShopController : MonoBehaviour
         int dinero = GetComponent<NumberController>().numDolars;
         if (dinero>=item.price)
         {
-            GetComponent<NumberController>().numDolars -= item.price;
+            GetComponent<NumberController>().numDolars -= (int)item.price;
             switch (item.itemID) {
                 case 0:
                     GetComponent<GachaController>().numTicketsSkins += item.quantity;
@@ -45,7 +45,7 @@ public class ShopController : MonoBehaviour
         int dinero = GetComponent<NumberController>().dogeCoins;
         if (dinero >= item.price)
         {
-            GetComponent<NumberController>().dogeCoins -= item.price;
+            GetComponent<NumberController>().dogeCoins -=(int) item.price;
             switch (item.itemID)
             {
                 case 2:
@@ -63,7 +63,7 @@ public class ShopController : MonoBehaviour
         int dinero = GetComponent<NumberController>().numPasiveMoney;
         if (dinero >= item.price)
         {
-            GetComponent<NumberController>().numPasiveMoney -= item.price;
+            GetComponent<NumberController>().numPasiveMoney -= (int)item.price;
             GetComponent<GachaController>().numTicketsPassive += item.quantity;
         }
         passiveText.SetText(GetComponent<NumberController>().numPasiveMoney.ToString());

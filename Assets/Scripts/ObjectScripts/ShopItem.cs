@@ -6,7 +6,8 @@ using TMPro;
 
 public class ShopItem : MonoBehaviour
 {
-    public int itemID, quantity, price;
+    public int itemID, quantity;
+    public float price;
     public string name;
     public Sprite itemSprite;
     public string currency;

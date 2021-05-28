@@ -21,21 +21,21 @@ MonoBehaviour:
   useForAmazon: 0
   useForIos: 0
   shopProducts:
-  - productName: dogecoinsx2000
-    productType: 0
-    idGooglePlay: com.hachinima.clickbyte.2000coins
-    idAmazon: 
-    idIOS: 
-    value: 2000
-    localizedPriceString: '-'
-    price: 0
-    isoCurrencyCode: 
-  - productName: dogecoinsx5000
+  - productName: dogecoinsx300
     productType: 0
     idGooglePlay: com.hachinima.clickbyte.5000coins
     idAmazon: 
     idIOS: 
-    value: 5000
+    value: 300
+    localizedPriceString: '-'
+    price: 0
+    isoCurrencyCode: 
+  - productName: dogecoinsx100
+    productType: 0
+    idGooglePlay: com.hachinima.clickbyte.2000coins
+    idAmazon: 
+    idIOS: 
+    value: 100
     localizedPriceString: '-'
     price: 0
     isoCurrencyCode: 
