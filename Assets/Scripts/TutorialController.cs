@@ -16,10 +16,26 @@ public class TutorialController : MonoBehaviour
     [SerializeField] GameObject shop;
     [SerializeField] GameObject PcPanel;
     bool aux = false;
+
+
+    [SerializeField] GameObject T1;
+    [SerializeField] GameObject T2;
+    [SerializeField] GameObject T3;
+    [SerializeField] GameObject T4;
+    [SerializeField] GameObject T5;
+    [SerializeField] GameObject T6;
+    [SerializeField] GameObject T7;
+    [SerializeField] GameObject T8;
+
+    void Awake()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        T1.SetActive(true);
     }
 
     // Update is called once per frame
@@ -30,10 +46,11 @@ public class TutorialController : MonoBehaviour
             firstStop.SetActive(false);
         }
 
-        if (bits.currentBits == 12)
+        if (bits.currentBits >= 12)
         {
             if (aux == false)
             {
+                T1.SetActive(false);
                 secondStop.SetActive(true);
                 secondStop2.SetActive(true);
                 secondStop3.SetActive(true);
@@ -47,6 +64,7 @@ public class TutorialController : MonoBehaviour
             secondStop.SetActive(false);
             secondStop2.SetActive(false);
             secondStop3.SetActive(false);
+            T2.SetActive(true);
         }
 
         if (shop.activeInHierarchy && shopStop.activeInHierarchy)
@@ -56,5 +74,51 @@ public class TutorialController : MonoBehaviour
             shopStop3.SetActive(false);
             shopStop4.SetActive(false);
         }
+    }
+
+
+    public void ActiveInformationPanelTutrial()
+    {
+        T2.SetActive(false);
+        T3.SetActive(true);
+    }
+
+    public void ActivePanelGoToGaccha()
+    {
+        T3.SetActive(false);
+        T4.SetActive(true);
+    }
+
+    public void ActivePanelGaccha()
+    {
+        T4.SetActive(false);
+        T5.SetActive(true);
+    }
+
+    public void DesactiveGacha()
+    {
+        T5.SetActive(false);
+    }
+
+    public void ActiveReturnToMainScreen()
+    {
+        T6.SetActive(true);
+    }
+
+    public void ActiveT7()
+    {
+        T6.SetActive(false);
+        T7.SetActive(true);
+    }
+
+    public void ActiveT8()
+    {
+        T7.SetActive(false);
+        T8.SetActive(true);
+    }
+
+    public void closeAll()
+    {
+
     }
 }
