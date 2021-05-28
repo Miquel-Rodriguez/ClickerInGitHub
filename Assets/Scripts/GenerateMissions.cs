@@ -8,6 +8,7 @@ public class GenerateMissions : MonoBehaviour
     public GameObject missionPrefab, gameController;
     public List<string> descsTier1,descTier2,descTier3;
     public List<GameObject> currentMissions;
+    [SerializeField] GPHAchievements achievements;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,7 @@ public class GenerateMissions : MonoBehaviour
             mission.GetComponent<Mission>().missionName = "Mission " + (i + 1);
             mission.GetComponent<Mission>().numberController = gameController;
             mission.GetComponent<Mission>().generator = this.gameObject;
+            mission.GetComponent<Mission>().achievements = achievements;
             int num = Random.Range(0, 2);
             Debug.Log(num);
             mission.GetComponent<Mission>().userID = num;

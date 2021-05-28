@@ -57,7 +57,7 @@ public class ScreenText : MonoBehaviour
 
     private void randomString()
     {
-        random = Random.Range(1, 5);
+        random = Random.Range(1, 11);
 
         switch (random)
         {
@@ -72,6 +72,24 @@ public class ScreenText : MonoBehaviour
                 break;
             case 4:
                 code = ex4;
+                break;
+            case 5:
+                code = ex5;
+                break;
+            case 6:
+                code = ex6;
+                break;
+            case 7:
+                code = ex7;
+                break;
+            case 8:
+                code = ex8;
+                break;
+            case 9:
+                code = ex9;
+                break;
+            case 10:
+                code = ex10;
                 break;
         }
     }

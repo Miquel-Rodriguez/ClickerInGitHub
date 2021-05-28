@@ -24,9 +24,23 @@
 
 public static class GPGSIds
 {
+        public const string achievement_senior_hacker = "CgkIoLHz1ooREAIQDA"; // <GPGSID>
+        public const string achievement_more_bits_than_elon_musk = "CgkIoLHz1ooREAIQCA"; // <GPGSID>
         public const string achievement_tapping_begginer = "CgkIoLHz1ooREAIQAQ"; // <GPGSID>
-        public const string achievement_shopping = "CgkIoLHz1ooREAIQAg"; // <GPGSID>
+        public const string achievement_i_got_coins__but_at_what_cost = "CgkIoLHz1ooREAIQDg"; // <GPGSID>
+        public const string achievement_getting_bits = "CgkIoLHz1ooREAIQBA"; // <GPGSID>
+        public const string achievement_the_power_of_love = "CgkIoLHz1ooREAIQEQ"; // <GPGSID>
+        public const string achievement_i_can_feel_the_power = "CgkIoLHz1ooREAIQDw"; // <GPGSID>
+        public const string achievement_a_billion = "CgkIoLHz1ooREAIQBw"; // <GPGSID>
+        public const string achievement_a_pretty_short_credits = "CgkIoLHz1ooREAIQEA"; // <GPGSID>
+        public const string achievement_my_first_skin = "CgkIoLHz1ooREAIQCQ"; // <GPGSID>
+        public const string achievement_a_million = "CgkIoLHz1ooREAIQBg"; // <GPGSID>
         public const string leaderboard_score = "CgkIoLHz1ooREAIQAA"; // <GPGSID>
+        public const string achievement_my_first_mission = "CgkIoLHz1ooREAIQCg"; // <GPGSID>
+        public const string achievement_shopping = "CgkIoLHz1ooREAIQAg"; // <GPGSID>
+        public const string achievement_begginer_hacker = "CgkIoLHz1ooREAIQCw"; // <GPGSID>
+        public const string achievement_more_and_more_bits = "CgkIoLHz1ooREAIQBQ"; // <GPGSID>
+        public const string achievement_pro_hacker = "CgkIoLHz1ooREAIQDQ"; // <GPGSID>
 
 }
 

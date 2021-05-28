@@ -11,7 +11,15 @@ public class RebirthParticlesManager : MonoBehaviour
 
     private void Start()
     {
-        
+        if (PlayerPrefs.GetInt("heartsRebirth", 0) == 1)
+        {
+            heartsRebirth = true;
+        }
+        else
+        {
+            heartsRebirth = false;
+        }
+            
     }
     void Update()
     {

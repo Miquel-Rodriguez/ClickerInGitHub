@@ -19,6 +19,10 @@ public class Rebirth : MonoBehaviour
     string firstTextMoney = "You will lose all your bits and your components stats will be 0, but you will gain ";
     string secondTextMoney = " coins that you can exchange for a ticket of the pasive gacha";
 
+    private void Start()
+    {
+        numRebirths = PlayerPrefs.GetInt("numRebirth", 0); 
+    }
 
     private void Update()
     {
@@ -28,6 +32,7 @@ public class Rebirth : MonoBehaviour
     public void addStatsRebirth()
     {
         numRebirths++;
+        PlayerPrefs.SetInt("numRebirths", numRebirths);
         textRebirth.text = numRebirths * 7 + normalRebirth;
         lvlGraphic.baseBitesPerSecond += lvlGraphic.baseBitesPerSecond * (numRebirths * 0.7f);
         lvlGraphic.bitesForSeocnd += lvlGraphic.bitesForSeocnd * (numRebirths * 0.7f);

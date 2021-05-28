@@ -1239,7 +1239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'B/
+  m_Text: 'E/
 
     S'
 --- !u!222 &93617240
@@ -11156,6 +11156,7 @@ MonoBehaviour:
   - Get subs in Witch.tv
   - Get Elden Ring info
   currentMissions: []
+  achievements: {fileID: 1620933390}
 --- !u!1001 &620122622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19911,12 +19912,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1445307963}
-        m_MethodName: 
+      - m_Target: {fileID: 1620933390}
+        m_MethodName: Rebirth1Time
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -24374,6 +24375,7 @@ MonoBehaviour:
   particulasCorazones: {fileID: 1591697929}
   rebirth: {fileID: 1445307972}
   rebirthParticles: {fileID: 1445307971}
+  achievements: {fileID: 0}
 --- !u!114 &1445307970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27652,6 +27654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1586efd8992f3f74f87e7cd2f614038a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bits: {fileID: 1445307967}
 --- !u!4 &1620933391
 Transform:
   m_ObjectHideFlags: 0
@@ -29128,7 +29131,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1761095458}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1620933390}
+        m_MethodName: UnlockCredits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1761095458
 MonoBehaviour:
   m_ObjectHideFlags: 0
