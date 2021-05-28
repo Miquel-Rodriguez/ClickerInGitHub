@@ -65,6 +65,7 @@ public class GachaController : MonoBehaviour
 
     [SerializeField] private GameObject particulasCorazones;
     [SerializeField] Rebirth rebirth;
+    [SerializeField] RebirthParticlesManager rebirthParticles;
 
     private bool activeParticles;
 
@@ -326,6 +327,8 @@ public class GachaController : MonoBehaviour
             SetNumTickets();
             SaveTickets();
             rebirth.addStatsRebirth();
+            rebirthParticles.heartsRebirth = true;
+            
         }
     }
 

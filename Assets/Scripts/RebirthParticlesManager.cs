@@ -7,6 +7,7 @@ public class RebirthParticlesManager : MonoBehaviour
     [SerializeField] GameObject clickEffect;
     private Vector2 mousePos;
     [SerializeField] GameObject canvas;
+    public bool heartsRebirth = false;
 
     private void Start()
     {
@@ -14,6 +15,7 @@ public class RebirthParticlesManager : MonoBehaviour
     }
     void Update()
     {
+        if(heartsRebirth)
         hearts();
     }
 
