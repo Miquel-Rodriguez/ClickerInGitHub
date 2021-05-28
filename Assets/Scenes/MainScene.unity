@@ -23930,6 +23930,7 @@ MonoBehaviour:
   audioManager: {fileID: 1071058035}
   particulasCorazones: {fileID: 1591697929}
   rebirth: {fileID: 1445307972}
+  rebirthParticles: {fileID: 1445307971}
 --- !u!114 &1445307970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23975,6 +23976,7 @@ MonoBehaviour:
   clickEffect: {fileID: 4494681168409426262, guid: cff6cfcd41744364ea0d4154c1b00b00,
     type: 3}
   canvas: {fileID: 1891388368}
+  heartsRebirth: 0
 --- !u!114 &1445307972
 MonoBehaviour:
   m_ObjectHideFlags: 0
