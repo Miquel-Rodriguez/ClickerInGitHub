@@ -114,4 +114,9 @@ public class GPHAchievements : MonoBehaviour
         PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_i_can_feel_the_power, 1, null);
     }
 
+    public void FinishTutorial()
+    {
+        Social.ReportProgress(GPGSIds.achievement_tutorial_completed, 100f, null);
+    }
+
 }
