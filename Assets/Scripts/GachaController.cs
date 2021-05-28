@@ -67,6 +67,8 @@ public class GachaController : MonoBehaviour
     [SerializeField] Rebirth rebirth;
     [SerializeField] RebirthParticlesManager rebirthParticles;
 
+    [SerializeField] GPHAchievements achievements;
+
     private bool activeParticles;
 
     private void Awake()
@@ -319,6 +321,7 @@ public class GachaController : MonoBehaviour
             ChangeStateNoTicket();
         }
         else{
+            achievements.GetThePowerOfLove();
             numTicketsPassive--;
             rarity = 2;
             rewardSprite.enabled = false;
@@ -328,6 +331,7 @@ public class GachaController : MonoBehaviour
             SaveTickets();
             rebirth.addStatsRebirth();
             rebirthParticles.heartsRebirth = true;
+            PlayerPrefs.SetInt("heartsRebirth", 1);
             
         }
     }
@@ -343,6 +347,7 @@ public class GachaController : MonoBehaviour
         }
         else
         {
+            achievements.Use20TimesGachaPowerUp();
             numTicketsPowerUps--;
              rarity = generateNumberRandom();
 

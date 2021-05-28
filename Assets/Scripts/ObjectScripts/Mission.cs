@@ -25,6 +25,7 @@ public class Mission : MonoBehaviour
     public GameObject imageUser;
     [Header("External components")]
     public GameObject numberController, generator;
+    public GPHAchievements achievements;
 
     void Start()
     {
@@ -42,7 +43,11 @@ public class Mission : MonoBehaviour
     public void completeMission() {
             if (numberController.GetComponent<NumberController>().missionComplete(requiredBits,reward))
             {
-                completed = true;
+            achievements.Get1Mission();
+            achievements.Get100Missions();
+            achievements.Get10Missions();
+            achievements.Get50Missions();
+            completed = true;
                 int misionesCompletadas = PlayerPrefs.GetInt("misionesCompletadas");
                 misionesCompletadas++;
                 PlayerPrefs.SetInt("misionesCompletadas",misionesCompletadas);
