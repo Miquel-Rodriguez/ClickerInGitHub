@@ -6,7 +6,7 @@ using GoogleMobileAds.Api;
 public class BannerAd : MonoBehaviour
 {
     private BannerView bannerView;
-    private string baner = "ca-app-pub-3940256099942544/6300978111";
+    private string baner = "ca-app-pub-1036217507857732/5797842072";
     //si
     public void Start()
     {

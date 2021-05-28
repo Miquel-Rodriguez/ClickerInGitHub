@@ -9,7 +9,7 @@ public class RewardedAdScript : MonoBehaviour
     private RewardedAd rewardedAd;
     [SerializeField] GachaController gacha;
 
-    private string rewardedId = "ca-app-pub-3940256099942544/5224354917";
+    private string rewardedId = "ca-app-pub-1036217507857732/6979895954";
 
     public void Start()
     {
