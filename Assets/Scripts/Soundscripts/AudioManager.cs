@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.Audio;
 using UnityEngine;
+using TMPro;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     private bool mute;
+
+    [SerializeField] private TextMeshProUGUI textMute;
 
     void Awake()
     {
@@ -86,13 +89,15 @@ public class AudioManager : MonoBehaviour
             {
                 s.source.volume = 0;
             }
-        }
+            textMute.text = "Unmute";
+}
         else
         {
             foreach (Sound s in sounds)
             {
                 s.source.volume = s.originalVolume;
             }
+            textMute.text = "mute";
         }
         mute = !mute;
     }

@@ -55,6 +55,11 @@ public class NumberController : MonoBehaviour
     public int numDolars;
     public int numPasiveMoney;
     public int dogeCoins;
+
+
+
+
+
     void Start()
     {
         currentBits = PlayerPrefs.GetFloat("TotalBits",0);
