@@ -9,10 +9,6 @@ public class TutorialController : MonoBehaviour
     [SerializeField] GameObject secondStop;
     [SerializeField] GameObject secondStop2;
     [SerializeField] GameObject secondStop3;
-    [SerializeField] GameObject shopStop;
-    [SerializeField] GameObject shopStop2;
-    [SerializeField] GameObject shopStop3;
-    [SerializeField] GameObject shopStop4;
     [SerializeField] GameObject shop;
     [SerializeField] GameObject PcPanel;
     bool aux = false;
@@ -32,7 +28,7 @@ public class TutorialController : MonoBehaviour
 
     void Awake()
     {
-        PlayerPrefs.DeleteAll();    
+        //PlayerPrefs.DeleteAll();    
     }
 
     // Start is called before the first frame update
@@ -80,14 +76,6 @@ public class TutorialController : MonoBehaviour
                 secondStop2.SetActive(false);
                 secondStop3.SetActive(false);
                 T2.SetActive(true);
-            }
-
-            if (shop.activeInHierarchy && shopStop.activeInHierarchy)
-            {
-                shopStop.SetActive(false);
-                shopStop2.SetActive(false);
-                shopStop3.SetActive(false);
-                shopStop4.SetActive(false);
             }
 
         }

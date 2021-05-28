@@ -48,7 +48,7 @@ public class NumberController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI textDolares;
     [SerializeField] private TextMeshProUGUI textPasiveMoney;
-    [SerializeField] private TextMeshProUGUI textHardCurrency;
+    public TextMeshProUGUI textHardCurrency;
     [SerializeField] public TextMeshProUGUI counterMissions;
 
     [SerializeField] private AudioManager audioManager;
