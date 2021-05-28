@@ -17,27 +17,25 @@ public class Rebirth : MonoBehaviour
     private string normalRebirth = "0% enhanced components";
     int rebirthMoneyText;
     string firstTextMoney = "You will lose all your bits and your components stats will be 0, but you will gain ";
-    string secondTextMoney = " coins that you can exchange for a ticket of the pasive gacha (20 coins = 1 ticket)";
+    string secondTextMoney = " coins that you can exchange for a ticket of the pasive gacha";
 
 
     private void Update()
     {
-        /*
-         if (se hace el gacha de rebirth)
-           {
-             numRebirths++;
-             textRebirth.text = numRebirths * 7 + normalRebirth;
-             lvlGraphic.baseBitesPerSecond += lvlGraphic.baseBitesPerSecond * (numRebirths * 0.7f);
-             lvlGraphic.bitesForSeocnd += lvlGraphic.bitesForSeocnd * (numRebirths * 0.7f);
-             lvlEnergy.baseSaveEnergy += lvlEnergy.baseSaveEnergy * (numRebirths * 0.7f);
-             lvlEnergy.saveEnergy += lvlEnergy.saveEnergy * (numRebirths * 0.7f);
-             lvlStorage.baseMaxBitesCapacity += lvlStorage.baseMaxBitesCapacity * (numRebirths * 0.7f);
-             lvlProcessor.baseBitesPerClick += lvlProcessor.baseBitesPerClick * (numRebirths * 0.7f);
-             lvlProcessor.bitesPerClick += lvlProcessor.baseBitesPerClick * (numRebirths * 0.7f);
-        }
-        */
-        
         textMoneyRebirth.text = firstTextMoney + rebirthMoneyText + secondTextMoney;
+    }
+
+    public void addStatsRebirth()
+    {
+        numRebirths++;
+        textRebirth.text = numRebirths * 7 + normalRebirth;
+        lvlGraphic.baseBitesPerSecond += lvlGraphic.baseBitesPerSecond * (numRebirths * 0.7f);
+        lvlGraphic.bitesForSeocnd += lvlGraphic.bitesForSeocnd * (numRebirths * 0.7f);
+        lvlEnergy.baseSaveEnergy += lvlEnergy.baseSaveEnergy * (numRebirths * 0.7f);
+        lvlEnergy.saveEnergy += lvlEnergy.saveEnergy * (numRebirths * 0.7f);
+        lvlStorage.baseMaxBitesCapacity += lvlStorage.baseMaxBitesCapacity * (numRebirths * 0.7f);
+        lvlProcessor.baseBitesPerClick += lvlProcessor.baseBitesPerClick * (numRebirths * 0.7f);
+        lvlProcessor.bitesPerClick += lvlProcessor.baseBitesPerClick * (numRebirths * 0.7f);
     }
 
     public void resetAll()
