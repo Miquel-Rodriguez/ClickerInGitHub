@@ -28,12 +28,15 @@ public class ShopController : MonoBehaviour
             switch (item.itemID) {
                 case 0:
                     GetComponent<GachaController>().numTicketsSkins += item.quantity;
+                    GetComponent<GachaController>().SetNumTickets();
                     break;
                 case 1:
                     GetComponent<GachaController>().numTicketsPowerUps += item.quantity;
+                    GetComponent<GachaController>().SetNumTickets();
                     break;
                 case 2:
                     GetComponent<GachaController>().numTicketsPassive += item.quantity;
+                    GetComponent<GachaController>().SetNumTickets();
                     break;
             }
         }
