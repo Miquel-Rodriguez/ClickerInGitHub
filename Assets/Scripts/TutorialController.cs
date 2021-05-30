@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class TutorialController : MonoBehaviour
 {
-    [SerializeField] GameObject firstStop;
     [SerializeField] NumberController bits;
     [SerializeField] GameObject secondStop;
-    [SerializeField] GameObject secondStop2;
-    [SerializeField] GameObject secondStop3;
     [SerializeField] GameObject shop;
     [SerializeField] GameObject PcPanel;
     bool aux = false;
@@ -30,7 +27,7 @@ public class TutorialController : MonoBehaviour
 
     void Awake()
     {
-       // PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 
     // Start is called before the first frame update
@@ -55,10 +52,6 @@ public class TutorialController : MonoBehaviour
     {
         if (activeTutorial)
         {
-            if (firstStop.activeInHierarchy && Input.GetMouseButtonDown(0))
-            {
-                firstStop.SetActive(false);
-            }
 
             if (bits.currentBits >= 12)
             {
@@ -66,8 +59,6 @@ public class TutorialController : MonoBehaviour
                 {
                     T1.SetActive(false);
                     secondStop.SetActive(true);
-                    secondStop2.SetActive(true);
-                    secondStop3.SetActive(true);
                     aux = true;
                 }
 
@@ -76,8 +67,6 @@ public class TutorialController : MonoBehaviour
             if (secondStop.activeInHierarchy && PcPanel.activeInHierarchy)
             {
                 secondStop.SetActive(false);
-                secondStop2.SetActive(false);
-                secondStop3.SetActive(false);
                 T2.SetActive(true);
             }
 
@@ -125,6 +114,16 @@ public class TutorialController : MonoBehaviour
 
     }
 
+    public void ActiveReturnToMainScreen()
+    {
+        if (activeTutorial)
+        {
+
+            T6.SetActive(true);
+        }
+
+    }
+
 
     public void ActiveGoToRebirth()
     {
@@ -135,15 +134,7 @@ public class TutorialController : MonoBehaviour
     }
 
 
-    public void ActiveReturnToMainScreen()
-    {
-        if (activeTutorial)
-        {
-
-            T6.SetActive(true);
-        }
-
-    }
+    
 
     public void ActiveT7()
     {
