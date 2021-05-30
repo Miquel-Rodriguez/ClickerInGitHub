@@ -67,6 +67,6 @@ public class Graphic : Component
 
     public void SetDescription()
     {
-        statsDescription = "Bites Per Second: " + bitesForSeocnd;
+        statsDescription = "Bits Per Second: " + bitesForSeocnd;
     }
 }

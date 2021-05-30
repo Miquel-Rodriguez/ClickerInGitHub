@@ -75,7 +75,7 @@ public class ProcessorComponent : Component
 
     public void SetDescription()
     {
-        statsDescription = "bites per click: " + bitesPerClick + "\n" +
+        statsDescription = "bits per click: " + bitesPerClick + "\n" +
               "cost for click: " + energyPerClick;
     }
 }

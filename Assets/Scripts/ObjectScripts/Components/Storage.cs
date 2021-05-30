@@ -60,6 +60,6 @@ public class Storage : Component
 
     public void SetDescription()
     {
-        statsDescription = "Max bites capacity: " + maxBitesCapacity;
+        statsDescription = "Max bits capacity: " + maxBitesCapacity;
     }
 }
