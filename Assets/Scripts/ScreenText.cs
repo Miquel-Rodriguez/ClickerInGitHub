@@ -45,12 +45,11 @@ public class ScreenText : MonoBehaviour
         }
     }
     
-    void Update()
+    public void showTextButton()
     {
-        if (Input.GetMouseButtonDown(0))
-        {           
+                
             StartCoroutine(showText()); 
-        }
+        
 
      
     }

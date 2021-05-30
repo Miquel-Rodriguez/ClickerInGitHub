@@ -11,9 +11,6 @@ public class GPHAchievements : MonoBehaviour
     {
         switch (bits.currentBits)
         {
-            case 10000f:
-                Get10000Bits();
-                break;
             case 100000f:
                 Get100000Bits();
                 break;
@@ -49,9 +46,9 @@ public class GPHAchievements : MonoBehaviour
         Social.ReportProgress(GPGSIds.achievement_a_pretty_short_credits, 100f, null);
     }
 
-    public void Get10000Bits()
+    public void Do10000Taps()
     {
-        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_getting_bits, (int)bits.currentBits, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_getting_bits, 1, null);
     }
 
     public void Get100000Bits()
@@ -76,17 +73,17 @@ public class GPHAchievements : MonoBehaviour
 
     public void Get10Missions()
     {
-        Social.ReportProgress(GPGSIds.achievement_begginer_hacker, 100f, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_begginer_hacker, 1, null);
     }
 
     public void Get50Missions()
     {
-        Social.ReportProgress(GPGSIds.achievement_senior_hacker, 100f, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_senior_hacker, 1, null);
     }
 
     public void Get100Missions()
     {
-        Social.ReportProgress(GPGSIds.achievement_pro_hacker, 100f, null);
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_pro_hacker, 1, null);
     }
 
     public void Rebirth1Time()
