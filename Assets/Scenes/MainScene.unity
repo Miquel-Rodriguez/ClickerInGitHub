@@ -8386,8 +8386,8 @@ MonoBehaviour:
   bitesPerClick: 1
   baseEnergyPerClick: 50
   energyPerClick: 25
-  bitesMultiplier: 0
-  energyMultiplier: 0
+  bitesMultiplier: 1
+  energyMultiplier: 0.1
 --- !u!4 &418029507
 Transform:
   m_ObjectHideFlags: 0

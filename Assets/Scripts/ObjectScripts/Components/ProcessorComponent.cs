@@ -53,13 +53,13 @@ public class ProcessorComponent : Component
 
         if (lvl % 5 == 0)
         {
-            energyMultiplier *=10;
+            energyMultiplier *=1.1f;
             bitesMultiplier *=10;
         }
         else
         {
             bitesMultiplier *= 3f;
-            energyMultiplier *= 3f;
+            energyMultiplier *= 1.5f;
         }
 
 
@@ -68,8 +68,9 @@ public class ProcessorComponent : Component
         bitesPerClick += bitesMultiplier;
         energyPerClick += energyMultiplier;
 
-        SetDescription();
         SaveLvl();
+
+        SetDescription();
     }
 
     public void SetDescription()
