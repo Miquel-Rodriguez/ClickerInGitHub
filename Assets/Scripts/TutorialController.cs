@@ -22,13 +22,15 @@ public class TutorialController : MonoBehaviour
     [SerializeField] GameObject T6;
     [SerializeField] GameObject T7;
     [SerializeField] GameObject T8;
+    [SerializeField] GameObject T9;
+    [SerializeField] GameObject T10;
     [SerializeField] GameObject All;
 
-    bool activeTutorial=true;
+    bool activeTutorial = true;
 
     void Awake()
     {
-        //PlayerPrefs.DeleteAll();    
+       // PlayerPrefs.DeleteAll();
     }
 
     // Start is called before the first frame update
@@ -41,7 +43,7 @@ public class TutorialController : MonoBehaviour
         }
         else activeTutorial = false;
 
-       
+
         if (activeTutorial)
         {
             T1.SetActive(true);
@@ -51,7 +53,8 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activeTutorial) {
+        if (activeTutorial)
+        {
             if (firstStop.activeInHierarchy && Input.GetMouseButtonDown(0))
             {
                 firstStop.SetActive(false);
@@ -85,7 +88,8 @@ public class TutorialController : MonoBehaviour
 
     public void ActiveInformationPanelTutrial()
     {
-        if (activeTutorial) {
+        if (activeTutorial)
+        {
             T2.SetActive(false);
             T3.SetActive(true);
         }
@@ -121,10 +125,21 @@ public class TutorialController : MonoBehaviour
 
     }
 
+
+    public void ActiveGoToRebirth()
+    {
+        if (activeTutorial)
+        {
+            T9.SetActive(true);
+        }
+    }
+
+
     public void ActiveReturnToMainScreen()
     {
         if (activeTutorial)
         {
+
             T6.SetActive(true);
         }
 
@@ -135,15 +150,28 @@ public class TutorialController : MonoBehaviour
         if (activeTutorial)
         {
             T6.SetActive(false);
+            T9.SetActive(false);
             T7.SetActive(true);
         }
 
+    }
+
+
+    public void ActivateTutPowerUps()
+    {
+        if (activeTutorial)
+        {
+
+            T7.SetActive(false);
+            T10.SetActive(true);
+        }
     }
 
     public void ActiveT8()
     {
         if (activeTutorial)
         {
+            T10.SetActive(false);
             T7.SetActive(false);
             T8.SetActive(true);
         }
@@ -157,7 +185,7 @@ public class TutorialController : MonoBehaviour
             All.SetActive(false);
             T8.SetActive(false);
             activeTutorial = false;
-            PlayerPrefs.SetInt("activeTutorial",0);
+            PlayerPrefs.SetInt("activeTutorial", 0);
         }
     }
 }

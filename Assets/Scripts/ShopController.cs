@@ -8,6 +8,8 @@ using TMPro;
 public class ShopController : MonoBehaviour
 {
     public TextMeshProUGUI dollarText, dogeText, passiveText;
+
+    [SerializeField] AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +31,17 @@ public class ShopController : MonoBehaviour
                 case 0:
                     GetComponent<GachaController>().numTicketsSkins += item.quantity;
                     GetComponent<GachaController>().SetNumTickets();
+                    PlaySoundBuy();
                     break;
                 case 1:
                     GetComponent<GachaController>().numTicketsPowerUps += item.quantity;
                     GetComponent<GachaController>().SetNumTickets();
+                    PlaySoundBuy();
                     break;
                 case 2:
                     GetComponent<GachaController>().numTicketsPassive += item.quantity;
                     GetComponent<GachaController>().SetNumTickets();
+                    PlaySoundBuy();
                     break;
             }
         }
@@ -53,9 +58,11 @@ public class ShopController : MonoBehaviour
             {
                 case 2:
                     GetComponent<NumberController>().numDolars += item.quantity;
+                    PlaySoundBuy();
                     break;
                 case 3:
                     GetComponent<NumberController>().currentBits += item.quantity;
+                    PlaySoundBuy();
                     break;
             }
         }
@@ -68,7 +75,14 @@ public class ShopController : MonoBehaviour
         {
             GetComponent<NumberController>().numPasiveMoney -= (int)item.price;
             GetComponent<GachaController>().numTicketsPassive += item.quantity;
+            PlaySoundBuy();
         }
         passiveText.SetText(GetComponent<NumberController>().numPasiveMoney.ToString());
+    }
+
+
+    private void PlaySoundBuy()
+    {
+        audioManager.Play("buy");
     }
 }
