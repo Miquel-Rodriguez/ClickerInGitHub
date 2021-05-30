@@ -125,7 +125,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.19
+  bundleVersion: 0.20
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -166,7 +166,7 @@ PlayerSettings:
     Android: com.Hachinima.ClickByte
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 19
+  AndroidBundleVersionCode: 22
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 30
   AndroidPreferredInstallLocation: 1
