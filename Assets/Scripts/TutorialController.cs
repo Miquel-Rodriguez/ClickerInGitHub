@@ -27,7 +27,7 @@ public class TutorialController : MonoBehaviour
 
     void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     // Start is called before the first frame update
